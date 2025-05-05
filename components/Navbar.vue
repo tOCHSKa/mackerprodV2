@@ -16,9 +16,6 @@
           <NuxtLink to="#" class="text-gray-700 hover:text-[#941e28] transition open">Contact</NuxtLink>
         </nav>
         
-
-      
-
         <!-- Mobile menu button -->
         <button
           class="md:hidden text-gray-700 focus:outline-none"
