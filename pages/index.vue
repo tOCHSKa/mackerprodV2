@@ -6,5 +6,6 @@
 
     <Navbar />
     <Header />
+    <Footer />
 </template>
   

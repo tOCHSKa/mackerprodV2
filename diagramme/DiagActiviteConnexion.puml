@@ -1,5 +1,5 @@
 @startuml diagmodif
-title Diagramme de séquence : Modifier un album (admin)
+title Diagramme d'Activité : Modifier un album (admin)
 
 |Admin|
 start
@@ -21,13 +21,13 @@ else (si oui)
   |Admin|
   #red:**Envoi message d'erreur : album introuvable**;
   stop
- else (Albualbum trouvé)
+ else (Album trouvé)
    |Serveur Web|
    :Récupère les données de l'album;
    |Admin|
    :Affiche le formulaire de modification;
    :Saisit les nouvelles données;
-   |Serveur WEB|
+   |BDD|
    :Valide les données saisie;
    if () is (Données Invalides) then
    |Admin|
