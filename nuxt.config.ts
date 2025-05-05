@@ -13,7 +13,15 @@ export default defineNuxtConfig({
     '@nuxt/content'
   ],
   app: {
-    pageTransition: { name: 'page', mode: 'out-in' }
+    pageTransition: { name: 'page', mode: 'out-in' },
+    head: {
+      link: [
+        {
+          rel: 'stylesheet',
+          href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
+        }
+      ]
+    }
   },
   css: ['~/assets/css/main.css'],
   vite: {
