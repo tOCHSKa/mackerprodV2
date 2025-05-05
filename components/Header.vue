@@ -1,4 +1,5 @@
 <template>
+
   <section class="hero-bg min-h-screen flex items-center">
   <div class="container mx-auto px-6 text-center md:text-left">
     <div class="md:w-1/2">
@@ -50,14 +51,6 @@ const isMobileMenuOpen = ref(false)
 h1 {
   font-family: "Raleway", sans-serif;
   
-}
-
-.open {
-  font-family: "Open Sans", sans-serif;
-}
-
-.transitionleft {
-  transform: translate(100%);
 }
 
 </style>
