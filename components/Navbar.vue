@@ -4,16 +4,28 @@
       <div class="flex justify-between items-center">
         <!-- Logo -->
         <div class="text-2xl font-bold ">
-          <span class="texte-rouge">MACKER</span>
-          <span class="text-[#1a2026]">PROD</span>
+          <nuxt-link to="/">
+            <span class="texte-rouge">MACKER</span>
+            <span class="text-[#1a2026]">PROD</span>
+          </nuxt-link>
+
         </div>
 
         <!-- Desktop Nav -->
         <nav class=" open flex gap-5 bg-white sticky top-0 z-50 hidden md:flex">
-          <NuxtLink to="#" class="text-gray-700 hover:text-[#941e28] transition open">Réalisations</NuxtLink>
-          <NuxtLink to="#" class="text-gray-700 hover:text-[#941e28] transition open">Prestations</NuxtLink>
-          <NuxtLink to="#" class="text-gray-700 hover:text-[#941e28] transition open">Portfolio</NuxtLink>
-          <NuxtLink to="#" class="text-gray-700 hover:text-[#941e28] transition open">Contact</NuxtLink>
+          
+          <NuxtLink to="#" class="group relative text-gray-700 hover:text-[#941e28] pb-1 border-b-2 border-transparent  transition-all duration-300 open">Réalisations
+            <span class="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#941e28] transition-all duration-300 group-hover:w-full"></span>
+          </NuxtLink>
+          <NuxtLink to="#" class="group relative text-gray-700 hover:text-[#941e28] pb-1 border-b-2 border-transparent  transition-all duration-300 open">Préstations
+            <span class="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#941e28] transition-all duration-300 group-hover:w-full"></span>
+          </NuxtLink>
+          <NuxtLink to="#" class="group relative text-gray-700 hover:text-[#941e28] pb-1 border-b-2 border-transparent  transition-all duration-300 open">Portfolio
+            <span class="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#941e28] transition-all duration-300 group-hover:w-full"></span>
+          </NuxtLink>
+          <NuxtLink to="#" class="group relative text-gray-700 hover:text-[#941e28] pb-1 border-b-2 border-transparent  transition-all duration-300 open">Contact
+            <span class="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#941e28] transition-all duration-300 group-hover:w-full"></span>
+          </NuxtLink>
         </nav>
         
         <!-- Mobile menu button -->
@@ -61,9 +73,8 @@
   :class="[{ 'translate-x-0': isMobileMenuOpen, '-translate-x-full': !isMobileMenuOpen }]"
 >
   <nav class="flex flex-col space-y-4">
-    <NuxtLink to="/about" class="text-gray-700">Accueil</NuxtLink>
-    <NuxtLink to="#" class="text-gray-700">À propos</NuxtLink>
     <NuxtLink to="#" class="text-gray-700">Contact</NuxtLink>
+    <NuxtLink to="#" class="text-gray-700">À propos</NuxtLink>
     <NuxtLink to="#" class="text-gray-700">Portfolio</NuxtLink>
   </nav>
 </div>

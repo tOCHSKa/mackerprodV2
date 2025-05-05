@@ -1,15 +1,19 @@
-@startuml DiagrameSequenceConnexion
-title 'Diagrame séquence pour la connexion'
-actor User as U #Purple
-participant Site as A #Yellow
-participant Server as S #Green
-participant BDD as B #Red
+@startuml Connexion
+actor Utilisateur
+boundary "Formulaire de Connexion" as Formulaire
+control "Backend" as Backend
+database "Base de Données" as BDD
 
-U -> A : se connecter
-A -> S : authentification
-S -> B : vérification
+Utilisateur -> Formulaire : Saisir email et mot de passe
+Formulaire -> Backend : Requête de connexion (email, mot de passe)
+Backend -> BDD : Rechercher utilisateur par email
+BDD --> Backend : Informations utilisateur (ou null)
 
-B --> S : confirmation
-S --> A : authentification réussie
-A --> U : vous êtes connectés
+alt Utilisateur trouvé et mot de passe valide
+    Backend --> Formulaire : Authentification OK
+    Formulaire --> Utilisateur : Redirection vers le tableau de bord
+else Utilisateur non trouvé ou mot de passe incorrect
+    Backend --> Formulaire : Erreur d'authentification
+    Formulaire --> Utilisateur : Affichage message d'erreur
+end
 @enduml
