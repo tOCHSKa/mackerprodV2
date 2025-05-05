@@ -1,0 +1,15 @@
+@startuml DiagrameSequenceConnexion
+title 'Diagrame séquence pour la connexion'
+actor User as U #Purple
+participant Site as A #Yellow
+participant Server as S #Green
+participant BDD as B #Red
+
+U -> A : se connecter
+A -> S : authentification
+S -> B : vérification
+
+B --> S : confirmation
+S --> A : authentification réussie
+A --> U : vous êtes connectés
+@enduml

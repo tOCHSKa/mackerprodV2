@@ -1,4 +1,5 @@
 <template>
+  <Navbar />
   <div class="min-h-screen flex flex-col items-center justify-center p-4">
     <h1 class="text-2xl font-bold mb-6">Inscription</h1>
 
