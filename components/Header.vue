@@ -11,7 +11,7 @@
       </p>
       <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
         <a class="bg-[#941e28] hover:bg-transparent hover:border-[2px] border-[2px] border-[#941e28]  text-white px-8 py-3 rounded-full font-bold transition" href="#contact">Discutons de votre projet</a>
-        <a class="border-2 text-white border-white bg-white-400 hover:bg-white hover:text-black px-8 py-3 rounded-full font-bold transition" href="#realisations">Voir mes réalisations</a>
+        <a class="border-2 text-white border-white bg-white-400 hover:bg-white hover:text-black px-8 py-3 rounded-full font-bold transition" href="/">Voir mes réalisations</a>
     </div>
     <div class="flex flex-row mt-8 px-2 gap-5 flex-items-center">
     <a href="#"class="text-white fa-xl  hover:scale-125  transition-transform duration-300">
