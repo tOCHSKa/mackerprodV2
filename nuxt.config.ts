@@ -31,5 +31,9 @@ export default defineNuxtConfig({
         prependPath: false
       }
     }
-  }
+  },
+components: [
+  { path: '~/components', pathPrefix: true },
+  { path: '~/components/home', pathPrefix: false },
+]
 })

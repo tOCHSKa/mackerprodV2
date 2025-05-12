@@ -15,7 +15,7 @@
           <h3 class="text-xl font-semibold mb-4">Liens utiles</h3>
           <ul class="space-y-2 text-sm text-gray-300">
             <li><a href="#" class="hover:text-white">Accueil</a></li>
-            <li><a href="#" class="hover:text-white"> Stu'Dee Photographie</a></li>
+            <li><a href="#" class="hover:text-white">Stu'Dee Photographie</a></li>
             <li><a href="#" class="hover:text-white">Prestations</a></li>
             <li><a href="#" class="hover:text-white">S'identifier</a></li>
             <li><a href="#" class="hover:text-white">Contact</a></li>

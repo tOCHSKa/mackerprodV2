@@ -3,9 +3,21 @@
       <h1>Home page</h1>
       <NuxtLink to="/about">About page</NuxtLink>
     </div> -->
-
-    <Navbar />
-    <Header />
-    <Footer />
-</template>
+    <div class="open">  
+      <Navbar />
+      <Header />
+      <Realisation />
+      <Prestation />
+      <Contact />
+      <Universphoto />
+      <Footer />
+    </div>
+  </template>
   
+
+<style scoped>
+.open {
+  font-family: "Open Sans", sans-serif;
+}
+
+</style>
