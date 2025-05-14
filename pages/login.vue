@@ -51,7 +51,7 @@
             </label>
             <a href="#" class="text-red-700 hover:underline">Mot de passe oublié ?</a>
           </div>
-  
+
           <!-- Submit -->
           <button
             type="submit"
