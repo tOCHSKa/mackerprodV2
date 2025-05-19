@@ -20,6 +20,11 @@
                             <input type="email" id="email"
                                 class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent">
                         </div>
+                        <div>
+                            <label for="phone" class="block mb-2">Votre téléphone</label>
+                            <input type="phone" id="phone"
+                                class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent">
+                        </div>
 
                         <div>
                             <label for="service" class="block mb-2">Type de projet</label>
@@ -42,7 +47,7 @@
                         </div>
 
                         <button type="submit"
-                            class="w-full bg-[#941e20] hover:bg-white text-white hover:text-[#941e20] font-bold px-6 py-4 rounded-lg transition cursor-pointer">Envoyer
+                            class="w-full bg-[#941E28] hover:bg-white text-white hover:text-[#941E28] font-bold px-6 py-4 rounded-lg transition ease-in-out duration-300 cursor-pointer">Envoyer
                             le message</button>
                     </form>
                 </div>

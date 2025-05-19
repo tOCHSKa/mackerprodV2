@@ -17,7 +17,7 @@
             <li><a href="#" class="hover:text-white">Accueil</a></li>
             <li><a href="#" class="hover:text-white">Stu'Dee Photographie</a></li>
             <li><a href="#" class="hover:text-white">Prestations</a></li>
-            <li><a href="#" class="hover:text-white">S'identifier</a></li>
+            <li><a href="/login" class="hover:text-white">S'identifier</a></li>
             <li><a href="#" class="hover:text-white">Contact</a></li>
           </ul>
         </div>

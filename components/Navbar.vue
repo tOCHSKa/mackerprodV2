@@ -14,16 +14,16 @@
         <!-- Desktop Nav -->
         <nav class=" open flex gap-5 bg-white sticky top-0 z-50 hidden md:flex">
           
-          <NuxtLink to="#" class="group relative text-gray-700 hover:text-[#941e28] pb-1 border-b-2 border-transparent  transition-all duration-300 open">Réalisations
+          <NuxtLink to="/realisation" class="group relative text-gray-700 hover:text-[#941e28] border-b-2 border-transparent  transition-all duration-300 open">Réalisations
             <span class="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#941e28] transition-all duration-300 group-hover:w-full"></span>
           </NuxtLink>
-          <NuxtLink to="#" class="group relative text-gray-700 hover:text-[#941e28] pb-1 border-b-2 border-transparent  transition-all duration-300 open">Préstations
+          <NuxtLink to="/prestation" class="group relative text-gray-700 hover:text-[#941e28] border-b-2 border-transparent  transition-all duration-300 open">Préstations
             <span class="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#941e28] transition-all duration-300 group-hover:w-full"></span>
           </NuxtLink>
-          <NuxtLink to="#" class="group relative text-gray-700 hover:text-[#941e28] pb-1 border-b-2 border-transparent  transition-all duration-300 open">Portfolio
+          <NuxtLink to="#" class="group relative text-gray-700 hover:text-[#941e28] border-b-2 border-transparent  transition-all duration-300 open">Portfolio
             <span class="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#941e28] transition-all duration-300 group-hover:w-full"></span>
           </NuxtLink>
-          <NuxtLink to="#" class="group relative text-gray-700 hover:text-[#941e28] pb-1 border-b-2 border-transparent  transition-all duration-300 open">Contact
+          <NuxtLink to="/#contact" class="group relative text-gray-700 hover:text-[#941e28] border-b-2 border-transparent  transition-all duration-300 open">Contact
             <span class="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#941e28] transition-all duration-300 group-hover:w-full"></span>
           </NuxtLink>
         </nav>
@@ -73,9 +73,10 @@
   :class="[{ 'translate-x-0': isMobileMenuOpen, '-translate-x-full': !isMobileMenuOpen }]"
 >
   <nav class="flex flex-col space-y-4">
-    <NuxtLink to="#" class="text-gray-700">Contact</NuxtLink>
-    <NuxtLink to="#" class="text-gray-700">À propos</NuxtLink>
-    <NuxtLink to="#" class="text-gray-700">Portfolio</NuxtLink>
+    <NuxtLink to="/realisation" class="text-gray-700">Réalisations</NuxtLink>
+    <NuxtLink to="/prestation" class="text-gray-700">Préstations</NuxtLink>
+    <NuxtLink to="#portfolio" class="text-gray-700">Portfolio</NuxtLink>
+    <NuxtLink to="#contact" class="text-gray-700">Contact</NuxtLink>
   </nav>
 </div>
 </header>
@@ -84,7 +85,6 @@
 <script setup>
 
 const isMobileMenuOpen = ref(false)
-
 
 </script>
 

@@ -6,31 +6,31 @@
     
     <div class="sidebar-menu">
         <p class="menu-title">Principal</p>
-        <a href="#" class="menu-item active">
+        <a href="/admin" class="menu-item active">
             <i class="fas fa-home"></i>
             <span>Dashboard</span>
         </a>
         
         <p class="menu-title">Gestion</p>
-        <a href="#" class="menu-item">
+        <a href="/admin/users" class="menu-item">
             <i class="fas fa-users"></i>
             <span>Utilisateurs</span>
         </a>
-        <a href="#" class="menu-item">
-            <i class="fas fa-box"></i>
-            <span>Produits</span>
+        <a href="/admin/videos" class="menu-item">
+            <i class="fas fa-video"></i>
+            <span>Espace Vidéo</span>
         </a>
-        <a href="#" class="menu-item">
-            <i class="fas fa-shopping-cart"></i>
-            <span>Commandes</span>
+        <a href="/admin/photos" class="menu-item">
+            <i class="fas fa-camera"></i>
+            <span>Espace Photo</span>
         </a>
         
         <p class="menu-title">Paramètres</p>
-        <a href="#" class="menu-item">
+        <a href="/admin/settings" class="menu-item">
             <i class="fas fa-cog"></i>
             <span>Paramètres</span>
         </a>
-        <a href="#" class="menu-item">
+        <a href="/admin/notifications" class="menu-item">
             <i class="fas fa-bell"></i>
             <span>Notifications</span>
         </a>

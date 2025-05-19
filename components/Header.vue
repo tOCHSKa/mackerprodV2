@@ -10,19 +10,19 @@
         Je capture l'émotion et raconte votre histoire à travers l'objectif. Des vidéos qui marquent les esprits et créent l'impact.
       </p>
       <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-        <a class="bg-[#941e28] hover:bg-transparent hover:border-[2px] border-[2px] border-[#941e28]  text-white px-8 py-3 rounded-full font-bold transition" href="#contact">Discutons de votre projet</a>
-        <a class="border-2 text-white border-white bg-white-400 hover:bg-white hover:text-black px-8 py-3 rounded-full font-bold transition" href="/">Voir mes réalisations</a>
+        <NuxtLink to="#contact" class="bg-[#941e28] hover:bg-transparent hover:border-[2px] border-[2px] border-[#941e28]  text-white px-8 py-3 rounded-full font-bold transition duration-300 ease-in-out">Discutons de votre projet</NuxtLink>
+        <NuxtLink to="/realisation" class="border-2 text-white border-white bg-white-400 hover:bg-white hover:text-black px-8 py-3 rounded-full font-bold transition duration-300 ease-in-out">Voir mes réalisations</NuxtLink>
     </div>
     <div class="flex flex-row mt-8 px-2 gap-5 flex-items-center">
-    <a href="#"class="text-white fa-xl  hover:scale-125  transition-transform duration-300">
+    <NuxtLink to="#"class="text-white fa-xl  hover:scale-125  transition-transform duration-300 ease-in-out">
       <i class="fab fa-youtube"></i>
-    </a>
-    <a href="#" class="text-white fa-xl hover:scale-125  transition-transform duration-300">
+    </NuxtLink>
+    <NuxtLink to="#" class="text-white fa-xl hover:scale-125  transition-transform duration-300 ease-in-out">
       <i class="fab fa-linkedin-in"></i>
-    </a>
-    <a href="#" class="text-white fa-xl hover:scale-125  transition-transform duration-300">
+    </NuxtLink>
+    <NuxtLink to="#" class="text-white fa-xl hover:scale-125  transition-transform duration-300 ease-in-out">
       <i class="fab fa-facebook"></i>
-    </a>
+    </NuxtLink>
   </div>
   </div>
 </div>

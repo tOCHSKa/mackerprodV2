@@ -15,4 +15,8 @@
   opacity: 0;
   filter: blur(1rem);
 }
+
+html {
+  scroll-behavior: smooth;
+}
 </style>

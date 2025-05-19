@@ -35,5 +35,7 @@ export default defineNuxtConfig({
 components: [
   { path: '~/components', pathPrefix: true },
   { path: '~/components/home', pathPrefix: false },
+  { path: '~/components/PageRealisation', pathPrefix: false },
+  { path: '~/components/PagePrestation', pathPrefix: false },
 ]
 })
