@@ -111,7 +111,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <div class="pagination">
+                <div class="pagination mb-4">
                     <button 
                         class="pagination-btn" 
                         :disabled="currentPage === 1"

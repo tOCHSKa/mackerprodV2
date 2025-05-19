@@ -23,12 +23,21 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
+  // nitro: {
+  //   devProxy: {
+  //     '/server': {
+  //       target: 'http://localhost:3001',
+  //       changeOrigin: true,
+  //       prependPath: false
+  //     }
+  //   }
+  // },
   nitro: {
-    devProxy: {
-      '/server': {
-        target: 'http://localhost:3001',
-        changeOrigin: true,
-        prependPath: false
+    routeRules: {
+      '/api/': { 
+        proxy: { 
+          to: 'http://localhost:3001/api/' // make sure this is an ENV driven variable if production does not match
+        }
       }
     }
   },

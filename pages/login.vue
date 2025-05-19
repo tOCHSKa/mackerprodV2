@@ -74,77 +74,70 @@
   </template>
   
   <script setup>
-  import { ref } from 'vue'
-  import { reactive } from 'vue'
-  import * as z from 'zod'
-  
-  /**
-   * Zod schema for form validation.
-   * Validates:
-   * - A properly formatted email.
-   * - A password with minimum 8 characters, including:
-   *   - At least one uppercase letter,
-   *   - At least one lowercase letter,
-   *   - At least one number,
-   *   - At least one special character.
-   */
-  const schema = z.object({
-    email: z.string().email('Email invalide'),
-    password: z
-      .string()
-      .min(8, 'Mot de passe trop court')
-      .refine((val) => /[A-Z]/.test(val), {
-        message: 'Le mot de passe doit contenir une majuscule'
-      })
-      .refine((val) => /[a-z]/.test(val), {
-        message: 'Le mot de passe doit contenir une minuscule'
-      })
-      .refine((val) => /[0-9]/.test(val), {
-        message: 'Le mot de passe doit contenir un chiffre'
-      })
-      .refine((val) => /[^A-Za-z0-9]/.test(val), {
-        message: 'Le mot de passe doit contenir un caractère spécial'
-      })
+  import { reactive, ref } from 'vue'
+  import { useUserStore } from '~/store/userStore'
+  import { useRouter } from 'vue-router'
+
+  const router = useRouter()
+  const userStore = useUserStore()
+
+  const errors = ref({
+    email: '',
+    password: ''
   })
-  
-  /**
-   * Holds error messages for each form field.
-   * Initially empty.
-   * Updated only if validation fails.
-   */
-  const errors = ref({ email: '', password: '' })
-  
-  /**
-   * Reactive state object for form input values.
-   * Used for data binding in the template.
-   */
+
   const state = reactive({
     email: '',
-    password: '' 
+    password: '',
+    remember: false
   })
-  
-  /**
-   * Handles form submission.
-   * Validates input using the schema.
-   * Updates error messages if validation fails.
-   * Logs valid form data if validation passes.
-   */
-  function onSubmit() {
-    const result = schema.safeParse(state)
-    console.log(result)
-  
+
+  async function onSubmit() {
     // Reset error messages
     errors.value = { email: '', password: '' }
-  
-    if (!result.success) {
-      // Extract field-specific error messages
-      const fieldErrors = result.error.flatten().fieldErrors
-  
-      errors.value.email = fieldErrors.email?.[0] || ''
-      errors.value.password = fieldErrors.password?.[0] || ''
+
+    // Validation basique
+    if (!state.email) {
+      errors.value.email = 'L\'email est requis'
       return
     }
-  
-    console.log('Form submitted with:', result.data)
+    if (!state.password) {
+      errors.value.password = 'Le mot de passe est requis'
+      return
+    }
+
+    try {
+      const success = await userStore.login({
+        email: state.email,
+        password: state.password
+      })
+
+      if (success) {
+        // Redirection vers le dashboard après connexion réussie
+        // router.push('/')
+        console.log(userStore.token)
+        console.log(userStore.isAuthenticated)
+        console.log(userStore.role)
+        console.log(userStore.email)
+        if(userStore.token){
+          if(userStore.role === 'admin'){
+            router.push('/admin')
+          }else{
+            router.push('/')
+          }
+        } else {
+          errors.value.email = 'Erreur lors de la connexion'
+        }
+      } else {
+        errors.value.email = 'Identifiants incorrects'
+      }
+    } catch (error) {
+      console.error('Erreur lors de la connexion:', error)
+      errors.value.email = 'Une erreur est survenue lors de la connexion'
+    }
   }
+
+  onMounted(() => {
+    userStore.initializeStore()
+  })
   </script>

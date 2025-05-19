@@ -38,10 +38,10 @@
     
     <div class="sidebar-footer">
         <div class="user-profile">
-            <div class="user-avatar">JD</div>
+            <div class="user-avatar">{{ userStore.email.charAt(0).toUpperCase() }}</div>
             <div class="user-info">
-                <div class="user-name">John Doe</div>
-                <div class="user-role">Administrateur</div>
+                <div class="user-name">{{ userStore.email }}</div>
+                <div class="user-role">{{ userStore.role }}</div>
             </div>
         </div>
     </div>
@@ -49,6 +49,13 @@
 </template>
 
 <script setup>
+import { useUserStore } from '~/store/userStore'
+
+const userStore = useUserStore()
+
+onMounted(() => {
+    userStore.initializeStore()
+})
 </script>
 
 <style scoped>

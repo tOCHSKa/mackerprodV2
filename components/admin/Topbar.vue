@@ -19,13 +19,20 @@
             </div>
             
             <div class="user-profile">
-                <div class="user-avatar">JD</div>
+                <div class="user-avatar">{{ userStore.email.charAt(0).toUpperCase() }}</div>
             </div>
         </div>
     </header>    
 </template>
 
 <script setup>
+import { useUserStore } from '~/store/userStore'
+
+const userStore = useUserStore()
+
+onMounted(() => {
+    userStore.initializeStore()
+})
 </script>
 
 <style scoped>
