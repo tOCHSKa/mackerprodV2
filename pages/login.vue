@@ -107,7 +107,7 @@
     }
 
     try {
-      const success = await userStore.login({
+      const success = await userStore.loginAdmin({
         email: state.email,
         password: state.password
       })

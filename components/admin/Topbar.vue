@@ -19,19 +19,19 @@
             </div>
             
             <div class="user-profile">
-                <div class="user-avatar">{{ userStore.email.charAt(0).toUpperCase() }}</div>
+                <div class="user-avatar">{{ adminStore.email.charAt(0).toUpperCase() }}</div>
             </div>
         </div>
     </header>    
 </template>
 
 <script setup>
-import { useUserStore } from '~/store/userStore'
+import { useAdminStore } from '~/store/adminStore'
 
-const userStore = useUserStore()
+const adminStore = useAdminStore()
 
 onMounted(() => {
-    userStore.initializeStore()
+    adminStore.initializeStore()
 })
 </script>
 
