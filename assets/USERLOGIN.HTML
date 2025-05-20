@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Profil | MackerProd</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1A2026',
+                        accent: '#941E28',
+                        darkbg: '#1A2026',
+                        lightbg: '#ffffff',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .profile-bg {
+            background: linear-gradient(rgba(26, 32, 38, 0.9), rgba(26, 32, 38, 0.9)), url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1630&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .devis-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid #941E28;
+        }
+        
+        .devis-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .status-pending {
+            background-color: #FEF3C7;
+            color: #92400E;
+        }
+        
+        .status-approved {
+            background-color: #D1FAE5;
+            color: #065F46;
+        }
+        
+        .status-rejected {
+            background-color: #FEE2E2;
+            color: #92400E;
+        }
+        
+        .status-completed {
+            background-color: #DBEAFE;
+            color: #1E40AF;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-primary">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-accent">MACKER<span class="text-primary">PROD</span></div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="hover:text-accent transition">Accueil</a>
+                    <a href="projets.html" class="hover:text-accent transition">Mes Projets</a>
+                    <a href="devis.html" class="hover:text-accent transition">Mes Devis</a>
+                    <a href="profil.html" class="text-accent font-medium">Mon Profil</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="outline-none mobile-menu-button">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="hidden mobile-menu">
+                <div class="flex flex-col mt-4 space-y-2">
+                    <a href="index.html" class="block px-3 py-2 hover:bg-gray-100 rounded">Accueil</a>
+                    <a href="projets.html" class="block px-3 py-2 hover:bg-gray-100 rounded">Mes Projets</a>
+                    <a href="devis.html" class="block px-3 py-2 hover:bg-gray-100 rounded">Mes Devis</a>
+                    <a href="profil.html" class="block px-3 py-2 bg-gray-100 rounded">Mon Profil</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Header -->
+    <section class="profile-bg text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/4 mb-8 md:mb-0 flex justify-center">
+                    <div class="relative">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Photo de profil" 
+                             class="w-40 h-40 rounded-full border-4 border-accent object-cover">
+                        <button class="absolute bottom-0 right-0 bg-accent text-white p-2 rounded-full hover:bg-red-800 transition">
+                            <i class="fas fa-camera"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="md:w-3/4 md:pl-12 text-center md:text-left">
+                    <h1 class="text-3xl md:text-4xl font-bold mb-2">Jean Dupont</h1>
+                    <p class="text-xl mb-4">Client depuis 2022</p>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-6">
+                        <div class="bg-gray-800 bg-opacity-50 px-4 py-2 rounded-full">
+                            <i class="fas fa-envelope mr-2"></i> jean.dupont@example.com
+                        </div>
+                        <div class="bg-gray-800 bg-opacity-50 px-4 py-2 rounded-full">
+                            <i class="fas fa-phone-alt mr-2"></i> +33 6 12 34 56 78
+                        </div>
+                    </div>
+                    <div class="flex space-x-4 justify-center md:justify-start">
+                        <a href="#" class="bg-accent hover:bg-red-800 text-white px-6 py-2 rounded-full font-medium transition">
+                            Modifier mon profil
+                        </a>
+                        <a href="devis.html" class="border-2 border-white hover:bg-white hover:text-primary px-6 py-2 rounded-full font-medium transition">
+                            Voir mes devis
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Sidebar -->
+                <div class="lg:w-1/4">
+                    <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                        <h3 class="text-xl font-bold mb-4">Informations personnelles</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-user text-accent mr-3 w-5"></i>
+                                <span>Jean Dupont</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-envelope text-accent mr-3 w-5"></i>
+                                <span>jean.dupont@example.com</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-phone text-accent mr-3 w-5"></i>
+                                <span>+33 6 12 34 56 78</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-accent mr-3 w-5"></i>
+                                <span>12 Rue de la Paix, 75002 Paris</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-calendar-alt text-accent mr-3 w-5"></i>
+                                <span>Membre depuis: 15/06/2022</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-bold mb-4">Statistiques</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Projets réalisés</span>
+                                    <span class="font-bold text-accent">3</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-accent h-2 rounded-full" style="width: 60%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Devis en cours</span>
+                                    <span class="font-bold text-accent">2</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-yellow-500 h-2 rounded-full" style="width: 40%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Satisfaction</span>
+                                    <span class="font-bold text-accent">4.8/5</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-green-500 h-2 rounded-full" style="width: 96%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Main Content -->
+                <div class="lg:w-3/4">
+                    <!-- Devis Section -->
+                    <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                        <div class="flex justify-between items-center mb-6">
+                            <h2 class="text-2xl font-bold">Mes <span class="text-accent">Devis</span></h2>
+                            <a href="devis.html" class="text-accent hover:underline flex items-center">
+                                Voir tous <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Devis 1 -->
+                            <div class="devis-card bg-white rounded-lg p-6 border border-gray-200">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div>
+                                        <h3 class="font-bold text-lg">Mariage - Sophie & Pierre</h3>
+                                        <p class="text-gray-600 text-sm">Créé le: 15/05/2023</p>
+                                    </div>
+                                    <span class="status-approved px-3 py-1 rounded-full text-sm font-medium">Accepté</span>
+                                </div>
+                                <p class="text-gray-700 mb-4">Prestation complète de vidéographie pour mariage avec drone et montage personnalisé.</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="font-bold text-lg">1 850 €</span>
+                                    <a href="#" class="text-accent hover:underline">Voir détails</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Devis 2 -->
+                            <div class="devis-card bg-white rounded-lg p-6 border border-gray-200">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div>
+                                        <h3 class="font-bold text-lg">Spot publicitaire</h3>
+                                        <p class="text-gray-600 text-sm">Créé le: 02/06/2023</p>
+                                    </div>
+                                    <span class="status-pending px-3 py-1 rounded-full text-sm font-medium">En attente</span>
+                                </div>
+                                <p class="text-gray-700 mb-4">Production d'un spot de 30 secondes pour la marque EcoFood avec 3 jours de tournage.</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="font-bold text-lg">3 200 €</span>
+                                    <a href="#" class="text-accent hover:underline">Voir détails</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Projets Récents -->
+                    <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                        <div class="flex justify-between items-center mb-6">
+                            <h2 class="text-2xl font-bold">Mes <span class="text-accent">Projets</span></h2>
+                            <a href="projets.html" class="text-accent hover:underline flex items-center">
+                                Voir tous <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <!-- Projet 1 -->
+                            <div class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition">
+                                <div class="h-40 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                                <div class="p-4">
+                                    <h3 class="font-bold mb-2">Mariage - Sophie & Pierre</h3>
+                                    <div class="flex justify-between items-center text-sm text-gray-600 mb-2">
+                                        <span>Terminé</span>
+                                        <span>15/06/2023</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="flex mr-2">
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star-half-alt text-yellow-400"></i>
+                                        </div>
+                                        <span class="text-sm">4.7</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Projet 2 -->
+                            <div class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition">
+                                <div class="h-40 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                                <div class="p-4">
+                                    <h3 class="font-bold mb-2">Anniversaire - 30 ans</h3>
+                                    <div class="flex justify-between items-center text-sm text-gray-600 mb-2">
+                                        <span>Terminé</span>
+                                        <span>12/03/2023</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="flex mr-2">
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                        </div>
+                                        <span class="text-sm">5.0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Projet 3 -->
+                            <div class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition">
+                                <div class="h-40 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80');"></div>
+                                <div class="p-4">
+                                    <h3 class="font-bold mb-2">Vidéo d'entreprise</h3>
+                                    <div class="flex justify-between items-center text-sm text-gray-600 mb-2">
+                                        <span>Terminé</span>
+                                        <span>28/01/2023</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="flex mr-2">
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="far fa-star text-yellow-400"></i>
+                                        </div>
+                                        <span class="text-sm">4.2</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Documents -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-2xl font-bold mb-6">Mes <span class="text-accent">Documents</span></h2>
+                        
+                        <div class="space-y-4">
+                            <!-- Document 1 -->
+                            <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition">
+                                <div class="flex items-center">
+                                    <div class="bg-gray-100 p-3 rounded-lg mr-4">
+                                        <i class="fas fa-file-pdf text-red-500 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-medium">Contrat Mariage - Sophie & Pierre.pdf</h3>
+                                        <p class="text-sm text-gray-600">Ajouté le 10/05/2023</p>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <a href="#" class="p-2 text-gray-500 hover:text-accent transition">
+                                        <i class="fas fa-download"></i>
+                                    </a>
+                                    <a href="#" class="p-2 text-gray-500 hover:text-red-500 transition">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- Document 2 -->
+                            <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition">
+                                <div class="flex items-center">
+                                    <div class="bg-gray-100 p-3 rounded-lg mr-4">
+                                        <i class="fas fa-file-invoice-dollar text-blue-500 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-medium">Facture 2023-001.pdf</h3>
+                                        <p class="text-sm text-gray-600">Ajouté le 15/06/2023</p>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <a href="#" class="p-2 text-gray-500 hover:text-accent transition">
+                                        <i class="fas fa-download"></i>
+                                    </a>
+                                    <a href="#" class="p-2 text-gray-500 hover:text-red-500 transition">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- Document 3 -->
+                            <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition">
+                                <div class="flex items-center">
+                                    <div class="bg-gray-100 p-3 rounded-lg mr-4">
+                                        <i class="fas fa-file-video text-purple-500 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-medium">Storyboard projet EcoFood.pdf</h3>
+                                        <p class="text-sm text-gray-600">Ajouté le 02/06/2023</p>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <a href="#" class="p-2 text-gray-500 hover:text-accent transition">
+                                        <i class="fas fa-download"></i>
+                                    </a>
+                                    <a href="#" class="p-2 text-gray-500 hover:text-red-500 transition">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6">
+                            <button class="flex items-center text-accent hover:text-red-800 transition">
+                                <i class="fas fa-plus-circle mr-2"></i> Ajouter un document
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="text-2xl font-bold text-accent mb-2">MACKER<span class="text-white">PROD</span></div>
+                    <p class="text-gray-400">Créations vidéo et photographiques d'exception</p>
+                </div>
+
+                <div class="flex flex-col md:flex-row md:space-x-8 space-y-4 md:space-y-0 text-center md:text-left">
+                    <div>
+                        <h4 class="font-bold mb-2">NAVIGATION</h4>
+                        <ul class="space-y-2">
+                            <li><a href="index.html" class="text-gray-400 hover:text-white transition">Accueil</a></li>
+                            <li><a href="projets.html" class="text-gray-400 hover:text-white transition">Mes Projets</a></li>
+                            <li><a href="devis.html" class="text-gray-400 hover:text-white transition">Mes Devis</a></li>
+                            <li><a href="profil.html" class="text-gray-400 hover:text-white transition">Mon Profil</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold mb-2">LEGAL</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Mentions légales</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Politique de confidentialité</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">CGV</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2024 MackerProd. Tous droits réservés.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-vimeo-v"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const btn = document.querySelector(".mobile-menu-button");
+        const menu = document.querySelector(".mobile-menu");
+
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    if (!menu.classList.contains('hidden')) {
+                        menu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
