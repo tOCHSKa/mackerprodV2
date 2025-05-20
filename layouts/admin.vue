@@ -17,6 +17,7 @@
   <script setup>
   import Sidebar from '@/components/admin/Sidebar.vue'
   import Topbar from '@/components/admin/Topbar.vue'
+
   </script>
   
   <style scoped>

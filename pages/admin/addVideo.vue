@@ -8,7 +8,7 @@
             <div>
                 <button class="btn btn-outline mr-2">
                     <i class="fas fa-arrow-left mr-2"></i>
-                    Retour
+                    <NuxtLink to="/admin/videoList">Retour</NuxtLink>
                 </button>
                 <button class="btn btn-primary" id="submit-btn">
                     <i class="fas fa-save mr-2"></i>
@@ -29,11 +29,13 @@
                         <label for="category" class="form-label">Catégorie</label>
                         <select id="category" class="form-control" required>
                             <option value="">Sélectionnez une catégorie</option>
-                            <option value="education">Éducation</option>
-                            <option value="entertainment">Divertissement</option>
-                            <option value="music">Musique</option>
-                            <option value="sports">Sports</option>
-                            <option value="technology">Technologie</option>
+                            <option value="event">Event</option>
+                            <option value="drone">Drone</option>
+                            <option value="mariage">Mariage</option>
+                            <option value="immobilier">Immobilier</option>
+                            <option value="corporate">Corporate</option>
+                            <option value="documentaire">Documentaire</option>
+                            <option value="autre">Autre</option>
                         </select>
                     </div>
                 </div>
@@ -58,18 +60,6 @@
                             <option value="private">Privé</option>
                             <option value="unlisted">Non listé</option>
                         </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="tags" class="form-label">Tags (séparés par des virgules)</label>
-                        <input type="text" id="tags" class="form-control" placeholder="tag1, tag2, tag3">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="flex items-center">
-                        <input type="checkbox" id="comments-enabled" class="mr-2" checked>
-                        <label for="comments-enabled">Autoriser les commentaires</label>
                     </div>
                 </div>
             </form>
