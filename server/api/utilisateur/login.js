@@ -3,7 +3,7 @@ export default defineEventHandler(async (event) => {
   
     try {
       // Note le "users" ici 👇
-      const response = await $fetch('http://localhost:3001/api/utilisateur/loginuser', {
+      const response = await $fetch('http://localhost:3001/api/utilisateur/login', {
         method: 'POST',
         body
       })

@@ -137,7 +137,4 @@
     }
   }
 
-  onMounted(() => {
-    adminStore.initializeStore()
-  })
   </script>

@@ -52,15 +52,13 @@ export const useUtilisateurStore = defineStore('utilisateur', {
       this.role = null
       this.token = null
       this.isAuthenticated = false
-
       const tokenCookie = useCookie('token')
       tokenCookie.value = null
     }
   },
 
   getters: {
-   isUser: (state) => state.role === 'user',
-
+    isUser: (state) => state.role === 'user',
     userEmail: (state) => state.email,
     authToken: (state) => state.token,
   }

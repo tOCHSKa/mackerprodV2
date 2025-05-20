@@ -9,17 +9,17 @@
                         <h2 class="text-3xl font-bold text-gray-900">Content de vous revoir</h2>
                         <p class="mt-2 text-sm text-gray-600">Accédez à votre espace client MackerProd</p>
                     </div>
-                    <form class="mt-8 space-y-6">
+                    <form @submit.prevent="onSubmit" class="mt-8 space-y-6">
                         <div class="rounded-md shadow-sm space-y-4">
                             <div>
                                 <label for="login-email" class="sr-only">Email</label>
-                                <input id="login-email" name="email" type="email" autocomplete="email" required
+                                <input id="login-email" name="email" type="email" autocomplete="email" required v-model="state.email"
                                     class="input-field appearance-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-accent focus:border-accent focus:z-10 sm:text-sm"
                                     placeholder="Adresse email">
                             </div>
                             <div>
                                 <label for="login-password" class="sr-only">Mot de passe</label>
-                                <input id="login-password" name="password" type="password" autocomplete="current-password"
+                                <input id="login-password" name="password" type="password" autocomplete="current-password" v-model="state.password"
                                     required
                                     class="input-field appearance-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-accent focus:border-accent focus:z-10 sm:text-sm"
                                     placeholder="Mot de passe">
@@ -44,7 +44,7 @@
 
                         <div>
                             <button type="submit"
-                                class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-accent hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition">
+                                class="cursor-pointer group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-accent hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition">
                                 <span class="absolute left-0 inset-y-0 flex items-center pl-3">
                                     <i class="fas fa-sign-in-alt"></i>
                                 </span>
@@ -89,64 +89,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Register Form (hidden by default) -->
-                <div id="register-form" class="hidden p-8">
-                    <div class="text-center mb-8">
-                        <h2 class="text-3xl font-bold text-gray-900">Créez votre compte</h2>
-                        <p class="mt-2 text-sm text-gray-600">Rejoignez la communauté MackerProd</p>
-                    </div>
-                    <form class="mt-8 space-y-6">
-                        <div class="rounded-md shadow-sm space-y-4">
-                            <div>
-                                <label for="register-email" class="sr-only">Email</label>
-                                <input id="register-email" name="email" type="email" autocomplete="email" required
-                                    class="input-field appearance-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-accent focus:border-accent focus:z-10 sm:text-sm"
-                                    placeholder="Adresse email">
-                            </div>
-
-                            <div>
-                                <label for="register-password" class="sr-only">Mot de passe</label>
-                                <input id="register-password" name="password" type="password" required
-                                    class="input-field appearance-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-accent focus:border-accent focus:z-10 sm:text-sm"
-                                    placeholder="Mot de passe">
-                            </div>
-
-                            <div>
-                                <label for="register-confirm-password" class="sr-only">Confirmer le mot de passe</label>
-                                <input id="register-confirm-password" name="confirm-password" type="password" required
-                                    class="input-field appearance-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-accent focus:border-accent focus:z-10 sm:text-sm"
-                                    placeholder="Confirmer le mot de passe">
-                            </div>
-                        </div>
-
-                        <div class="flex items-center">
-                            <input id="accept-terms" name="accept-terms" type="checkbox"
-                                class="h-4 w-4 text-accent focus:ring-accent border-gray-300 rounded">
-                            <label for="accept-terms" class="ml-2 block text-sm text-gray-900">
-                                J'accepte les <a href="#" class="text-accent hover:text-red-800">conditions
-                                    d'utilisation</a> et la <a href="#" class="text-accent hover:text-red-800">politique
-                                    de confidentialité</a>
-                            </label>
-                        </div>
-
-                        <div>
-                            <button type="submit"
-                                class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-accent hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition">
-                                <span class="absolute left-0 inset-y-0 flex items-center pl-3">
-                                    <i class="fas fa-user-plus"></i>
-                                </span>
-                                S'inscrire
-                            </button>
-                        </div>
-                    </form>
-
-                    <div class="mt-6 text-center">
-                        <p class="text-sm text-gray-600">
-                            Vous avez déjà un compte? <button id="switch-to-login" class="text-accent hover:text-red-800">Connectez-vous</button>
-                        </p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -171,7 +113,8 @@
     remember: false
   })
 
-  async function onSubmit() {
+  const onSubmit = async () => {
+    console.log('coucou')
     // Reset error messages
     errors.value = { email: '', password: '' }
 
@@ -200,9 +143,9 @@
         console.log(utilisateurStore.email)
         if(utilisateurStore.token){
           if(utilisateurStore.role === 'user'){
-            router.push('/')
+            router.push('/profil')
           }else{
-            router.push('/')
+            router.push('/loginuser')
           }
         } else {
           errors.value.email = 'Erreur lors de la connexion'
@@ -215,10 +158,6 @@
       errors.value.email = 'Une erreur est survenue lors de la connexion'
     }
   }
-
-  onMounted(() => {
-    utilisateurStore.initializeStore()
-  })
 
     </script>
     <style scoped>

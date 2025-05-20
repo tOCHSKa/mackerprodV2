@@ -2,12 +2,26 @@
   <section class="relative min-h-screen flex items-center overflow-hidden">
     
     <!-- VIDEO DE FOND -->
-    <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-[-1]">
-      <source src="https://videos.pexels.com/video-files/9665449/9665449-hd_1920_1080_25fps.mp4" type="video/mp4" />
+    <video
+      ref="videoRef"
+      autoplay
+      muted
+      loop
+      playsinline
+      class="absolute top-0 left-0 w-full h-full object-cover z-[-1]">
+      <source src="@/assets/video/headerVideo.mp4" type="video/mp4" />
       Votre navigateur ne supporte pas les vidéos HTML5.
     </video>
 
-    <!-- OVERLAY sombre -->
+    <!-- BOUTON SON -->
+    <button
+      @click="toggleMute"
+      class="absolute cursor-pointer bottom-[75px] right-3 bg-white px-4 py-2 rounded z-10">
+      <i v-if="isMuted === null" class="fas fa-spinner fa-spin"></i>
+      <i v-else :class="isMuted ? 'fas fa-volume-mute' : 'fas fa-volume-up'"></i>
+    </button>
+
+    <!-- OVERLAY -->
     <div class="absolute top-0 left-0 w-full h-full bg-black opacity-60 z-[-1]"></div>
 
     <!-- CONTENU -->
@@ -41,8 +55,26 @@
 </template>
 
 <script setup>
-const isMobileMenuOpen = ref(false)
+import { ref, onMounted } from 'vue'
+
+const videoRef = ref(null)
+const isMuted = ref(null)
+
+const toggleMute = () => {
+  if (videoRef.value) {
+    videoRef.value.muted = !videoRef.value.muted
+    isMuted.value = videoRef.value.muted
+    videoRef.value.play() // pour forcer la lecture si bloqué
+  }
+}
+
+onMounted(() => {
+  if (videoRef.value) {
+    isMuted.value = videoRef.value.muted
+  }
+})
 </script>
+
 
 <style scoped>
 .texte-rouge {
