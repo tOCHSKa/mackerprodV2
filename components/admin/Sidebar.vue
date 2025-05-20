@@ -12,15 +12,15 @@
         </a>
         
         <p class="menu-title">Gestion</p>
-        <a href="/admin/users" class="menu-item">
+        <a href="/admin/userList" class="menu-item">
             <i class="fas fa-users"></i>
             <span>Utilisateurs</span>
         </a>
-        <a href="/admin/videos" class="menu-item">
+        <a href="/admin/videoList" class="menu-item">
             <i class="fas fa-video"></i>
             <span>Espace Vidéo</span>
         </a>
-        <a href="/admin/photos" class="menu-item">
+        <a href="/admin/photoList" class="menu-item">
             <i class="fas fa-camera"></i>
             <span>Espace Photo</span>
         </a>

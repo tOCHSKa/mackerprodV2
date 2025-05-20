@@ -5,10 +5,6 @@
                     <h1>Tableau de bord</h1>
                     <p>Bienvenue dans votre espace d'administration</p>
                 </div>
-                <button class="btn btn-primary">
-                    <i class="fas fa-plus"></i>
-                    Nouvel élément
-                </button>
             </div>
             
             <!-- Stats Cards -->
@@ -134,10 +130,13 @@
         </main>
 </template>
 <script setup>
-
+import { useAdminStore } from '~/store/adminStore'
 definePageMeta({
   layout: 'admin'
 })
+
+const adminStore = useAdminStore()
+adminStore.initializeStore()
 
 const activeDropdown = ref(null)
 const currentPage = ref(1)

@@ -75,11 +75,11 @@
   
   <script setup>
   import { reactive, ref } from 'vue'
-  import { useUserStore } from '~/store/userStore'
+  import { useAdminStore } from '~/store/adminStore'
   import { useRouter } from 'vue-router'
 
   const router = useRouter()
-  const userStore = useUserStore()
+  const adminStore = useAdminStore()
 
   const errors = ref({
     email: '',
@@ -107,7 +107,7 @@
     }
 
     try {
-      const success = await userStore.loginAdmin({
+      const success = await adminStore.loginAdmin({
         email: state.email,
         password: state.password
       })
@@ -115,12 +115,12 @@
       if (success) {
         // Redirection vers le dashboard après connexion réussie
         // router.push('/')
-        console.log(userStore.token)
-        console.log(userStore.isAuthenticated)
-        console.log(userStore.role)
-        console.log(userStore.email)
-        if(userStore.token){
-          if(userStore.role === 'admin'){
+        console.log(adminStore.token)
+        console.log(adminStore.isAuthenticated)
+        console.log(adminStore.role)
+        console.log(adminStore.email)
+        if(adminStore.token){
+          if(adminStore.role === 'admin'){
             router.push('/admin')
           }else{
             router.push('/')
@@ -138,6 +138,6 @@
   }
 
   onMounted(() => {
-    userStore.initializeStore()
+    adminStore.initializeStore()
   })
   </script>
