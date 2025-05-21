@@ -10,40 +10,40 @@
                 <div class="slider">
                     <div class="slide-track">
                         <div class="slide">
-                            <img src="/svg/4tech.svg" alt="4tech">
+                            <img src="/4tech.svg" alt="4tech">
                         </div>
                         <div class="slide">
-                            <img src="/svg/dimmobilier.svg" alt="dim mobilier">
+                            <img src="/dimmobilier.svg" alt="dim mobilier">
                         </div>
                         <div class="slide">
-                            <img src="/svg/foxhabitat.svg" alt="foxhabitat">
+                            <img src="/foxhabitat.svg" alt="foxhabitat">
                         </div>
                         <div class="slide">
-                            <img src="/svg/liujo.svg" alt="liujo">
+                            <img src="/liujo.svg" alt="liujo">
                         </div>
                         <div class="slide">
-                            <img src="/svg/4tech.svg" alt="4tech">
+                            <img src="/4tech.svg" alt="4tech">
                         </div>
                         <div class="slide">
-                            <img src="/svg/dimmobilier.svg" alt="dim mobilier">
+                            <img src="/dimmobilier.svg" alt="dim mobilier">
                         </div>
                         <div class="slide">
-                            <img src="/svg/foxhabitat.svg" alt="foxhabitat">
+                            <img src="/foxhabitat.svg" alt="foxhabitat">
                         </div>
                         <div class="slide">
-                            <img src="/svg/liujo.svg" alt="liujo">
+                            <img src="/liujo.svg" alt="liujo">
                         </div>
                         <div class="slide">
-                            <img src="/svg/4tech.svg" alt="4tech">
+                            <img src="/4tech.svg" alt="4tech">
                         </div>
                         <div class="slide">
-                            <img src="/svg/dimmobilier.svg" alt="dim mobilier">
+                            <img src="/dimmobilier.svg" alt="dim mobilier">
                         </div>
                         <div class="slide">
-                            <img src="/svg/foxhabitat.svg" alt="foxhabitat">
+                            <img src="/foxhabitat.svg" alt="foxhabitat">
                         </div>
                         <div class="slide">
-                            <img src="/svg/liujo.svg" alt="liujo">
+                            <img src="/liujo.svg" alt="liujo">
                         </div>
                     </div>
                 </div>
