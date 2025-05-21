@@ -13,7 +13,7 @@
     <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       <!-- Projet -->
       <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-        <div class="aspect-w-16 aspect-h-9 h-64">
+        <div class="h-[300px]">
           <iframe
             class="w-full h-full"
             src="https://www.youtube.com/embed/XUr1a12Bk1g?controls=0&modestbranding=1&rel=0&showinfo=0"
@@ -42,7 +42,7 @@
         </div>
       </div>
       <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-        <div class="aspect-w-16 aspect-h-9 h-64">
+        <div class="h-[300px]">
           <iframe
           class="w-full h-full"
             src="https://www.youtube.com/embed/QIJaPO-Bu5I?controls=0&mute=1&loop=1&playlist=QIJaPO-Bu5I&modestbranding=1&rel=0"
@@ -74,7 +74,7 @@
       <!-- Projet -->
       <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
         <div
-          class="h-64 bg-cover bg-center"
+          class="h-[300px] bg-cover bg-center"
           style="background-image: url('');"
         ></div>
         <div class="p-6">
