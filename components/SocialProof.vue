@@ -133,10 +133,10 @@
 </template>
 
 <script setup>
-import fourtech from "../assets/svg/4tech.svg"
-import dimmobilier from "../assets/svg/dimmobilier.svg"
-import foxhabitat from "../assets/svg/foxhabitat.svg"
-import liujo from "../assets/svg/liujo.svg"
+import fourtech from "../public/svg/4tech.svg"
+import dimmobilier from "../public/svg/dimmobilier.svg"
+import foxhabitat from "../public/svg/foxhabitat.svg"
+import liujo from "../public/svg/liujo.svg"
 </script>
 
 <style scoped>
