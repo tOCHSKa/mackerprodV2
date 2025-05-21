@@ -10,40 +10,40 @@
                 <div class="slider">
                     <div class="slide-track">
                         <div class="slide">
-                            <img src="/4tech.svg" alt="4tech">
+                            <img src="https://tochska.github.io/assets-mackerprod/4tech.svg" alt="4tech">
                         </div>
                         <div class="slide">
-                            <img src="/dimmobilier.svg" alt="dim mobilier">
+                            <img src="https://tochska.github.io/assets-mackerprod/dimmobilier.svg" alt="dim mobilier">
                         </div>
                         <div class="slide">
-                            <img src="/foxhabitat.svg" alt="foxhabitat">
+                            <img src="https://tochska.github.io/assets-mackerprod/foxhabitat.svg" alt="foxhabitat">
                         </div>
                         <div class="slide">
-                            <img src="/liujo.svg" alt="liujo">
+                            <img src="https://tochska.github.io/assets-mackerprod/liujo.svg" alt="liujo">
                         </div>
                         <div class="slide">
-                            <img src="/4tech.svg" alt="4tech">
+                            <img src="https://tochska.github.io/assets-mackerprod/4tech.svg" alt="4tech">
                         </div>
                         <div class="slide">
-                            <img src="/dimmobilier.svg" alt="dim mobilier">
+                            <img src="https://tochska.github.io/assets-mackerprod/dimmobilier.svg" alt="dim mobilier">
                         </div>
                         <div class="slide">
-                            <img src="/foxhabitat.svg" alt="foxhabitat">
+                            <img src="https://tochska.github.io/assets-mackerprod/foxhabitat.svg" alt="foxhabitat">
                         </div>
                         <div class="slide">
-                            <img src="/liujo.svg" alt="liujo">
+                            <img src="https://tochska.github.io/assets-mackerprod/liujo.svg" alt="liujo">
                         </div>
                         <div class="slide">
-                            <img src="/4tech.svg" alt="4tech">
+                            <img src="https://tochska.github.io/assets-mackerprod/4tech.svg" alt="4tech">
                         </div>
                         <div class="slide">
-                            <img src="/dimmobilier.svg" alt="dim mobilier">
+                            <img src="https://tochska.github.io/assets-mackerprod/dimmobilier.svg" alt="dim mobilier">
                         </div>
                         <div class="slide">
-                            <img src="/foxhabitat.svg" alt="foxhabitat">
+                            <img src="https://tochska.github.io/assets-mackerprod/foxhabitat.svg" alt="foxhabitat">
                         </div>
                         <div class="slide">
-                            <img src="/liujo.svg" alt="liujo">
+                            <img src="https://tochska.github.io/assets-mackerprod/liujo.svg" alt="liujo">
                         </div>
                     </div>
                 </div>
