@@ -10,40 +10,40 @@
                 <div class="slider">
                     <div class="slide-track">
                         <div class="slide">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" alt="Google">
+                            <img src="/assets/svg/4tech.svg" alt="Google">
                         </div>
                         <div class="slide">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1200px-Apple_logo_black.svg.png" alt="Apple">
+                            <img src="/assets/svg/dimmobilier.svg" alt="Apple">
                         </div>
                         <div class="slide">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1200px-Amazon_logo.svg.png" alt="Amazon">
+                            <img src="/assets/svg/foxhabitat.svg" alt="Amazon">
                         </div>
                         <div class="slide">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/1200px-Microsoft_logo_%282012%29.svg.png" alt="Microsoft">
+                            <img src="/assets/svg/liujo.svg" alt="Microsoft">
                         </div>
                         <div class="slide">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Nike_logo.svg/1200px-Nike_logo.svg.png" alt="Nike">
+                            <img src="/assets/svg/4tech.svg" alt="Google">
                         </div>
                         <div class="slide">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png" alt="Laravel">
+                            <img src="/assets/svg/dimmobilier.svg" alt="Apple">
                         </div>
                         <div class="slide">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Nike_logo.svg/1200px-Nike_logo.svg.png" alt="Nike">
+                            <img src="/assets/svg/foxhabitat.svg" alt="Amazon">
                         </div>
                         <div class="slide">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" alt="Google">
+                            <img src="/assets/svg/liujo.svg" alt="Microsoft">
                         </div>
                         <div class="slide">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1200px-Apple_logo_black.svg.png" alt="Apple">
+                            <img src="/assets/svg/4tech.svg" alt="Google">
                         </div>
                         <div class="slide">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1200px-Amazon_logo.svg.png" alt="Amazon">
+                            <img src="/assets/svg/dimmobilier.svg" alt="Apple">
                         </div>
                         <div class="slide">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/1200px-Microsoft_logo_%282012%29.svg.png" alt="Microsoft">
+                            <img src="/assets/svg/foxhabitat.svg" alt="Amazon">
                         </div>
                         <div class="slide">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png" alt="Laravel">
+                            <img src="/assets/svg/liujo.svg" alt="Microsoft">
                         </div>
                     </div>
                 </div>
