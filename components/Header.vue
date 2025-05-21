@@ -9,7 +9,7 @@
       loop
       playsinline
       class="absolute top-0 left-0 w-full h-full object-cover z-[-1]">
-      <source src="@/assets/video/headerVideo.mp4" type="video/mp4" />
+      <source :src="videoHeader" type="video/mp4" />
       Votre navigateur ne supporte pas les vidéos HTML5.
     </video>
 
@@ -56,7 +56,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-
+import videoHeader from "../assets/video/headerVideo.mp4"
 const videoRef = ref(null)
 const isMuted = ref(null)
 
