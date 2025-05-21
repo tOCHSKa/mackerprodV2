@@ -9,7 +9,7 @@
       loop
       playsinline
       class="absolute top-0 left-0 w-full h-full object-cover z-[-1]">
-      <source src="../public/video/headerVideo.mp4" type="video/mp4" />
+      <source src="/video/headerVideo.mp4" type="video/mp4" />
       Votre navigateur ne supporte pas les vidéos HTML5.
     </video>
 
