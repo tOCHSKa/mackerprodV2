@@ -75,7 +75,7 @@
       <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
         <div
           class="h-64 bg-cover bg-center"
-          style="background-image: url('/assets/kTPwbEL.png');"
+          style="background-image: url('');"
         ></div>
         <div class="p-6">
           <h3 class="text-xl font-semibold mb-2">Cérémonie Armistice 11 Novembre</h3>
