@@ -10,40 +10,40 @@
                 <div class="slider">
                     <div class="slide-track">
                         <div class="slide">
-                            <img :src="fourtech" alt="4tech">
+                            <img src="/svg/4tech.svg" alt="4tech">
                         </div>
                         <div class="slide">
-                            <img :src="dimmobilier" alt="dim mobilier">
+                            <img src="/svg/dimmobilier.svg" alt="dim mobilier">
                         </div>
                         <div class="slide">
-                            <img :src="foxhabitat" alt="foxhabitat">
+                            <img src="/svg/foxhabitat.svg" alt="foxhabitat">
                         </div>
                         <div class="slide">
-                            <img :src="liujo" alt="liujo">
+                            <img src="/svg/liujo.svg" alt="liujo">
                         </div>
                         <div class="slide">
-                            <img :src="fourtech" alt="4tech">
+                            <img src="/svg/4tech.svg" alt="4tech">
                         </div>
                         <div class="slide">
-                            <img :src="dimmobilier" alt="dim mobilier">
+                            <img src="/svg/dimmobilier.svg" alt="dim mobilier">
                         </div>
                         <div class="slide">
-                            <img :src="foxhabitat" alt="foxhabitat">
+                            <img src="/svg/foxhabitat.svg" alt="foxhabitat">
                         </div>
                         <div class="slide">
-                            <img :src="liujo" alt="liujo">
+                            <img src="/svg/liujo.svg" alt="liujo">
                         </div>
                         <div class="slide">
-                            <img :src="fourtech" alt="4tech">
+                            <img src="/svg/4tech.svg" alt="4tech">
                         </div>
                         <div class="slide">
-                            <img :src="dimmobilier" alt="dim mobilier">
+                            <img src="/svg/dimmobilier.svg" alt="dim mobilier">
                         </div>
                         <div class="slide">
-                            <img :src="foxhabitat" alt="foxhabitat">
+                            <img src="/svg/foxhabitat.svg" alt="foxhabitat">
                         </div>
                         <div class="slide">
-                            <img :src="liujo" alt="liujo">
+                            <img src="/svg/liujo.svg" alt="liujo">
                         </div>
                     </div>
                 </div>
@@ -133,10 +133,6 @@
 </template>
 
 <script setup>
-import fourtech from "/svg/4tech.svg"
-import dimmobilier from "/svg/dimmobilier.svg"
-import foxhabitat from "/svg/foxhabitat.svg"
-import liujo from "/svg/liujo.svg"
 </script>
 
 <style scoped>

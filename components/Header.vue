@@ -56,7 +56,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import videoHeader from "../public/video/headerVideo.mp4"
+
 const videoRef = ref(null)
 const isMuted = ref(null)
 
