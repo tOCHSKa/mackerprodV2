@@ -8,6 +8,7 @@
       <Header />
       <Realisation />
       <Prestation />
+      <SocialProof />
       <Contact />
       <Universphoto />
       <Footer />

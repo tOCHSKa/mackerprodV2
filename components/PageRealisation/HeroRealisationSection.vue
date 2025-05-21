@@ -2,7 +2,7 @@
       <!-- Hero Section -->
       <section class="hero-bg text-white py-32">
         <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">MES <span class="text-accent">RÉALISATIONS</span></h1>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">MES <span class="text-[#941e28]">RÉALISATIONS</span></h1>
             <p class="text-xl max-w-2xl mx-auto">Découvrez une sélection de mes projets vidéo les plus marquants. Chaque réalisation est une histoire unique, capturée avec passion et professionnalisme.</p>
         </div>
     </section>
