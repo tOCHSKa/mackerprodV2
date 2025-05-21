@@ -5,7 +5,6 @@
     <video
       ref="videoRef"
       autoplay
-      muted
       loop
       playsinline
       class="absolute top-0 left-0 w-full h-full object-cover z-[-1]">
@@ -58,19 +57,23 @@
 import { ref, onMounted } from 'vue'
 
 const videoRef = ref(null)
-const isMuted = ref(null)
+const isMuted = ref(true) // ⚠️ ne pas laisser `null`
 
 const toggleMute = () => {
   if (videoRef.value) {
     videoRef.value.muted = !videoRef.value.muted
     isMuted.value = videoRef.value.muted
-    videoRef.value.play() // pour forcer la lecture si bloqué
+    videoRef.value.play().catch(() => {}) // au cas où lecture auto échoue
   }
 }
 
 onMounted(() => {
   if (videoRef.value) {
-    isMuted.value = videoRef.value.muted
+    videoRef.value.muted = true // ⚠️ initialisation nécessaire
+    isMuted.value = true
+    videoRef.value.play().catch((err) => {
+      console.warn("Lecture automatique bloquée :", err)
+    })
   }
 })
 </script>
