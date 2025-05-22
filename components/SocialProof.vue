@@ -55,7 +55,7 @@
                 <div class="review-card p-6">
                     <div class="flex items-center mb-4">
                         <div class="mr-4">
-                            <img class="w-12 h-12 rounded-full" src="https://randomuser.me/api/portraits/women/43.jpg" alt="Client">
+                            <img class="w-12 h-12 rounded-full" src="https://scontent-cdg4-1.xx.fbcdn.net/v/t39.30808-1/486094925_3849494558601164_7042117494380945027_n.jpg?stp=cp0_dst-jpg_s40x40_tt6&_nc_cat=108&ccb=1-7&_nc_sid=e99d92&_nc_ohc=tuic9Quq6mMQ7kNvwFX_1NP&_nc_oc=Adm0Edvmevi273v_lUoImFg3JApqEEGuFK8FlQy2g3BZNksThJoMOs2qvUGYgoF_FbU&_nc_zt=24&_nc_ht=scontent-cdg4-1.xx&_nc_gid=qZLTg6N1JvCqoDEaEdHjvQ&oh=00_AfL0p8fs2BFEUysPEsUd4CyiwQGTo3a9srqImJm3-X4kdA&oe=6833BB5C" alt="Client">
                         </div>
                         <div>
                             <h4 class="font-bold">Sophie Martin</h4>
