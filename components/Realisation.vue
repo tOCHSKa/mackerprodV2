@@ -24,7 +24,9 @@
           ></iframe>
         </div>
         <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2">LIU.JO Cambrai</h3>
+          <div class="slide">
+              <img src="https://tochska.github.io/assets-mackerprod/liujo.svg" alt="liujo">
+          </div>
           <p class="text-gray-600 mb-4">
             L’élégance en mouvement – Découvrez l’univers Liu-jo Cambrai.
           </p>
@@ -53,7 +55,9 @@
           ></iframe>
         </div>
         <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2">4TECH+</h3>
+          <div class="slide">
+            <img src="https://tochska.github.io/assets-mackerprod/4tech.svg" alt="4tech">
+        </div>
           <p class="text-gray-600 mb-4">
             Interview et présentation de l'entreprise - Découvrez 4TECH+
           </p>
@@ -108,6 +112,21 @@
 
 </script>
 
-<style>
+<style scoped>
+    .slide {
+        height: 100px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .slide img {
+      max-height: 70px;
+      max-width: 180px;
+      width: 100%;
+        object-fit: cover;
+        transition: all 0.3s ease;
+    }
 
 </style>

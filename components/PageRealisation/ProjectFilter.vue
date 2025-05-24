@@ -158,11 +158,6 @@
         transition: all 0.3s ease;
     }
     
-    .project-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    }
-    
     .video-thumbnail {
         position: relative;
         overflow: hidden;
@@ -171,17 +166,21 @@
     .video-thumbnail::after {
             content: "▶";
             position: absolute;
+            background: #941E28;
+            width: 4rem;
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             color: white;
             font-size: 3rem;
-            opacity: 0.8;
             transition: all 0.3s ease;
     }
-    
     .video-thumbnail:hover::after {
-        opacity: 1;
         transform: translate(-50%, -50%) scale(1.2);
     }
     .filter-btn {

@@ -2,6 +2,16 @@ import { defineStore } from 'pinia'
 import { jwtDecode } from 'jwt-decode'
 import { useCookie } from '#app'
 
+function isTokenValid(token) {
+  try {
+    const decoded = jwtDecode(token)
+    const now = Math.floor(Date.now() / 1000)
+    return decoded.exp && decoded.exp > now
+  } catch (e) {
+    return false
+  }
+}
+
 export const useAdminStore = defineStore('admin', {
   state: () => ({
     email: null,
@@ -15,12 +25,19 @@ export const useAdminStore = defineStore('admin', {
       const tokenCookie = useCookie('token')
       const token = tokenCookie.value
 
-      if (token) {
+      if (token && isTokenValid(token)) {
         this.setUser({ token })
+      } else {
+        this.logout()
       }
     },
 
     setUser(userData) {
+      if (!isTokenValid(userData.token)) {
+        this.logout()
+        return
+      }
+
       const decoded = jwtDecode(userData.token)
 
       this.email = decoded.email

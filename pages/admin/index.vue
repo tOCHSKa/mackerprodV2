@@ -16,7 +16,7 @@
                             <i class="fas fa-users"></i>
                         </div>
                     </div>
-                    <div class="card-value">1,248</div>
+                    <div class="card-value">{{ usersCount }}</div>
                     <div class="card-footer">
                         <i class="fas fa-arrow-up positive"></i>
                         <span class="positive">12%</span> depuis le mois dernier
@@ -30,7 +30,7 @@
                             <i class="fas fa-dollar-sign"></i>
                         </div>
                     </div>
-                    <div class="card-value">24</div>
+                    <div class="card-value">4151</div>
                     <div class="card-footer">
                         <i class="fas fa-arrow-up positive"></i>
                         <span class="positive">8%</span> depuis le mois dernier
@@ -44,7 +44,7 @@
                             <i class="fas fa-shopping-cart"></i>
                         </div>
                     </div>
-                    <div class="card-value">12</div>
+                    <div class="card-value">{{ messageCount }}</div>
                     <div class="card-footer">
                         <i class="fas fa-arrow-down negative"></i>
                         <span class="negative">3%</span> depuis le mois dernier
@@ -58,7 +58,7 @@
                             <i class="fas fa-percentage"></i>
                         </div>
                     </div>
-                    <div class="card-value">3.6%</div>
+                    <div class="card-value">0</div>
                     <div class="card-footer">
                         <i class="fas fa-arrow-up positive"></i>
                         <span class="positive">1.2%</span> depuis le mois dernier
@@ -74,18 +74,18 @@
                             <th>ID</th>
                             <th>Client</th>
                             <th>Date</th>
-                            <th>Montant</th>
+                            <th>Devis</th>
                             <th>Statut</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(item, index) in items" :key="index">
-                            <td>{{ item.id }}</td>
-                            <td>{{ item.client }}</td>
-                            <td>{{ item.date }}</td>
-                            <td>{{ item.amount }}</td>
-                            <td><span class="status" :class="item.status">{{ item.status }}</span></td>
+                        <tr v-for="(user, index) in users" :key="index">
+                            <td>{{ user.id_utilisateur }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.created_at.slice(0, 10) }}</td>
+                            <td>{{ user.devis }}</td>
+                            <td><span class="status" :class="user.role">{{ user.role }}</span></td>
                             <td class="relative">
                                 <div class="dropdown">
                                     <button class="dropdown-trigger" @click="toggleDropdown(index)">
@@ -138,28 +138,20 @@ definePageMeta({
 const adminStore = useAdminStore()
 adminStore.initializeStore()
 
+const messages = ref([])
+const error = ref(null)
 const activeDropdown = ref(null)
 const currentPage = ref(1)
 const itemsPerPage = 5
-
-const allItems = ref([
-  { id: '#4567', client: 'Jean Dupont', date: '12/05/2023', amount: '$128.90', status: 'active' },
-  { id: '#4566', client: 'Marie Martin', date: '11/05/2023', amount: '$245.50', status: 'pending' },
-  { id: '#4565', client: 'Pierre Bernard', date: '10/05/2023', amount: '$89.99', status: 'active' },
-  { id: '#4564', client: 'Sophie Leroy', date: '09/05/2023', amount: '$156.75', status: 'inactive' },
-  { id: '#4563', client: 'Thomas Moreau', date: '08/05/2023', amount: '$210.00', status: 'active' },
-  { id: '#4562', client: 'Lucas Petit', date: '07/05/2023', amount: '$175.25', status: 'pending' },
-  { id: '#4561', client: 'Emma Dubois', date: '06/05/2023', amount: '$320.00', status: 'active' },
-  { id: '#4560', client: 'Léa Robert', date: '05/05/2023', amount: '$95.50', status: 'inactive' },
-])
+const users = ref([])
 
 // Computed properties pour la pagination
-const totalPages = computed(() => Math.ceil(allItems.value.length / itemsPerPage))
+const totalPages = computed(() => Math.ceil(users.value.length / itemsPerPage))
 
 const items = computed(() => {
     const start = (currentPage.value - 1) * itemsPerPage
     const end = start + itemsPerPage
-    return allItems.value.slice(start, end)
+    return users.value.slice(start, end)
 })
 
 const toggleDropdown = (index) => {
@@ -177,7 +169,8 @@ const viewDetails = (index) => {
 }
 
 const deleteItem = (index) => {
-  console.log('Suppression de l\'item', index)
+    const userId = users.value[index].id_utilisateur
+  console.log('Suppression de l\'utilisateur avec ID', userId);
   activeDropdown.value = null
 }
 
@@ -188,6 +181,58 @@ onMounted(() => {
       activeDropdown.value = null
     }
   })
+})
+const messageCount = ref(0)
+async function fetchMessages () {
+    try {
+    const { data } = await useFetch('/api/message/count', {
+      headers: {
+        Authorization: `Bearer ${adminStore.token}`
+      }
+    })
+    messageCount.value = data.value?.count ?? 0
+  } catch (err) {
+    error.value = err
+  }
+}
+
+const usersCount = ref(0)
+async function fetchUsers () {
+    try {
+    const { data } = await useFetch('/api/utilisateur/count', {
+      headers: {
+        Authorization: `Bearer ${adminStore.token}`
+      }
+    })
+    usersCount.value = data.value?.count ?? 0
+  } catch (err) {
+    error.value = err
+  }
+}
+
+
+async function fetchAllUsers () {
+    try {
+    const { data } = await useFetch('/api/utilisateur/getAll', {
+      headers: {
+        Authorization: `Bearer ${adminStore.token}`
+      }
+    })
+    users.value = data.value
+  } catch (err) {
+    error.value = err
+  }
+}
+onMounted(async () => {
+  await nextTick() // ou un `watch` sur adminStore.token
+
+  if (adminStore.token) {
+    fetchMessages()
+    fetchUsers()
+    fetchAllUsers()  
+  } else {
+    console.warn("Token non disponible, fetchMessages annulé")
+  }
 })
 </script>
 

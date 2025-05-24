@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="open">
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
@@ -18,5 +18,8 @@
 
 html {
   scroll-behavior: smooth;
+}
+.open {
+  font-family: "Open Sans", sans-serif;
 }
 </style>

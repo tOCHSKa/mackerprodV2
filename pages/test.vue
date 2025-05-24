@@ -8,7 +8,7 @@ const adminStore = useAdminStore()
 adminStore.initializeStore()
 async function fetchUsers () {
   try {
-    const { data, error: fetchError } = await useFetch('/api/admin/all', {
+    const { data, error: fetchError } = await useFetch('/api/message/count', {
       headers: {
         Authorization: `Bearer ${adminStore.token}` // ✅ IMPORTANT
       }
@@ -30,7 +30,7 @@ async function fetchUsers () {
     <h1>Liste des utilisateurs</h1>
     <button @click="fetchUsers">Rafraîchir</button>
     <ul >
-        <li v-for="(user, index) in users" :key="index">{{ user.email }}</li>
+        <li v-for="(user, index) in users" :key="index">{{ user }}</li>
     </ul>
   </div>
 </template>
