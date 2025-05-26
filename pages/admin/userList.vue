@@ -24,10 +24,10 @@
                 </thead>
                 <tbody>
                     <tr v-for="(item, index) in items" :key="index">
-                        <td>{{ item.id }}</td>
+                        <td>{{ item.id_utilisateur }}</td>
                         <td>{{ item.email }}</td>
-                        <td>{{ item.date }}</td>
-                        <td><span class="status" :class="item.status">{{ item.status }}</span></td>
+                        <td>{{ item.created_at.slice(0, 10) }}</td>
+                        <td><span class="status" :class="item.role">{{ item.role }}</span></td>
                         <td class="relative">
                             <div class="dropdown">
                                 <button class="dropdown-trigger" @click="toggleDropdown(index)">
@@ -84,24 +84,13 @@ const activeDropdown = ref(null)
 const currentPage = ref(1)
 const itemsPerPage = 10
 
-const allItems = ref([
-{ id: '#4567', email: 'Jean Dupont', date: '12/05/2023', status: 'active' },
-{ id: '#4566', email: 'Marie Martin', date: '11/05/2023', status: 'pending' },
-{ id: '#4565', email: 'Pierre Bernard', date: '10/05/2023', status: 'active' },
-{ id: '#4564', email: 'Sophie Leroy', date: '09/05/2023', status: 'inactive' },
-{ id: '#4563', email: 'Thomas Moreau', date: '08/05/2023', status: 'active' },
-{ id: '#4562', email: 'Lucas Petit', date: '07/05/2023', status: 'pending' },
-{ id: '#4561', email: 'Emma Dubois', date: '06/05/2023', status: 'active' },
-{ id: '#4560', email: 'Léa Robert', date: '05/05/2023', status: 'inactive' },
-])
-
 // Computed properties pour la pagination
-const totalPages = computed(() => Math.ceil(allItems.value.length / itemsPerPage))
+const totalPages = computed(() => Math.ceil(users.value.length / itemsPerPage))
 
 const items = computed(() => {
 const start = (currentPage.value - 1) * itemsPerPage
 const end = start + itemsPerPage
-return allItems.value.slice(start, end)
+return users.value.slice(start, end)
 })
 
 const toggleDropdown = (index) => {
@@ -131,6 +120,19 @@ if (!event.target.closest('.dropdown')) {
 }
 })
 })
+
+const users = ref([])
+const error = ref(null)
+const { data: usersData, error: usersError } = await useAsyncData('users', () =>
+$fetch('/api/utilisateur/getAll', {
+    headers: {
+    Authorization: `Bearer ${adminStore.token}`
+    }
+})
+)
+
+users.value = usersData.value || []
+error.value = usersError.value || null
 </script>
 
 <style scoped>

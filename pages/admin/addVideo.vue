@@ -10,7 +10,7 @@
                     <i class="fas fa-arrow-left mr-2"></i>
                     <NuxtLink to="/admin/videoList">Retour</NuxtLink>
                 </button>
-                <button class="btn btn-primary" id="submit-btn">
+                <button @click="submitForm" class="btn btn-primary" id="submit-btn">
                     <i class="fas fa-save mr-2"></i>
                     Enregistrer
                 </button>
@@ -22,13 +22,13 @@
                 <div class="grid-cols-2">
                     <div class="form-group">
                         <label for="title" class="form-label">Titre de la vidéo</label>
-                        <input type="text" id="title" class="form-control" placeholder="Entrez le titre de la vidéo" required>
+                        <input v-model="video.titre" type="text" id="title" class="form-control" placeholder="Entrez le titre de la vidéo" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="category" class="form-label">Catégorie</label>
-                        <select id="category" class="form-control" required>
-                            <option value="">Sélectionnez une catégorie</option>
+                        <label for="category" class="form-label">Thème</label>
+                        <select v-model="video.theme" id="category" class="form-control" required>
+                            <option value="">Sélectionnez un thème</option>
                             <option value="event">Event</option>
                             <option value="drone">Drone</option>
                             <option value="mariage">Mariage</option>
@@ -42,12 +42,12 @@
 
                 <div class="form-group">
                     <label for="description" class="form-label">Description</label>
-                    <textarea id="description" class="form-control form-textarea" placeholder="Décrivez le contenu de votre vidéo"></textarea>
+                    <textarea v-model="video.description" id="description" class="form-control form-textarea" placeholder="Décrivez le contenu de votre vidéo"></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="youtube-url" class="form-label">Lien YouTube</label>
-                    <input type="url" id="youtube-url" class="form-control" placeholder="https://www.youtube.com/watch?v=..." required>
+                    <input v-model="video.chemin_lien" type="url" id="youtube-url" class="form-control" placeholder="https://www.youtube.com/watch?v=..." required>
                     <small class="text-gray-500">Collez l'URL complète de la vidéo YouTube</small>
                     <div id="youtube-preview-container" class="youtube-preview hidden"></div>
                 </div>
@@ -55,10 +55,9 @@
                 <div class="grid-cols-2">
                     <div class="form-group">
                         <label for="visibility" class="form-label">Visibilité</label>
-                        <select id="visibility" class="form-control" required>
+                        <select v-model="video.isVisible" id="visibility" class="form-control" required>
                             <option value="public">Public</option>
                             <option value="private">Privé</option>
-                            <option value="unlisted">Non listé</option>
                         </select>
                     </div>
                 </div>
@@ -71,6 +70,39 @@
 definePageMeta({
     layout: 'admin'
 })
+import { useAdminStore } from '~/store/adminStore'
+const adminStore = useAdminStore()
+adminStore.initializeStore()
+const video = reactive({
+    titre: '',
+    theme: '',
+    description: '',
+    chemin_lien: '',
+    isVisible: 'public',
+})
+
+const formatedVideo = computed(() => {
+    let isVisible = video.isVisible === 'public' ? true : false;
+    let chemin_lien = video.chemin_lien.split('v=')[1];
+    return {
+        titre: video.titre,
+        theme: video.theme,
+        description: video.description,
+        chemin_lien: `https://www.youtube.com/embed/${chemin_lien}`,
+        isVisible: isVisible,
+    }
+})
+
+const submitForm = async () => {
+    const response = await $fetch('http://localhost:3001/api/video/add', {
+        method: 'POST',
+        body: formatedVideo.value,
+        headers: {
+            Authorization: `Bearer ${adminStore.token}`
+        }
+    })
+    console.log(response)
+}
 </script>
 
 <style scoped>

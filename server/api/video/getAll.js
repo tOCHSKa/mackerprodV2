@@ -7,13 +7,12 @@ export default defineEventHandler(async (event) => {
       })
     }
     try {
-      const response = await $fetch('http://localhost:3001/api/utilisateur/getAll', {
+      const response = await $fetch('http://localhost:3001/api/video/getAll', {
         method: 'GET',
         headers: {
-          Authorization: token
+          Authorization: token || ''
         }
       })
-
       return response
     } catch (error) {
       console.error('Erreur côté API Nuxt:', error)

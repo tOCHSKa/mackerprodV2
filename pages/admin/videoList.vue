@@ -50,7 +50,6 @@
                     <thead class="bg-gray-50">
                         <tr>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Vidéo</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Statut</th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Visibilité</th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Vues</th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
@@ -58,162 +57,29 @@
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
-                        <!-- Video 1 -->
-                        <tr>
+                        <tr v-for="(video, index) in videos" :key="video.id_video">
                             <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="flex items-center">
-                                    <div class="flex-shrink-0 w-32">
-                                        <div class="video-thumbnail">
-                                            <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Miniature vidéo">
-                                            <span class="video-duration">4:20</span>
-                                        </div>
-                                    </div>
-                                    <div class="ml-4">
-                                        <div class="text-sm font-medium text-gray-900">Tutoriel complet sur React 2023</div>
-                                        <div class="text-sm text-gray-500">Éducation</div>
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 w-32">
+                                    <div class="video-thumbnail">
+                                        <img :src="`https://img.youtube.com/vi/${video.miniature}/default.jpg`" alt="Miniature vidéo">
                                     </div>
                                 </div>
+                                <div class="ml-4">
+                                    <div class="text-sm font-medium text-gray-900">{{ video.titre }}</div>
+                                    <div class="text-sm text-gray-500">{{ video.theme }}</div>
+                                </div>
+                            </div>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="status active">Publié</span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="text-sm text-gray-900">Public</span>
+                                <span v-if="video.isVisible" class="status active">Publié</span>
+                                <span v-else class="status inactive">Privé</span>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <span class="text-sm text-gray-900">124,568</span>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="text-sm text-gray-900">15/06/2023</span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                <div class="dropdown">
-                                    <button class="text-gray-400 hover:text-gray-600">
-                                        <i class="fas fa-ellipsis-v"></i>
-                                    </button>
-                                    <div class="dropdown-content">
-                                        <a href="#" class="dropdown-item"><i class="fas fa-eye mr-2"></i>Voir</a>
-                                        <a href="#" class="dropdown-item"><i class="fas fa-edit mr-2"></i>Modifier</a>
-                                        <a href="#" class="dropdown-item"><i class="fas fa-chart-bar mr-2"></i>Statistiques</a>
-                                        <a href="#" class="dropdown-item text-red-500"><i class="fas fa-trash mr-2"></i>Supprimer</a>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        
-                        <!-- Video 2 -->
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="flex items-center">
-                                    <div class="flex-shrink-0 w-32">
-                                        <div class="video-thumbnail">
-                                            <img src="https://i.ytimg.com/vi/J---aiyznGQ/hqdefault.jpg" alt="Miniature vidéo">
-                                            <span class="video-duration">2:45</span>
-                                        </div>
-                                    </div>
-                                    <div class="ml-4">
-                                        <div class="text-sm font-medium text-gray-900">Les chats les plus drôles du web</div>
-                                        <div class="text-sm text-gray-500">Divertissement</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="status active">Publié</span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="text-sm text-gray-900">Public</span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="text-sm text-gray-900">987,342</span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="text-sm text-gray-900">22/05/2023</span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                <div class="dropdown">
-                                    <button class="text-gray-400 hover:text-gray-600">
-                                        <i class="fas fa-ellipsis-v"></i>
-                                    </button>
-                                    <div class="dropdown-content">
-                                        <a href="#" class="dropdown-item"><i class="fas fa-eye mr-2"></i>Voir</a>
-                                        <a href="#" class="dropdown-item"><i class="fas fa-edit mr-2"></i>Modifier</a>
-                                        <a href="#" class="dropdown-item"><i class="fas fa-chart-bar mr-2"></i>Statistiques</a>
-                                        <a href="#" class="dropdown-item text-red-500"><i class="fas fa-trash mr-2"></i>Supprimer</a>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        
-                        <!-- Video 3 -->
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="flex items-center">
-                                    <div class="flex-shrink-0 w-32">
-                                        <div class="video-thumbnail">
-                                            <img src="https://i.ytimg.com/vi/9bZkp7q19f0/hqdefault.jpg" alt="Miniature vidéo">
-                                            <span class="video-duration">3:52</span>
-                                        </div>
-                                    </div>
-                                    <div class="ml-4">
-                                        <div class="text-sm font-medium text-gray-900">Nouveautés technologiques 2023</div>
-                                        <div class="text-sm text-gray-500">Technologie</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="status pending">Brouillon</span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="text-sm text-gray-900">Privé</span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="text-sm text-gray-900">0</span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="text-sm text-gray-900">10/07/2023</span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                <div class="dropdown">
-                                    <button class="text-gray-400 hover:text-gray-600">
-                                        <i class="fas fa-ellipsis-v"></i>
-                                    </button>
-                                    <div class="dropdown-content">
-                                        <a href="#" class="dropdown-item"><i class="fas fa-eye mr-2"></i>Voir</a>
-                                        <a href="#" class="dropdown-item"><i class="fas fa-edit mr-2"></i>Modifier</a>
-                                        <a href="#" class="dropdown-item"><i class="fas fa-chart-bar mr-2"></i>Statistiques</a>
-                                        <a href="#" class="dropdown-item text-red-500"><i class="fas fa-trash mr-2"></i>Supprimer</a>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        
-                        <!-- Video 4 -->
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="flex items-center">
-                                    <div class="flex-shrink-0 w-32">
-                                        <div class="video-thumbnail">
-                                            <img src="https://i.ytimg.com/vi/kXYiU_JCYtU/hqdefault.jpg" alt="Miniature vidéo">
-                                            <span class="video-duration">12:18</span>
-                                        </div>
-                                    </div>
-                                    <div class="ml-4">
-                                        <div class="text-sm font-medium text-gray-900">Guide complet de la photographie</div>
-                                        <div class="text-sm text-gray-500">Éducation</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="status active">Publié</span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="text-sm text-gray-900">Non listé</span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="text-sm text-gray-900">45,231</span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="text-sm text-gray-900">05/05/2023</span>
+                                <span class="text-sm text-gray-900">{{ video.created_at.slice(0, 10) }}</span>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                 <div class="dropdown">
@@ -254,6 +120,22 @@
 definePageMeta({
   layout: 'admin'
 })
+import { useAdminStore } from '~/store/adminStore'
+const videos = ref([])
+const error = ref(null)
+const adminStore = useAdminStore()
+adminStore.initializeStore()
+
+const { data: videosData, error: videosError } = await useAsyncData('videos', () =>
+$fetch('/api/video/getAll', {
+    headers: {
+    Authorization: `Bearer ${adminStore.token}`
+    }
+})
+)
+
+videos.value = videosData.value || []
+error.value = videosError.value || null
 
 </script>
 

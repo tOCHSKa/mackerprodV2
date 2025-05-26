@@ -70,57 +70,60 @@
                 </div>
 
                 <!-- Projet 4 - Publicité -->
-                <div class="project-card ad" data-category="ad">
+                <div class="project-card ad">
                     <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-                        <div class="video-thumbnail relative h-64 overflow-hidden" style="background: url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b3da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover;">
+                        <div class="relative h-64 overflow-hidden">
+                            <iframe :src="videos[2].chemin_lien" class="absolute inset-0 w-full h-full" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                         <div class="p-6">
                             <div class="flex justify-between items-start mb-2">
-                                <h3 class="text-xl font-bold">Campagne "L'Essentiel" - L'Oréal</h3>
-                                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Publicité</span>
+                                <h3 class="text-xl font-bold">{{ videos[2].titre }}</h3>
+                                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">{{ videos[2].theme }}</span>
                             </div>
-                            <p class="text-gray-600 mb-4">Spot publicitaire mettant en avant une nouvelle gamme de produits de beauté naturels.</p>
+                            <p class="text-gray-600 mb-4">{{ videos[2].description }}</p>
                             <div class="flex justify-between items-center">
-                                <span class="text-sm text-accent font-medium">2022</span>
-                                <button class="text-accent hover:underline view-details" data-project="4">Voir les détails</button>
+                                <span class="text-sm text-accent font-medium">{{ videos[2].created_at.slice(0, 10) }}</span>
+                                <button class="text-accent hover:underline view-details">Voir sur YouTube</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Projet 5 - Événement -->
-                <div class="project-card event" data-category="event">
+                <div class="project-card event">
                     <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-                        <div class="video-thumbnail relative h-64 overflow-hidden" style="background: url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover;">
+                        <div class="relative h-64 overflow-hidden">
+                            <iframe :src="videos[0].chemin_lien" class="absolute inset-0 w-full h-full" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                         <div class="p-6">
                             <div class="flex justify-between items-start mb-2">
-                                <h3 class="text-xl font-bold">Festival des Arts Numériques</h3>
-                                <span class="bg-yellow-500 text-white text-xs px-2 py-1 rounded">Événement</span>
+                                <h3 class="text-xl font-bold">{{ videos[0].titre }}</h3>
+                                <span class="bg-yellow-500 text-white text-xs px-2 py-1 rounded">{{ videos[0].theme }}</span>
                             </div>
-                            <p class="text-gray-600 mb-4">Couverture vidéo complète du festival avec interviews d'artistes et captation des installations.</p>
+                            <p class="text-gray-600 mb-4"> {{ videos[0].description }}</p>
                             <div class="flex justify-between items-center">
-                                <span class="text-sm text-accent font-medium">2022</span>
-                                <button class="text-accent hover:underline view-details" data-project="5">Voir les détails</button>
+                                <span class="text-sm text-accent font-medium">{{ videos[0].created_at.slice(0, 10) }}</span>
+                                <button class="text-accent hover:underline view-details">Voir sur YouTube</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Projet 6 - Clip -->
-                <div class="project-card clip" data-category="clip">
+                <div class="project-card clip">
                     <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-                        <div class="video-thumbnail relative h-64 overflow-hidden" style="background: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover;">
+                        <div class="relative h-64 overflow-hidden">
+                            <iframe :src="videos[1].chemin_lien" class="absolute inset-0 w-full h-full" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                         <div class="p-6">
                             <div class="flex justify-between items-start mb-2">
-                                <h3 class="text-xl font-bold">"Loin d'ici" - Clara M.</h3>
-                                <span class="bg-accent text-white text-xs px-2 py-1 rounded">Clip musical</span>
+                                <h3 class="text-xl font-bold">{{ videos[1].titre }}</h3>
+                                <span class="bg-accent text-white text-xs px-2 py-1 rounded">{{ videos[1].theme }}</span>
                             </div>
-                            <p class="text-gray-600 mb-4">Clip intimiste tourné en extérieur avec une esthétique cinématographique pour cette chanson folk.</p>
+                            <p class="text-gray-600 mb-4">{{ videos[1].description }}</p>
                             <div class="flex justify-between items-center">
-                                <span class="text-sm text-accent font-medium">2022</span>
-                                <button class="text-accent hover:underline view-details" data-project="6">Voir les détails</button>
+                                <span class="text-sm text-accent font-medium">{{ videos[1].created_at.slice(0, 10) }}</span>
+                                <button class="text-accent hover:underline view-details">Voir sur YouTube</button>
                             </div>
                         </div>
                     </div>
@@ -151,6 +154,24 @@
 </template>
 
 <script setup>
+
+import { useAdminStore } from '~/store/adminStore'
+const videos = ref([])
+const error = ref(null)
+const adminStore = useAdminStore()
+adminStore.initializeStore()
+
+const { data: videosData, error: videosError } = await useAsyncData('videos', () =>
+$fetch('/api/video/getAll', {
+    headers: {
+    Authorization: `Bearer ${adminStore.token}`
+    }
+})
+)
+
+videos.value = videosData.value || []
+error.value = videosError.value || null
+
 </script>
 
 <style scoped>

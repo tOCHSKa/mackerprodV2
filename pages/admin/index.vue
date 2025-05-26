@@ -80,7 +80,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(user, index) in users" :key="index">
+                        <tr v-for="(user, index) in items" :key="index">
                             <td>{{ user.id_utilisateur }}</td>
                             <td>{{ user.email }}</td>
                             <td>{{ user.created_at.slice(0, 10) }}</td>
@@ -144,6 +144,8 @@ const activeDropdown = ref(null)
 const currentPage = ref(1)
 const itemsPerPage = 5
 const users = ref([])
+const messageCount = ref(0)
+const usersCount = ref(0)
 
 // Computed properties pour la pagination
 const totalPages = computed(() => Math.ceil(users.value.length / itemsPerPage))
@@ -182,58 +184,38 @@ onMounted(() => {
     }
   })
 })
-const messageCount = ref(0)
-async function fetchMessages () {
-    try {
-    const { data } = await useFetch('/api/message/count', {
-      headers: {
-        Authorization: `Bearer ${adminStore.token}`
-      }
-    })
-    messageCount.value = data.value?.count ?? 0
-  } catch (err) {
-    error.value = err
-  }
-}
-
-const usersCount = ref(0)
-async function fetchUsers () {
-    try {
-    const { data } = await useFetch('/api/utilisateur/count', {
-      headers: {
-        Authorization: `Bearer ${adminStore.token}`
-      }
-    })
-    usersCount.value = data.value?.count ?? 0
-  } catch (err) {
-    error.value = err
-  }
-}
 
 
-async function fetchAllUsers () {
-    try {
-    const { data } = await useFetch('/api/utilisateur/getAll', {
-      headers: {
-        Authorization: `Bearer ${adminStore.token}`
-      }
-    })
-    users.value = data.value
-  } catch (err) {
-    error.value = err
-  }
-}
-onMounted(async () => {
-  await nextTick() // ou un `watch` sur adminStore.token
-
-  if (adminStore.token) {
-    fetchMessages()
-    fetchUsers()
-    fetchAllUsers()  
-  } else {
-    console.warn("Token non disponible, fetchMessages annulé")
-  }
+const { data: userCountData, error: userCountError } = await useAsyncData('userCount', () =>
+$fetch('/api/utilisateur/count', {
+    headers: {
+    Authorization: `Bearer ${adminStore.token}`
+    }
 })
+)
+
+const {data: messageCountData, error: messageCountError} = await useAsyncData('messageCount', () =>
+$fetch('/api/message/count', {
+    headers: {
+    Authorization: `Bearer ${adminStore.token}`
+    }
+})
+)
+
+
+const { data: usersData, error: usersError } = await useAsyncData('users', () =>
+$fetch('/api/utilisateur/getAll', {
+    headers: {
+    Authorization: `Bearer ${adminStore.token}`
+    }
+})
+)
+
+usersCount.value = userCountData.value?.count || 0
+messageCount.value = messageCountData.value?.count || 0
+users.value = usersData.value || []
+error.value = usersError.value || null
+
 </script>
 
 <style scoped>
