@@ -2,23 +2,22 @@
   <section class="py-12 bg-gray-50">
         <div class="container mx-auto px-6">
             <div class="flex flex-wrap justify-center gap-4 mb-12">
-                <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 hover:bg-gray-200 cursor-pointer active" data-filter="all">Tous les projets</button>
-                <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 hover:bg-gray-200 cursor-pointer" data-filter="clip">Clips musicaux</button>
-                <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 hover:bg-gray-200 cursor-pointer" data-filter="wedding">Mariages</button>
-                <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 hover:bg-gray-200 cursor-pointer" data-filter="corporate">Corporate</button>
-                <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 hover:bg-gray-200 cursor-pointer" data-filter="ad">Publicités</button>
-                <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 hover:bg-gray-200 cursor-pointer" data-filter="event">Événements</button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 hover:bg-gray-200 cursor-pointer" @click="videoFilter = 'all'">Tous les projets</button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 hover:bg-gray-200 cursor-pointer" @click="videoFilter = 'corporate'">Corporate</button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 hover:bg-gray-200 cursor-pointer" @click="videoFilter = 'mariage'">Mariages</button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 hover:bg-gray-200 cursor-pointer" @click="videoFilter = 'publicité'">Publicités</button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 hover:bg-gray-200 cursor-pointer" @click="videoFilter = 'event'">Événements</button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 hover:bg-gray-200 cursor-pointer" @click="videoFilter = 'interview'">Interviews</button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 hover:bg-gray-200 cursor-pointer" @click="videoFilter = 'immobilier'">Immobilier</button>
             </div>
 
             <!-- Projects Grid -->
             <div id="all-projects" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div v-for="(video,index) in videos.slice(0, 6)">
-                        
-                    
+                <div v-for="(video,index) in videos.filter(video => videoFilter === 'all' || video.theme === videoFilter).slice(0, 6)">
                     <div class="project-card clip" data-category="clip">
                         <div class="bg-white rounded-lg overflow-hidden shadow-lg">
                             <div class="relative h-64 overflow-hidden">
-                                <iframe :src="videos[2].chemin_lien" class="absolute inset-0 w-full h-full" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe :src="video.chemin_lien" class="absolute inset-0 w-full h-full" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                             <div class="p-6">
                                 <div class="flex justify-between items-start mb-2">
@@ -28,7 +27,9 @@
                                 <p class="text-gray-600 mb-4">{{  video.description }}</p>
                                 <div class="flex justify-between items-center">
                                     <span class="text-sm text-accent font-medium">{{ video.created_at.slice(0, 10) }}</span>
-                                    <button class="text-accent hover:underline view-details" data-project="1">Voir les détails</button>
+                                    <button class="cursor-pointer text-accent hover:underline view-details" data-project="1">
+                                        <NuxtLink :to="`https://www.youtube.com/watch?v=${video.miniature}`">Voir les détails</NuxtLink>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -62,6 +63,7 @@
 
 import { useAdminStore } from '~/store/adminStore'
 const videos = ref([])
+const videoFilter = ref('all')
 const error = ref(null)
 const adminStore = useAdminStore()
 adminStore.initializeStore()

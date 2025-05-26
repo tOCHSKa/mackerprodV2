@@ -57,7 +57,7 @@
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
-                        <tr v-for="(video, index) in videos" :key="video.id_video">
+                        <tr v-for="(video, index) in items" :key="video.id_video">
                             <td class="px-6 py-4 whitespace-nowrap">
                             <div class="flex items-center">
                                 <div class="flex-shrink-0 w-32">
@@ -99,15 +99,22 @@
                 </table>
             </div>
 
-            <div class="pagination">
-                <button class="pagination-btn">
+            <div class="pagination mb-4">
+                <button 
+                    class="pagination-btn" 
+                    :disabled="currentPage === 1"
+                    @click="currentPage--"
+                >
                     <i class="fas fa-chevron-left"></i>
                 </button>
-                <button class="pagination-btn active">1</button>
-                <button class="pagination-btn">2</button>
-                <button class="pagination-btn">3</button>
-                <button class="pagination-btn">4</button>
-                <button class="pagination-btn">
+                <span class="pagination-info">
+                    Page {{ currentPage }} sur {{ totalPages }}
+                </span>
+                <button 
+                    class="pagination-btn" 
+                    :disabled="currentPage === totalPages"
+                    @click="currentPage++"
+                >
                     <i class="fas fa-chevron-right"></i>
                 </button>
             </div>
@@ -133,6 +140,19 @@ $fetch('/api/video/getAll', {
     }
 })
 )
+
+const activeDropdown = ref(null)
+const currentPage = ref(1)
+const itemsPerPage = 5
+
+// Computed properties pour la pagination
+const totalPages = computed(() => Math.ceil(videos.value.length / itemsPerPage))
+
+const items = computed(() => {
+    const start = (currentPage.value - 1) * itemsPerPage
+    const end = start + itemsPerPage
+    return videos.value.slice(start, end)
+})
 
 videos.value = videosData.value || []
 error.value = videosError.value || null
@@ -342,4 +362,36 @@ error.value = videosError.value || null
             background-size: 1rem;
             padding-left: 2.5rem;
         }
+
+          /* Pagination styles */
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+        gap: 1rem;
+    }
+
+    .pagination-btn {
+        background-color: #f3f4f6;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.375rem;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .pagination-btn:hover:not(:disabled) {
+        background-color: #e5e7eb;
+    }
+
+    .pagination-btn:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+
+    .pagination-info {
+        font-size: 0.875rem;
+        color: #4b5563;
+    }
 </style>
