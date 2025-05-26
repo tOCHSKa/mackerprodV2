@@ -30,12 +30,11 @@
                         <select v-model="video.theme" id="category" class="form-control" required>
                             <option value="">Sélectionnez un thème</option>
                             <option value="event">Event</option>
-                            <option value="drone">Drone</option>
                             <option value="mariage">Mariage</option>
                             <option value="immobilier">Immobilier</option>
                             <option value="corporate">Corporate</option>
-                            <option value="documentaire">Documentaire</option>
-                            <option value="autre">Autre</option>
+                            <option value="interview">Interview</option>
+                            <option value="publicité">Publicité</option>
                         </select>
                     </div>
                 </div>
@@ -101,8 +100,19 @@ const submitForm = async () => {
             Authorization: `Bearer ${adminStore.token}`
         }
     })
-    console.log(response)
+    if(response.message === 'Vidéo créée') {
+        await navigateTo('/admin/videoList')
+    } else {
+        video.value = {
+            titre: '',
+            theme: '',
+            description: '',
+            chemin_lien: '',
+            isVisible: 'public',
+        }
+    }
 }
+
 </script>
 
 <style scoped>

@@ -1,11 +1,19 @@
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
-
+  const token = getHeader(event, 'authorization')
+  if (!token) {
+    throw createError({
+      statusCode: 401,
+      statusMessage: 'Unauthorized'
+    })
+  }
   try {
-    // Note le "users" ici 👇
     const response = await $fetch('http://localhost:3001/api/video/add', {
       method: 'POST',
-      body
+      body,
+      headers: {
+        Authorization: token || ''
+      }
     })
 
     return response
