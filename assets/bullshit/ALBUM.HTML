@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Photographique | Rose Élégance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FFF5F7;
+            color: #4A2E41;
+        }
+
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .rose-pale {
+            background-color: #FFF0F3;
+        }
+
+        .rose-moyen {
+            background-color: #FFD6E0;
+        }
+
+        .rose-fonce {
+            background-color: #FF9BB3;
+        }
+
+        .rose-sombre {
+            background-color: #D46A7E;
+        }
+
+        .text-rose {
+            color: #D46A7E;
+        }
+
+        .border-rose {
+            border-color: #FF9BB3;
+        }
+
+        .carousel {
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+        }
+
+        .carousel-item {
+            scroll-snap-align: start;
+        }
+
+        .album-card:hover .album-overlay {
+            opacity: 1;
+        }
+
+        .album-overlay {
+            transition: opacity 0.3s ease;
+        }
+
+        /* Animation pour le bouton */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .pulse:hover {
+            animation: pulse 1.5s infinite;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen">
+    <!-- En-tête -->
+    <header class="rose-pale py-6 shadow-md">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="title-font text-3xl md:text-4xl font-bold text-rose">Studee Photographie</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#portfolio" class="hover:text-rose transition">Portfolio</a></li>
+                    <li><a href="#about" class="hover:text-rose transition">À propos</a></li>
+                    <li><a href="#contact" class="hover:text-rose transition">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="rose-moyen py-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h2 class="title-font text-4xl md:text-5xl font-bold mb-4">Capturer l'Éphémère</h2>
+                <p class="text-lg mb-6">Je suis Amélie, photographe spécialisée dans les moments intimes, les portraits
+                    émotionnels et les paysages oniriques.</p>
+                <a href="#portfolio"
+                    class="rose-fonce hover:rose-sombre text-white px-6 py-3 rounded-full font-medium transition pulse inline-block">Voir
+                    mon travail</a>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div
+                    class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-rose shadow-xl">
+                    <img src="https://scontent-cdg4-2.xx.fbcdn.net/v/t1.6435-9/143146987_10215781954416926_9217810723885761822_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=v0HI3VnnUQUQ7kNvwHxRu0l&_nc_oc=AdlBQUCvZZx4RgeJrFPlvM_VBc_hHexmqDav4fhSlxKeafRpwG-AHGItDH1n36D7zkA&_nc_zt=23&_nc_ht=scontent-cdg4-2.xx&_nc_gid=AiUcjQDdxRe5R91sg_xnpA&oh=00_AfF4EaR-Qzi6Sh1R14tCT6E0gjwbhVC837gARpWAig1RYA&oe=6836EAA9"
+                        alt="Portrait du photographe" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="title-font text-3xl md:text-4xl font-bold text-center mb-12 text-rose">Mes Albums</h2>
+
+            <!-- Albums Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Album 1 -->
+                <div class="album-card relative rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                        alt="Portraits Intimes" class="w-full h-64 object-cover">
+                    <div
+                        class="album-overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0">
+                        <button onclick="openCarousel('portraits')"
+                            class="rose-fonce hover:rose-sombre text-white px-6 py-2 rounded-full font-medium transition">Voir
+                            l'album</button>
+                    </div>
+                    <div class="p-4 rose-pale">
+                        <h3 class="title-font text-xl font-semibold">Portraits Intimes</h3>
+                        <p class="text-sm">Une collection de regards et d'émotions capturés</p>
+                    </div>
+                </div>
+
+                <!-- Album 2 -->
+                <div class="album-card relative rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=686&q=80"
+                        alt="Noches Enchantées" class="w-full h-64 object-cover">
+                    <div
+                        class="album-overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0">
+                        <button onclick="openCarousel('noches')"
+                            class="rose-fonce hover:rose-sombre text-white px-6 py-2 rounded-full font-medium transition">Voir
+                            l'album</button>
+                    </div>
+                    <div class="p-4 rose-pale">
+                        <h3 class="title-font text-xl font-semibold">Noches Enchantées</h3>
+                        <p class="text-sm">Mariages et moments d'amour éternisés</p>
+                    </div>
+                </div>
+
+                <!-- Album 3 -->
+                <div class="album-card relative rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D3D&auto=format&fit=crop&w=1470&q=80"
+                        alt="Horizons Oniriques" class="w-full h-64 object-cover">
+                    <div
+                        class="album-overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0">
+                        <button onclick="openCarousel('horizons')"
+                            class="rose-fonce hover:rose-sombre text-white px-6 py-2 rounded-full font-medium transition">Voir
+                            l'album</button>
+                    </div>
+                    <div class="p-4 rose-pale">
+                        <h3 class="title-font text-xl font-semibold">Horizons Oniriques</h3>
+                        <p class="text-sm">Paysages qui semblent sortis d'un rêve</p>
+                    </div>
+                </div>
+
+                <!-- Album 4 -->
+                <div class="album-card relative rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                        alt="Instants Urbains" class="w-full h-64 object-cover">
+                    <div
+                        class="album-overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0">
+                        <button onclick="openCarousel('urbains')"
+                            class="rose-fonce hover:rose-sombre text-white px-6 py-2 rounded-full font-medium transition">Voir
+                            l'album</button>
+                    </div>
+                    <div class="p-4 rose-pale">
+                        <h3 class="title-font text-xl font-semibold">Instants Urbains</h3>
+                        <p class="text-sm">La ville et ses habitants sous un nouvel angle</p>
+                    </div>
+                </div>
+
+                <!-- Album 5 -->
+                <div class="album-card relative rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                        alt="Silhouettes" class="w-full h-64 object-cover">
+                    <div
+                        class="album-overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0">
+                        <button onclick="openCarousel('silhouettes')"
+                            class="rose-fonce hover:rose-sombre text-white px-6 py-2 rounded-full font-medium transition">Voir
+                            l'album</button>
+                    </div>
+                    <div class="p-4 rose-pale">
+                        <h3 class="title-font text-xl font-semibold">Silhouettes</h3>
+                        <p class="text-sm">Formes et mouvements dans la lumière</p>
+                    </div>
+                </div>
+
+                <!-- Album 6 -->
+                <div class="album-card relative rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        alt="Nature Florale" class="w-full h-64 object-cover">
+                    <div
+                        class="album-overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0">
+                        <button onclick="openCarousel('florale')"
+                            class="rose-fonce hover:rose-sombre text-white px-6 py-2 rounded-full font-medium transition">Voir
+                            l'album</button>
+                    </div>
+                    <div class="p-4 rose-pale">
+                        <h3 class="title-font text-xl font-semibold">Nature Florale</h3>
+                        <p class="text-sm">La beauté éphémère des fleurs capturée</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrousel Modals -->
+    <!-- Portraits Intimes Carousel -->
+    <div id="portraits-carousel"
+        class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex-col justify-center items-center p-4">
+        <button onclick="closeCarousel()"
+            class="absolute top-4 right-4 text-white text-3xl hover:text-rose transition">&times;</button>
+        <h3 class="title-font text-2xl text-white mb-6">Portraits Intimes</h3>
+        <div class="relative w-full max-w-4xl">
+            <div class="carousel flex overflow-x-auto w-full max-w-4xl snap-x" id="portraits-inner">
+                <div class="carousel-item flex-shrink-0 w-full max-w-4xl">
+                    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                        class="w-full h-auto max-h-[70vh] object-contain" alt="Portrait 1">
+                </div>
+                <div class="carousel-item flex-shrink-0 w-full max-w-4xl">
+                    <img src="https://images.unsplash.com/photo-1531123897727-8f129e168b96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                        class="w-full h-auto max-h-[70vh] object-contain" alt="Portrait 2">
+                </div>
+                <div class="carousel-item flex-shrink-0 w-full max-w-4xl">
+                    <img src="https://images.unsplash.com/photo-1530785602389-07594beb8b73?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                        class="w-full h-auto max-h-[70vh] object-contain" alt="Portrait 3">
+                </div>
+            </div>
+            <button onclick="prevSlide('portraits-inner')"
+                class="absolute left-0 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-4 hover:bg-opacity-70 transition"><i
+                    class="fas fa-chevron-left"></i></button>
+            <button onclick="nextSlide('portraits-inner')"
+                class="absolute right-0 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-4 hover:bg-opacity-70 transition"><i
+                    class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="text-white mt-4 text-center">
+            <span id="portraits-counter">1/3</span>
+        </div>
+    </div>
+
+    <!-- Noches Enchantées Carousel -->
+    <div id="noches-carousel"
+        class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex-col justify-center items-center p-4">
+        <button onclick="closeCarousel()"
+            class="absolute top-4 right-4 text-white text-3xl hover:text-rose transition">&times;</button>
+        <h3 class="title-font text-2xl text-white mb-6">Noches Enchantées</h3>
+        <div class="relative w-full max-w-4xl">
+            <div class="carousel flex overflow-x-auto w-full max-w-4xl snap-x" id="noches-inner">
+                <div class="carousel-item flex-shrink-0 w-full max-w-4xl">
+                    <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=686&q=80"
+                        class="w-full h-auto max-h-[70vh] object-contain" alt="Noches 1">
+                </div>
+                <div class="carousel-item flex-shrink-0 w-full max-w-4xl">
+                    <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                        class="w-full h-auto max-h-[70vh] object-contain" alt="Noches 2">
+                </div>
+                <div class="carousel-item flex-shrink-0 w-full max-w-4xl">
+                    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        class="w-full h-auto max-h-[70vh] object-contain" alt="Noches 3">
+                </div>
+            </div>
+            <button onclick="prevSlide('noches-inner')"
+                class="absolute left-0 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-4 hover:bg-opacity-70 transition"><i
+                    class="fas fa-chevron-left"></i></button>
+            <button onclick="nextSlide('noches-inner')"
+                class="absolute right-0 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-4 hover:bg-opacity-70 transition"><i
+                    class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="text-white mt-4 text-center">
+            <span id="noches-counter">1/3</span>
+        </div>
+    </div>
+
+    <!-- Horizons Oniriques Carousel -->
+    <div id="horizons-carousel"
+        class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex-col justify-center items-center p-4">
+        <button onclick="closeCarousel()"
+            class="absolute top-4 right-4 text-white text-3xl hover:text-rose transition">&times;</button>
+        <h3 class="title-font text-2xl text-white mb-6">Horizons Oniriques</h3>
+        <div class="relative w-full max-w-4xl">
+            <div class="carousel flex overflow-x-auto w-full max-w-4xl snap-x" id="horizons-inner">
+                <div class="carousel-item flex-shrink-0 w-full max-w-4xl">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D3D&auto=format&fit=crop&w=1470&q=80"
+                        class="w-full h-auto max-h-[70vh] object-contain" alt="Horizons 1">
+                </div>
+                <div class="carousel-item flex-shrink-0 w-full max-w-4xl">
+                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1274&q=80"
+                        class="w-full h-auto max-h-[70vh] object-contain" alt="Horizons 2">
+                </div>
+                <div class="carousel-item flex-shrink-0 w-full max-w-4xl">
+                    <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        class="w-full h-auto max-h-[70vh] object-contain" alt="Horizons 3">
+                </div>
+            </div>
+            <button onclick="prevSlide('horizons-inner')"
+                class="absolute left-0 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-4 hover:bg-opacity-70 transition"><i
+                    class="fas fa-chevron-left"></i></button>
+            <button onclick="nextSlide('horizons-inner')"
+                class="absolute right-0 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-4 hover:bg-opacity-70 transition"><i
+                    class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="text-white mt-4 text-center">
+            <span id="horizons-counter">1/3</span>
+        </div>
+    </div>
+
+    <!-- À propos Section -->
+    <section id="about" class="py-16 rose-moyen">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                    <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-rose shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
+                            alt="Amélie" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-12">
+                    <h2 class="title-font text-3xl md:text-4xl font-bold mb-6 text-rose">À propos de moi</h2>
+                    <p class="mb-4">Je suis Amélie, une photographe passionnée par la capture d'émotions et de moments
+                        uniques. Mon approche artistique mélange sensibilité et technique pour créer des images qui
+                        racontent des histoires.</p>
+                    <p class="mb-4">Diplômée de l'École de Photographie de Paris, j'ai développé mon style au fil des
+                        années, avec une prédilection pour les tonalités douces et les ambiances intimistes.</p>
+                    <p>Mon travail a été exposé dans plusieurs galeries à travers la France et publié dans des magazines
+                        spécialisés. Je crois que chaque personne, chaque lieu a une beauté unique qui mérite d'être
+                        révélée.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="title-font text-3xl md:text-4xl font-bold text-center mb-12 text-rose">Travaillons ensemble</h2>
+
+            <div class="max-w-2xl mx-auto">
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block mb-2 font-medium">Nom</label>
+                            <input type="text" id="name"
+                                class="w-full px-4 py-2 border border-rose rounded-lg focus:ring-2 focus:ring-rose focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2 font-medium">Email</label>
+                            <input type="email" id="email"
+                                class="w-full px-4 py-2 border border-rose rounded-lg focus:ring-2 focus:ring-rose focus:border-transparent">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="subject" class="block mb-2 font-medium">Sujet</label>
+                        <input type="text" id="subject"
+                            class="w-full px-4 py-2 border border-rose rounded-lg focus:ring-2 focus:ring-rose focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="message" class="block mb-2 font-medium">Message</label>
+                        <textarea id="message" rows="5"
+                            class="w-full px-4 py-2 border border-rose rounded-lg focus:ring-2 focus:ring-rose focus:border-transparent"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="rose-fonce hover:rose-sombre text-white px-6 py-3 rounded-full font-medium transition w-full md:w-auto">Envoyer</button>
+                </form>
+
+                <div
+                    class="mt-12 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
+                    <a href="#" class="flex items-center text-rose hover:text-rose-sombre transition">
+                        <i class="fas fa-phone-alt text-xl mr-2"></i>
+                        <span>+33 6 12 34 56 78</span>
+                    </a>
+                    <a href="#" class="flex items-center text-rose hover:text-rose-sombre transition">
+                        <i class="fas fa-envelope text-xl mr-2"></i>
+                        <span>contact@Studee.com</span>
+                    </a>
+                    <a href="#" class="flex items-center text-rose hover:text-rose-sombre transition">
+                        <i class="fab fa-instagram text-xl mr-2"></i>
+                        <span>@Studee_Photographie</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="rose-sombre py-8 text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="title-font text-2xl font-bold">Studee Photographie</h3>
+                    <p class="mt-2">Capturer la beauté dans chaque détail</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-white hover:text-rose-pale transition"><i
+                            class="fab fa-facebook-f text-xl"></i></a>
+                    <a href="#" class="text-white hover:text-rose-pale transition"><i
+                            class="fab fa-instagram text-xl"></i></a>
+                    <a href="#" class="text-white hover:text-rose-pale transition"><i
+                            class="fab fa-pinterest-p text-xl"></i></a>
+                    <a href="#" class="text-white hover:text-rose-pale transition"><i
+                            class="fab fa-500px text-xl"></i></a>
+                </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-rose-pale text-center">
+                <p>&copy; 2024 Studee Photographie. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Fonctions pour le carrousel
+        function openCarousel(album) {
+            document.getElementById(`${album}-carousel`).classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            updateCounter(`${album}-inner`, `${album}-counter`);
+        }
+
+        function closeCarousel() {
+            document.querySelectorAll('[id$="-carousel"]').forEach(el => el.classList.add('hidden'));
+            document.body.style.overflow = '';
+        }
+
+        function prevSlide(carouselId) {
+            const carousel = document.getElementById(carouselId);
+            carousel.scrollBy({ left: -carousel.offsetWidth, behavior: 'smooth' });
+            setTimeout(() => updateCounter(carouselId, carouselId.replace('-inner', '-counter')), 300);
+        }
+
+        function nextSlide(carouselId) {
+            const carousel = document.getElementById(carouselId);
+            carousel.scrollBy({ left: carousel.offsetWidth, behavior: 'smooth' });
+            setTimeout(() => updateCounter(carouselId, carouselId.replace('-inner', '-counter')), 300);
+        }
+
+        function updateCounter(carouselId, counterId) {
+            const carousel = document.getElementById(carouselId);
+            const scrollPos = carousel.scrollLeft;
+            const itemWidth = carousel.scrollWidth / carousel.children.length;
+            const currentItem = Math.round(scrollPos / itemWidth) + 1;
+            document.getElementById(counterId).textContent = `${currentItem}/${carousel.children.length}`;
+        }
+
+        // Initialisation des carrousels
+        document.addEventListener('DOMContentLoaded', () => {
+            // Ajout d'événements pour les flèches du clavier
+            document.addEventListener('keydown', (e) => {
+                const openCarousel = document.querySelector('[id$="-carousel"]:not(.hidden)');
+                if (!openCarousel) return;
+
+                const carouselId = openCarousel.id.replace('-carousel', '-inner');
+
+                if (e.key === 'ArrowLeft') {
+                    prevSlide(carouselId);
+                } else if (e.key === 'ArrowRight') {
+                    nextSlide(carouselId);
+                } else if (e.key === 'Escape') {
+                    closeCarousel();
+                }
+            });
+
+            // Ajout d'images supplémentaires aux carrousels (pour la démo)
+            const albums = {
+                'portraits': [
+                    'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80',
+                    'https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
+                ],
+                'noches': [
+                    'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+                    'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80'
+                ],
+                'horizons': [
+                    'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+                    'https://images.unsplash.com/photo-1505142468610-359eebb67d04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80'
+                ]
+            };
+
+            for (const [album, images] of Object.entries(albums)) {
+                const carousel = document.getElementById(`${album}-inner`);
+                images.forEach(img => {
+                    const div = document.createElement('div');
+                    div.className = 'carousel-item flex-shrink-0 w-full max-w-4xl';
+                    div.innerHTML = `<img src="${img}" class="w-full h-auto max-h-[70vh] object-contain" alt="${album}">`;
+                    carousel.appendChild(div);
+                });
+
+                // Mise à jour des compteurs
+                const counter = document.getElementById(`${album}-counter`);
+                counter.textContent = `1/${carousel.children.length}`;
+            }
+        });
+    </script>
+</body>
+
+</html>
+studee.html
+30 KB
