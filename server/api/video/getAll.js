@@ -1,17 +1,7 @@
-export default defineEventHandler(async (event) => {
-    const token = getHeader(event, 'authorization')
-    if (!token) {
-      throw createError({
-        statusCode: 401,
-        statusMessage: 'Unauthorized'
-      })
-    }
+export default defineEventHandler(async () => {
     try {
       const response = await $fetch('http://localhost:3001/api/video/getAll', {
         method: 'GET',
-        headers: {
-          Authorization: token || ''
-        }
       })
       return response
     } catch (error) {
