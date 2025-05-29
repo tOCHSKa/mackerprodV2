@@ -1,75 +1,111 @@
-# Nuxt Minimal Starter
+# Documentation technique — mackerprodV2
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## 1. Présentation
 
-## Setup
+**mackerprodV2** est une application web développée avec **Nuxt.js 3**, sans TypeScript.  
+Elle est conçue pour un vidéaste souhaitant convertir et organiser ses contenus vidéo à travers une interface web moderne.  
+Le projet est actuellement en cours de développement.
 
-Make sure to install dependencies:
+---
 
-```bash
-# npm
-npm install
+## 2. Objectifs du projet
 
-# pnpm
-pnpm install
+- Permettre à un vidéaste de convertir des fichiers vidéos
+- Offrir une interface de gestion simple et ergonomique pour ses contenus
+- Créer une architecture modulaire, maintenable et extensible
 
-# yarn
-yarn install
+---
 
-# bun
-bun install
-```
+## 3. Structure du projet
 
-## Development Server
+Voici les répertoires et fichiers principaux du projet :
 
-Start the development server on `http://localhost:3000`:
+### Répertoires
 
-```bash
-# npm
-npm run dev
+- `assets`  
+  Contient les fichiers statiques liés au style ou aux images.
 
-# pnpm
-pnpm dev
+- `components`  
+  Contient les composants Vue.js utilisés à travers l’application (ex. : éléments UI).
 
-# yarn
-yarn dev
+- `content`  
+  Prévu pour le contenu structuré si le module `@nuxt/content` est utilisé.
 
-# bun
-bun run dev
-```
+- `diagramme`  
+  Répertoire spécifique pour stocker des diagrammes de flux, d’architecture ou de navigation.
 
-## Production
+- `layouts`  
+  Gabarits de mise en page réutilisables par les différentes pages de l’application.
 
-Build the application for production:
+- `middleware`  
+  Fonctions exécutées avant le rendu des pages (par exemple, vérification d’authentification).
 
-```bash
-# npm
-npm run build
+- `pages`  
+  Pages de l'application. Chaque fichier correspond à une route accessible via l’URL.
 
-# pnpm
-pnpm build
+- `plugins`  
+  Plugins personnalisés pour enrichir les fonctionnalités globales de Nuxt.
 
-# yarn
-yarn build
+- `public`  
+  Contient des fichiers accessibles directement via le navigateur (images, favicon, etc).
 
-# bun
-bun run build
-```
+- `server`  
+  Contient la logique côté serveur, notamment les API endpoints.
 
-Locally preview production build:
+- `store`  
+  Gestion de l’état global de l’application, généralement avec Pinia.
 
-```bash
-# npm
-npm run preview
+### Fichiers
 
-# pnpm
-pnpm preview
+- `app.vue`  
+  Composant racine de l’application.
 
-# yarn
-yarn preview
+- `nuxt.config.js`  
+  Fichier de configuration principal du projet Nuxt.
 
-# bun
-bun run preview
-```
+- `package.json`  
+  Liste des dépendances, scripts et métadonnées du projet.
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+---
+
+## 4. Fonctionnalités prévues
+
+- Interface de conversion de fichiers vidéo
+- Gestion d'une bibliothèque de contenus
+- Possibilité de trier, supprimer et consulter des vidéos
+- Intégration potentielle avec un service de traitement vidéo (ex. : backend REST)
+
+---
+
+## 5. Développement en cours
+
+Le projet est actuellement en phase de structuration. Les priorités de développement incluent :
+
+- Définition de l’architecture de pages et composants
+- Mise en place du système de navigation
+- Développement des premières interfaces utilisateur
+- Connexion à l’API backend pour le traitement vidéo
+
+---
+
+## 6. Déploiement
+
+Le projet est prévu pour être déployé sur une plateforme compatible avec Nuxt 3, que ce soit sur un serveur Node.js ou un hébergement type Static Hosting (avec génération statique).
+
+---
+
+## 7. Prochaine documentation à prévoir
+
+- Détail des composants
+- Documentation des routes et vues
+- Intégration avec le backend
+- Interface d’administration du contenu
+- Guide utilisateur pour le vidéaste
+
+---
+
+## 8. Auteur et contact
+
+Projet développé par [tOCHSKa](https://github.com/tOCHSKa).  
+Pour toute question technique ou besoin de collaboration, consulter directement le dépôt GitHub ou ouvrir une issue.
+
