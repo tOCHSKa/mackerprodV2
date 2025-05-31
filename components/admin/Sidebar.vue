@@ -1,39 +1,43 @@
 <template>
     <aside class="sidebar">
     <div class="sidebar-header">
-        <h2><i class="fas fa-rocket"></i> AdminPro</h2>
+        <h2>
+            <NuxtLink to="/">
+                <i class="fas fa-rocket"></i> AdminPro
+            </NuxtLink>
+        </h2>
     </div>
     
     <div class="sidebar-menu">
         <p class="menu-title">Principal</p>
-        <a href="/admin" class="menu-item active">
+        <NuxtLink to="/admin" class="menu-item active">
             <i class="fas fa-home"></i>
             <span>Dashboard</span>
-        </a>
+        </NuxtLink>
         
         <p class="menu-title">Gestion</p>
-        <a href="/admin/userList" class="menu-item">
+        <NuxtLink to="/admin/userList" class="menu-item">
             <i class="fas fa-users"></i>
             <span>Utilisateurs</span>
-        </a>
-        <a href="/admin/videoList" class="menu-item">
+        </NuxtLink>
+        <NuxtLink to="/admin/videoList" class="menu-item">
             <i class="fas fa-video"></i>
             <span>Espace Vidéo</span>
-        </a>
-        <a href="/admin/photoList" class="menu-item">
+        </NuxtLink>
+        <NuxtLink to="/admin/photoList" class="menu-item">
             <i class="fas fa-camera"></i>
             <span>Espace Photo</span>
-        </a>
+        </NuxtLink>
         
         <p class="menu-title">Paramètres</p>
-        <a href="/admin/settings" class="menu-item">
+        <NuxtLink to="/admin/settings" class="menu-item">
             <i class="fas fa-cog"></i>
             <span>Paramètres</span>
-        </a>
-        <a href="/admin/notifications" class="menu-item">
+        </NuxtLink>
+        <NuxtLink to="/admin/notifications" class="menu-item">
             <i class="fas fa-bell"></i>
             <span>Notifications</span>
-        </a>
+        </NuxtLink>
     </div>
     
     <div class="sidebar-footer">

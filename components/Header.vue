@@ -38,13 +38,13 @@
           <NuxtLink to="/realisation" class="border-2 text-white border-white bg-white-400 hover:bg-white hover:text-black px-8 py-3 rounded-full font-bold transition duration-300 ease-in-out">Voir mes réalisations</NuxtLink>
         </div>
         <div class="flex flex-row mt-8 px-2 gap-5 items-center">
-          <NuxtLink to="#" class="text-white fa-xl hover:scale-125 transition-transform duration-300 ease-in-out">
+          <NuxtLink to="https://www.youtube.com/@MackerPROD" target="_blank" rel="noopener noreferrer" class="text-white fa-xl hover:scale-125 transition-transform duration-300 ease-in-out">
             <i class="fab fa-youtube"></i>
           </NuxtLink>
-          <NuxtLink to="#" class="text-white fa-xl hover:scale-125 transition-transform duration-300 ease-in-out">
+          <NuxtLink to="https://www.linkedin.com/in/mickael-descheemacker-986463166/" target="_blank" rel="noopener noreferrer" class="text-white fa-xl hover:scale-125 transition-transform duration-300 ease-in-out">
             <i class="fab fa-linkedin-in"></i>
           </NuxtLink>
-          <NuxtLink to="#" class="text-white fa-xl hover:scale-125 transition-transform duration-300 ease-in-out">
+          <NuxtLink to="https://www.facebook.com/Mackerprod" target="_blank" rel="noopener noreferrer" class="text-white fa-xl hover:scale-125 transition-transform duration-300 ease-in-out">
             <i class="fab fa-facebook"></i>
           </NuxtLink>
         </div>

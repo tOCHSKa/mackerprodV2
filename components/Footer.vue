@@ -17,8 +17,18 @@
             <li><NuxtLink to="/" class="hover:text-white">Accueil</NuxtLink></li>
             <li><NuxtLink to="/" class="hover:text-white">Stu'Dee Photographie</NuxtLink></li>
             <li><NuxtLink to="/prestation" class="hover:text-white">Prestations</NuxtLink></li>
-            <li><NuxtLink to="/login" class="hover:text-white">Espace Admin</NuxtLink></li>
-            <li><NuxtLink to="/loginuser" class="hover:text-white">Mon compte</NuxtLink></li>
+            <li v-if="adminStore.role === 'admin'">
+              <NuxtLink to="/admin" class="hover:text-white">Espace Admin</NuxtLink>
+            </li>
+            <li v-else>
+              <NuxtLink to="/login" class="hover:text-white">Mon compte</NuxtLink>
+            </li>
+            <li v-if="adminStore.role === 'user'">
+              <NuxtLink to="/profil" class="hover:text-white">Profil</NuxtLink>
+            </li>
+            <li v-else>
+              <NuxtLink to="/loginuser" class="hover:text-white">Se connecter</NuxtLink>
+            </li>
             <li><NuxtLink to="/#contact" class="hover:text-white">Contact</NuxtLink></li>
           </ul>
         </div>
@@ -61,7 +71,11 @@
 </template>
 
 <script setup>
+import { useAdminStore } from '~/store/adminStore'
 
+const adminStore = useAdminStore()
+adminStore.initializeStore()
+console.log(adminStore.role)
 </script>
 
 <style scoped></style>

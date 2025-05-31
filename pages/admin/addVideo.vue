@@ -29,7 +29,7 @@
                         <label for="category" class="form-label">Thème</label>
                         <select v-model="video.theme" id="category" class="form-control" required>
                             <option value="">Sélectionnez un thème</option>
-                            <option value="event">Event</option>
+                            <option value="event">Événement</option>
                             <option value="mariage">Mariage</option>
                             <option value="immobilier">Immobilier</option>
                             <option value="corporate">Corporate</option>

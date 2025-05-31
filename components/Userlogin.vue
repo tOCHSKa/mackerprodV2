@@ -44,7 +44,10 @@
 
                         <div>
                             <button type="submit"
-                                class="cursor-pointer group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-accent hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition">
+                                class="cursor-pointer group relative w-full flex justify-center py-3 px-4 border
+                                border-transparent text-sm font-medium rounded-lg text-white bg-accent
+                                hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition
+                                hover:scale-105 duration-300 ease-in-out">
                                 <span class="absolute left-0 inset-y-0 flex items-center pl-3">
                                     <i class="fas fa-sign-in-alt"></i>
                                 </span>
@@ -135,12 +138,6 @@
       })
 
       if (success) {
-        // Redirection vers le dashboard après connexion réussie
-        // router.push('/')
-        console.log(utilisateurStore.token)
-        console.log(utilisateurStore.isAuthenticated)
-        console.log(utilisateurStore.role)
-        console.log(utilisateurStore.email)
         if(utilisateurStore.token){
           if(utilisateurStore.role === 'user'){
             router.push('/profil')
@@ -189,14 +186,6 @@
         .input-field:focus {
             border-color: #941E28;
             box-shadow: 0 0 0 3px rgba(148, 30, 40, 0.2);
-        }
-
-        .social-btn {
-            transition: all 0.3s ease;
-        }
-
-        .social-btn:hover {
-            transform: translateY(-3px);
         }
 
         .text-accent {
