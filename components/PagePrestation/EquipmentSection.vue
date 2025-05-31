@@ -5,14 +5,14 @@
             <h2 class="text-3xl font-bold text-center mb-4">MON <span class="text-accent">ÉQUIPEMENT</span></h2>
             <p class="text-center max-w-2xl mx-auto mb-12">Je travaille avec du matériel professionnel pour garantir une qualité d'image et de son irréprochable.</p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <!-- Caméra -->
                 <div class="text-center p-6 bg-gray-50 rounded-lg">
                     <div class="text-4xl mb-4 text-accent">
                         <i class="fas fa-video"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Caméras</h3>
-                    <p class="text-gray-600">Sony FX6 & FX3<br>4K HDR 10-bit<br>Objectifs haut de gamme</p>
+                    <p class="text-gray-600">Samyang 35-150mm<br>Lumix 24mm F1.8<br>Lumix 50mm F1.8</p>
                 </div>
 
                 <!-- Son -->
@@ -30,7 +30,7 @@
                         <i class="fas fa-lightbulb"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Lumière</h3>
-                    <p class="text-gray-600">Kits LED professionnels<br>Diffuseurs & réflecteurs<br>Éclairage continu</p>
+                    <p class="text-gray-600">Filtres ND & CPL<br>Flash et lumière Godox<br>Éclairage continu</p>
                 </div>
 
                 <!-- Post-prod -->
@@ -40,6 +40,23 @@
                     </div>
                     <h3 class="text-xl font-bold mb-2">Post-production</h3>
                     <p class="text-gray-600">Adobe Premiere Pro<br>DaVinci Resolve<br>After Effects</p>
+                </div>
+
+                <!-- Drone -->
+                <div class="text-center p-6 bg-gray-50 rounded-lg">
+                    <div class="text-4xl mb-4 text-accent">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Drone</h3>
+                    <p class="text-gray-600">Drone DJI Mini 3 Pro<br><br></p>
+                </div>
+
+                <div class="text-center p-6 bg-gray-50 rounded-lg">
+                    <div class="text-4xl mb-4 text-accent">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Équipements</h3>
+                    <p class="text-gray-600">Trépied<br>Stabilisateur DJI Ronin<br></p>
                 </div>
             </div>
         </div>

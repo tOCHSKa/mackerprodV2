@@ -10,7 +10,7 @@
                         <p class="mt-2 text-sm text-gray-600">Accédez à votre espace client MackerProd</p>
                     </div>
                     <form @submit.prevent="onSubmit" class="mt-8 space-y-6">
-                        <div class="rounded-md shadow-sm space-y-4">
+                        <div class="rounded-md space-y-4">
                             <div>
                                 <label for="login-email" class="sr-only">Email</label>
                                 <input id="login-email" name="email" type="email" autocomplete="email" required v-model="state.email"

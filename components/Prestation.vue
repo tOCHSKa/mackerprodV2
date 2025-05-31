@@ -9,11 +9,10 @@
                 <!-- Service 1 -->
                 <div class="service-card bg-gray-50 rounded-lg p-8 hover:shadow-lg transition">
                     <div class="service-icon text-[#941e28] text-4xl mb-4 text-primary">
-                        <i class="fas fa-film"></i>
+                        <i class="fas fa-home"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Clips Musicaux</h3>
-                    <p class="text-[#1a2026]">Production de clips vidéo artistiques qui mettent en valeur votre musique
-                        avec une esthétique unique et percutante.</p>
+                    <h3 class="text-xl font-bold mb-3">Immobilier</h3>
+                    <p class="text-[#1a2026]">Production de clips vidéo pour votre immobilier avec une esthétique unique et percutante.</p>
                 </div>
 
                 <!-- Service 2 -->
@@ -29,11 +28,10 @@
                 <!-- Service 3 -->
                 <div class="service-card bg-gray-50 rounded-lg p-8 hover:shadow-lg transition">
                     <div class="service-icon text-[#941e28] text-4xl mb-4 text-primary">
-                        <i class="fas fa-ad"></i>
+                        <i class="fas fa-briefcase"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Publicités & Marques</h3>
-                    <p class="text-[#1a2026]">Création de contenus publicitaires impactants qui renforcent l'identité de
-                        votre marque et captivent votre audience.</p>
+                    <h3 class="text-xl font-bold mb-3">Corporate</h3>
+                    <p class="text-[#1a2026]">Création de contenus pour votre entreprise avec une esthétique unique et percutante.</p>
                 </div>
 
                 <!-- Service 4 -->
@@ -49,11 +47,10 @@
                 <!-- Service 5 -->
                 <div class="service-card bg-gray-50 rounded-lg p-8 hover:shadow-lg transition">
                     <div class="service-icon text-[#941e28] text-4xl mb-4 text-primary">
-                        <i class="fas fa-bullhorn"></i>
+                        <i class="fas fa-plane"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Corporate</h3>
-                    <p class="text-[#1a2026]">Vidéos institutionnelles et reportages d'entreprise pour communiquer
-                        efficacement vos valeurs et votre expertise.</p>
+                    <h3 class="text-xl font-bold mb-3">Prestation drone</h3>
+                    <p class="text-[#1a2026]">Production de vidéos drone pour votre entreprise avec une esthétique unique et percutante.</p>
                 </div>
 
                 <!-- Service 6 -->

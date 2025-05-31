@@ -20,12 +20,19 @@
           <NuxtLink to="/prestation" class="group relative text-gray-700 hover:text-[#941e28] border-b-2 border-transparent  transition-all duration-300 open">Préstations
             <span class="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#941e28] transition-all duration-300 group-hover:w-full"></span>
           </NuxtLink>
-          <NuxtLink to="#" class="group relative text-gray-700 hover:text-[#941e28] border-b-2 border-transparent  transition-all duration-300 open">Portfolio
-            <span class="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#941e28] transition-all duration-300 group-hover:w-full"></span>
-          </NuxtLink>
           <NuxtLink to="/#contact" class="group relative text-gray-700 hover:text-[#941e28] border-b-2 border-transparent  transition-all duration-300 open">Contact
             <span class="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#941e28] transition-all duration-300 group-hover:w-full"></span>
           </NuxtLink>
+          <div v-if="adminStore.role === 'user'">
+            <NuxtLink to="/profil" class="group relative text-gray-700 hover:text-[#941e28] border-b-2 border-transparent  transition-all duration-300 open">Profil
+            <span class="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#941e28] transition-all duration-300 group-hover:w-full"></span>
+          </NuxtLink>
+          </div>
+          <div v-else>
+            <NuxtLink to="/loginuser" class="group relative text-gray-700 hover:text-[#941e28] border-b-2 border-transparent  transition-all duration-300 open">Se connecter
+            <span class="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#941e28] transition-all duration-300 group-hover:w-full"></span>
+          </NuxtLink>
+          </div>
         </nav>
         
         <!-- Mobile menu button -->
@@ -69,23 +76,36 @@
 
     <!-- Mobile Nav -->
     <div
-  class="open pl-6 pb-4 fixed top-[64px] left-0 w-full bg-white py-4 px-4 transition-transform duration-300 transform md:hidden"
+  class="open pl-6 pb-4 fixed top-[64px] left-0 w-full bg-white py-4 px-4 transition-transform duration-300 transform md:hidden z-50"
   :class="[{ 'translate-x-0': isMobileMenuOpen, '-translate-x-full': !isMobileMenuOpen }]"
 >
   <nav class="flex flex-col space-y-4">
-    <NuxtLink to="/realisation" class="text-gray-700">Réalisations</NuxtLink>
-    <NuxtLink to="/prestation" class="text-gray-700">Préstations</NuxtLink>
-    <NuxtLink to="#portfolio" class="text-gray-700">Portfolio</NuxtLink>
-    <NuxtLink to="#contact" class="text-gray-700">Contact</NuxtLink>
+    <NuxtLink to="/realisation" @click="handleClick" class="text-gray-700">Réalisations</NuxtLink>
+    <NuxtLink to="/prestation" @click="handleClick" class="text-gray-700">Préstations</NuxtLink>
+    <NuxtLink to="/#contact" @click="handleClick" class="text-gray-700">Contact</NuxtLink>
+    <div v-if="adminStore.role === 'user'">
+    <NuxtLink to="/profil" @click="handleClick" class="text-gray-700">Profil</NuxtLink>
+    </div>
+    <div v-else>
+    <NuxtLink to="/loginuser" @click="handleClick" class="text-gray-700">Se connecter</NuxtLink>
+    </div>
   </nav>
 </div>
 </header>
 </template>
 
 <script setup>
+import { useAdminStore } from '~/store/adminStore'
+const adminStore = useAdminStore()
+adminStore.initializeStore()
 
 const isMobileMenuOpen = ref(false)
 
+const isClicked = ref(false)
+
+function handleClick() {
+  isClicked.value = !isClicked.value
+}
 </script>
 
 <style scoped>
