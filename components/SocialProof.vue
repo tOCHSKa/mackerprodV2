@@ -22,16 +22,22 @@
                             <img src="https://tochska.github.io/assets-mackerprod/liujo.svg" alt="liujo">
                         </div>
                         <div class="slide">
+                            <img src="https://tochska.github.io/assets-mackerprod/steloi.svg" alt="steloi">
+                        </div>
+                        <div class="slide">
                             <img src="https://tochska.github.io/assets-mackerprod/4tech.svg" alt="4tech">
                         </div>
                         <div class="slide">
                             <img src="https://tochska.github.io/assets-mackerprod/dimmobilier.svg" alt="dim mobilier">
-                        </div>
+                        </div>                        
                         <div class="slide">
                             <img src="https://tochska.github.io/assets-mackerprod/foxhabitat.svg" alt="foxhabitat">
                         </div>
                         <div class="slide">
                             <img src="https://tochska.github.io/assets-mackerprod/liujo.svg" alt="liujo">
+                        </div>
+                        <div class="slide">
+                            <img src="https://tochska.github.io/assets-mackerprod/steloi.svg" alt="steloi">
                         </div>
                         <div class="slide">
                             <img src="https://tochska.github.io/assets-mackerprod/4tech.svg" alt="4tech">

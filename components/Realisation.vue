@@ -27,6 +27,7 @@
           <div class="slide">
               <img src="https://tochska.github.io/assets-mackerprod/liujo.svg" alt="liujo">
           </div>
+          <h3 class="text-xl font-semibold mb-2">Liu-jo Cambrai</h3>
           <p class="text-gray-600 mb-4">
             L’élégance en mouvement – Découvrez l’univers Liu-jo Cambrai.
           </p>
@@ -58,6 +59,7 @@
           <div class="slide">
             <img src="https://tochska.github.io/assets-mackerprod/4tech.svg" alt="4tech">
         </div>
+        <h3 class="text-xl font-semibold mb-2">4TECH+</h3>
           <p class="text-gray-600 mb-4">
             Interview et présentation de l'entreprise - Découvrez 4TECH+
           </p>
@@ -82,14 +84,17 @@
           style="background-image: url('');"
         ></div>
         <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2">Cérémonie Armistice 11 Novembre</h3>
+          <div class="slide-steloi">
+            <img src="https://tochska.github.io/assets-mackerprod/steloi.svg" alt="steloi">
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Saint-Eloi Bapaume</h3>
           <p class="text-gray-600 mb-4">
             Campagne publicitaire mettant en avant des produits bio locaux
             avec une esthétique naturelle et épurée.
           </p>
           <div class="flex justify-between items-center text-sm">
-            <span class="text-accent font-medium">2022</span>
-            <a href="#" class="text-accent hover:underline">Voir plus</a>
+            <span class="text-accent font-medium">2025</span>
+            <a href="#" class="text-accent hover:underline">Voir sur YouTube</a>
           </div>
         </div>
       </div>
@@ -124,6 +129,21 @@
     .slide img {
       max-height: 70px;
       max-width: 180px;
+      width: 100%;
+        object-fit: cover;
+        transition: all 0.3s ease;
+    }
+    .slide-steloi {
+        height: 100px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .slide-steloi img {
+      max-height: 100px;
+      max-width: 100px;
       width: 100%;
         object-fit: cover;
         transition: all 0.3s ease;
