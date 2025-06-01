@@ -6,61 +6,12 @@
                 à tous vos besoins, de la captation événementielle à la production cinématographique.</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="service-card bg-gray-50 rounded-lg p-8 hover:shadow-lg transition">
+                <div v-for="prestation in prestations" :key="prestation.title" class="service-card bg-gray-50 rounded-lg p-8 hover:shadow-lg transition">
                     <div class="service-icon text-[#941e28] text-4xl mb-4 text-primary">
-                        <i class="fas fa-home"></i>
+                        <i :class="prestation.icon"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Immobilier</h3>
-                    <p class="text-[#1a2026]">Production de clips vidéo pour votre immobilier avec une esthétique unique et percutante.</p>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="service-card bg-gray-50 rounded-lg p-8 hover:shadow-lg transition">
-                    <div class="service-icon text-[#941e28] text-4xl mb-4 text-primary">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Mariages & Événements</h3>
-                    <p class="text-[#1a2026]">Captation des moments les plus précieux de votre journée avec sensibilité
-                        et discrétion pour un souvenir émouvant.</p>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="service-card bg-gray-50 rounded-lg p-8 hover:shadow-lg transition">
-                    <div class="service-icon text-[#941e28] text-4xl mb-4 text-primary">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Corporate</h3>
-                    <p class="text-[#1a2026]">Création de contenus pour votre entreprise avec une esthétique unique et percutante.</p>
-                </div>
-
-                <!-- Service 4 -->
-                <div class="service-card bg-gray-50 rounded-lg p-8 hover:shadow-lg transition">
-                    <div class="service-icon text-[#941e28] text-4xl mb-4 text-primary">
-                        <i class="fas fa-video"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Documentaires</h3>
-                    <p class="text-[#1a2026]">Production de documentaires engagés qui racontent des histoires humaines
-                        avec profondeur et authenticité.</p>
-                </div>
-
-                <!-- Service 5 -->
-                <div class="service-card bg-gray-50 rounded-lg p-8 hover:shadow-lg transition">
-                    <div class="service-icon text-[#941e28] text-4xl mb-4 text-primary">
-                        <i class="fas fa-plane"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Prestation drone</h3>
-                    <p class="text-[#1a2026]">Production de vidéos drone pour votre entreprise avec une esthétique unique et percutante.</p>
-                </div>
-
-                <!-- Service 6 -->
-                <div class="service-card bg-gray-50 rounded-lg p-8 hover:shadow-lg transition">
-                    <div class="service-icon text-[#941e28] text-4xl mb-4 text-primary">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Contenu sur Mesure</h3>
-                    <p class="text-[#1a2026]">Solutions vidéo personnalisées adaptées à vos besoins spécifiques, du
-                        concept au produit final.</p>
+                    <h3 class="text-xl font-bold mb-3">{{ prestation.title }}</h3>
+                    <p class="text-[#1a2026]">{{ prestation.description }}</p>
                 </div>
             </div>
             <div class="text-center mt-12">
@@ -76,6 +27,38 @@
 </template>
 <script setup>
 
+const prestations = [
+    {
+        title: 'Immobilier',
+        description: 'Production de clips vidéo pour votre immobilier avec une esthétique unique et percutante.',
+        icon: 'fas fa-home'
+    },
+    {
+        title: 'Mariages & Événements',
+        description: 'Captation des moments les plus précieux de votre journée avec sensibilité et discrétion pour un souvenir émouvant.',
+        icon: 'fas fa-heart'
+    },
+    {
+        title: 'Corporate',
+        description: 'Création de contenus pour votre entreprise avec une esthétique unique et percutante.',
+        icon: 'fas fa-briefcase'
+    },
+    {
+        title: 'Documentaires',
+        description: 'Production de documentaires engagés qui racontent des histoires humaines avec profondeur et authenticité.',
+        icon: 'fas fa-video'
+    },
+    {
+        title: 'Prestation drone',
+        description: 'Production de vidéos drone pour votre entreprise avec une esthétique unique et percutante.',
+        icon: 'fas fa-plane'
+    },
+    {
+        title: 'Contenu sur Mesure',
+        description: 'Solutions vidéo personnalisées adaptées à vos besoins spécifiques, du concept au produit final.',
+        icon: 'fas fa-lightbulb'
+    }
+]
 </script>
 <style>
   

@@ -6,93 +6,14 @@
             <p class="text-center text-[#1a2026] max-w-2xl mx-auto mb-12">Chaque projet est unique et mérite une approche sur mesure. Découvrez les différents services que je propose pour donner vie à vos idées.</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="service-card bg-white rounded-lg p-8">
-                    <div class="service-icon text-4xl mb-4 text-primary">
-                        <i class="fas fa-home"></i>
+                <div v-for="prestation in prestations" :key="prestation.title" class="service-card bg-white rounded-lg p-8 hover:shadow-lg transition">
+                    <div class="service-icon text-[#941e28] text-4xl mb-4 text-primary">
+                        <i :class="prestation.icon"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Immobilier</h3>
-                    <p class="text-gray-600 mb-4">Production de clips vidéo artistiques qui mettent en valeur votre musique avec une esthétique unique et percutante.</p>
+                    <h3 class="text-xl font-bold mb-3">{{ prestation.title }}</h3>
+                    <p class="text-gray-600 mb-4">{{ prestation.description }}</p>
                     <ul class="space-y-2 text-gray-600 text-sm">
-                        <li class="flex items-center"><i class="fas fa-check text-[#941e28] mr-2"></i> Concept original</li>
-                        <li class="flex items-center"><i class="fas fa-check text-[#941e28] mr-2"></i> Tournage professionnel</li>
-                        <li class="flex items-center"><i class="fas fa-check text-[#941e28] mr-2"></i> Montage dynamique</li>
-                        <li class="flex items-center"><i class="fas fa-check text-[#941e28] mr-2"></i> Effets visuels</li>
-                    </ul>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="service-card bg-white rounded-lg p-8">
-                    <div class="service-icon text-4xl mb-4 text-primary">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Mariages & Événements</h3>
-                    <p class="text-gray-600 mb-4">Captation des moments les plus précieux de votre journée avec sensibilité et discrétion pour un souvenir émouvant.</p>
-                    <ul class="space-y-2 text-gray-600 text-sm">
-                        <li class="flex items-center"><i class="fas fa-check text-[#941e28] mr-2"></i> Film court et long</li>
-                        <li class="flex items-center"><i class="fas fa-check text-[#941e28] mr-2"></i> Prise de vue discrète</li>
-                        <li class="flex items-center"><i class="fas fa-check text-[#941e28] mr-2"></i> Montage émotionnel</li>
-                        <li class="flex items-center"><i class="fas fa-check text-[#941e28] mr-2"></i> Livraison premium</li>
-                    </ul>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="service-card bg-white rounded-lg p-8">
-                    <div class="service-icon text-4xl mb-4 text-primary">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Corporate</h3>
-                    <p class="text-gray-600 mb-4">Création de contenus publicitaires impactants qui renforcent l'identité de votre marque et captivent votre audience.</p>
-                    <ul class="space-y-2 text-gray-600 text-sm">
-                        <li class="flex items-center"><i class="fas fa-check text-[#941e28] mr-2"></i> Stratégie de marque</li>
-                        <li class="flex items-center"><i class="fas fa-check text-[#941e28] mr-2"></i> Scénarisation</li>
-                        <li class="flex items-center"><i class="fas fa-check text-[#941e28] mr-2"></i> Production HD/4K</li>
-                        <li class="flex items-center"><i class="fas fa-check text-[#941e28] mr-2"></i> Diffusion multi-plateforme</li>
-                    </ul>
-                </div>
-
-                <!-- Service 4 -->
-                <div class="service-card bg-white rounded-lg p-8">
-                    <div class="service-icon text-4xl mb-4 text-primary">
-                        <i class="fas fa-video"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Documentaires</h3>
-                    <p class="text-gray-600 mb-4">Production de documentaires engagés qui racontent des histoires humaines avec profondeur et authenticité.</p>
-                    <ul class="space-y-2 text-gray-600 text-sm">
-                        <li class="flex items-center"><i class="fas fa-check text-[#941e28] mr-2"></i> Recherche approfondie</li>
-                        <li class="flex items-center"><i class="fas fa-check text-[#941e28] mr-2"></i> Interviews captivantes</li>
-                        <li class="flex items-center"><i class="fas fa-check text-[#941e28] mr-2"></i> Narration puissante</li>
-                        <li class="flex items-center"><i class="fas fa-check text-[#941e28] mr-2"></i> Montage documentaire</li>
-                    </ul>
-                </div>
-
-                <!-- Service 5 -->
-                <div class="service-card bg-white rounded-lg p-8">
-                    <div class="service-icon text-4xl mb-4 text-primary">
-                        <i class="fas fa-plane"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Prestations drone</h3>
-                    <p class="text-gray-600 mb-4">Vidéos institutionnelles et reportages d'entreprise pour communiquer efficacement vos valeurs et votre expertise.</p>
-                    <ul class="space-y-2 text-gray-600 text-sm">
-                        <li class="flex items-center"><i class="fas fa-check text-[#941e28] mr-2"></i> Vidéo institutionnelle</li>
-                        <li class="flex items-center"><i class="fas fa-check text-[#941e28] mr-2"></i> Interview corporate</li>
-                        <li class="flex items-center"><i class="fas fa-check text-[#941e28] mr-2"></i> Motion design</li>
-                        <li class="flex items-center"><i class="fas fa-check text-[#941e28] mr-2"></i> Sous-titrage multilingue</li>
-                    </ul>
-                </div>
-
-                <!-- Service 6 -->
-                <div class="service-card bg-white rounded-lg p-8">
-                    <div class="service-icon text-4xl mb-4 text-primary">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Contenu sur Mesure</h3>
-                    <p class="text-gray-600 mb-4">Solutions vidéo personnalisées adaptées à vos besoins spécifiques, du concept au produit final.</p>
-                    <ul class="space-y-2 text-gray-600 text-sm">
-                        <li class="flex items-center"><i class="fas fa-check text-[#941e28] mr-2"></i> Conseil personnalisé</li>
-                        <li class="flex items-center"><i class="fas fa-check text-[#941e28] mr-2"></i> Scénario sur mesure</li>
-                        <li class="flex items-center"><i class="fas fa-check text-[#941e28] mr-2"></i> Tournage flexible</li>
-                        <li class="flex items-center"><i class="fas fa-check text-[#941e28] mr-2"></i> Post-production avancée</li>
+                        <li class="flex items-center" v-for="item in prestation.list" :key="item"><i class="fas fa-check text-[#941e28] mr-2"></i> {{ item }}</li>
                     </ul>
                 </div>
             </div>
@@ -101,6 +22,75 @@
 </template>
 
 <script setup>
+const prestations = [
+  {
+    title: 'Immobilier',
+    description: 'Clips immobiliers percutants pour valoriser vos biens avec esthétisme et efficacité.',
+    icon: 'fas fa-home',
+    list: [
+      'Mise en valeur visuelle du bien',
+      'Prises de vues aériennes (drone)',
+      'Montage rythmé et attractif',
+      'Habillage graphique sobre'
+    ]
+  },
+  {
+    title: 'Mariages & Événements',
+    description: 'Immortalisez vos moments uniques avec des vidéos émouvantes, sincères et intemporelles.',
+    icon: 'fas fa-heart',
+    list: [
+      'Captation discrète et naturelle',
+      'Émotion au cœur du montage',
+      'Séquences drone & slow motion',
+      'Livraison sur clé USB personnalisée'
+    ]
+  },
+  {
+    title: 'Corporate',
+    description: 'Vidéos professionnelles pour valoriser votre activité et renforcer votre image de marque.',
+    icon: 'fas fa-briefcase',
+    list: [
+      'Pitch entreprise dynamique',
+      'Interviews dirigées & scriptées',
+      'Motion design & sous-titrage',
+      'Livraison multi-format web'
+    ]
+  },
+  {
+    title: 'Documentaires',
+    description: 'Réalisation de formats longs racontant vos histoires avec authenticité et profondeur.',
+    icon: 'fas fa-video',
+    list: [
+      'Écriture & narration soignée',
+      'Interviews immersives',
+      'Tournage multi-caméras',
+      'Montage narratif fluide'
+    ]
+  },
+  {
+    title: 'Prestation drone',
+    description: 'Vue aérienne spectaculaire pour enrichir vos contenus visuels professionnels.',
+    icon: 'fas fa-plane',
+    list: [
+      'Prises de vues 4K stabilisées',
+      'Plans cinématiques personnalisés',
+      'Drone homologué & assuré',
+      'Pilote certifié DGAC'
+    ]
+  },
+  {
+    title: 'Contenu sur Mesure',
+    description: 'Solutions créatives adaptées à vos besoins spécifiques et à votre budget.',
+    icon: 'fas fa-lightbulb',
+    list: [
+      'Accompagnement sur-mesure',
+      'Création de script original',
+      'Adaptation à votre cible',
+      'Production clé en main'
+    ]
+  }
+]
+
 </script>
 
 <style scoped>

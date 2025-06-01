@@ -2,15 +2,10 @@
   <section class="py-12 bg-gray-50">
         <div class="container mx-auto px-6">
             <div class="flex flex-wrap justify-center gap-4 mb-12">
-                <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 hover:bg-gray-200 cursor-pointer" @click="videoFilter = 'all'">Tous les projets</button>
-                <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 hover:bg-gray-200 cursor-pointer" @click="videoFilter = 'corporate'">Corporate</button>
-                <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 hover:bg-gray-200 cursor-pointer" @click="videoFilter = 'mariage'">Mariages</button>
-                <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 hover:bg-gray-200 cursor-pointer" @click="videoFilter = 'publicité'">Publicités</button>
-                <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 hover:bg-gray-200 cursor-pointer" @click="videoFilter = 'event'">Événements</button>
-                <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 hover:bg-gray-200 cursor-pointer" @click="videoFilter = 'interview'">Interviews</button>
-                <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 hover:bg-gray-200 cursor-pointer" @click="videoFilter = 'immobilier'">Immobilier</button>
+                <div v-for="(button,index) in buttons" :key="index">
+                <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 hover:bg-gray-200 cursor-pointer" @click="videoFilter = button.value">{{ button.title }}</button>
+                </div>
             </div>
-
             <!-- Projects Grid -->
             <div id="all-projects" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div v-for="(video,index) in videos.filter(video => videoFilter === 'all' || video.theme === videoFilter).slice(0, 6)">
@@ -22,7 +17,7 @@
                             <div class="p-6">
                                 <div class="flex justify-between items-start mb-2">
                                     <h3 class="text-xl font-bold">{{  video.titre }}</h3>
-                                    <span class="bg-accent text-white text-xs px-2 py-1 rounded">{{  video.theme }}</span>
+                                    <span class="bg-accent text-white text-xs px-2 py-1 rounded capitalize">{{  video.theme }}</span>
                                 </div>
                                 <p class="text-gray-600 mb-4">{{  video.description }}</p>
                                 <div class="flex justify-between items-center">
@@ -79,6 +74,36 @@ $fetch('/api/video/getAll', {
 videos.value = videosData.value || []
 error.value = videosError.value || null
 
+const buttons = [
+    {
+        title: 'Tous les projets',
+        value: 'all'
+    },
+    {
+        title: 'Corporate',
+        value: 'corporate'
+    },
+    {
+        title: 'Mariages',
+        value: 'mariage'
+    },
+    {
+        title: 'Publicités',
+        value: 'publicité'
+    },
+    {
+        title: 'Événements',
+        value: 'event'
+    },
+    {
+        title: 'Interviews',
+        value: 'interview'
+    },
+    {
+        title: 'Immobilier',
+        value: 'immobilier'
+    }
+]
 </script>
 
 <style scoped>
