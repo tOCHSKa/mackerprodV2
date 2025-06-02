@@ -1,8 +1,8 @@
 <template>
   <div class="open">
     <Navbar/>
-    <HeroRealisationSection/>
-    <ProjectFilter/>
+    <HeroRealisationSection id="hero"/>
+    <ProjectFilter id="projects"/>
     <Footer/>
   </div>
 </template>
