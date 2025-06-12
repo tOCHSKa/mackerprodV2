@@ -34,7 +34,7 @@
         <div>
           <h3 class="text-xl font-semibold mb-4">Contact</h3>
           <p class="text-gray-400 text-sm">Email : contact@mackerprod.com</p>
-          <p class="text-gray-400 text-sm">Téléphone : +33 1 23 45 67 89</p>
+          <p class="text-gray-400 text-sm">Téléphone : +33 07 49 43 73 69</p>
           <div class="flex space-x-4 mt-4">
             <NuxtLink
               to="#"

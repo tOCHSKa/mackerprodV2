@@ -2,7 +2,7 @@
     <div class="relative py-4">
       <!-- Bouton gauche -->
       <button
-        @click="scrollLeft"
+        @click="scrollLeft" aria-label="Scroll left"
         class="cursor-pointer absolute left-0 top-85 lg:left-[45%] lg:top-85 -translate-y-1/2 z-10 bg-white shadow-lg px-[1rem] py-[0.5rem] rounded-full hover:bg-gray-100 transition"
       >
         <i class="fas fa-chevron-left"></i>
@@ -49,7 +49,7 @@
   
       <!-- Bouton droite -->
       <button
-        @click="scrollRight"
+        @click="scrollRight" aria-label="Scroll right"
         class="cursor-pointer absolute right-0 top-85 lg:right-[45%] lg:top-85 -translate-y-1/2 z-10 bg-white shadow-lg px-[1rem] py-[0.5rem] rounded-full hover:bg-gray-100 transition"
       >
         <i class="fas fa-chevron-right"></i>
