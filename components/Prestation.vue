@@ -44,8 +44,8 @@ const prestations = [
         icon: 'fas fa-briefcase'
     },
     {
-        title: 'Documentaires',
-        description: 'Production de documentaires engagés qui racontent des histoires humaines avec profondeur et authenticité.',
+        title: 'Formule DUO',
+        description: 'Une formule complète avec un photographe et un vidéaste, pour des souvenirs riches, vivants et parfaitement coordonnés',
         icon: 'fas fa-video'
     },
     {

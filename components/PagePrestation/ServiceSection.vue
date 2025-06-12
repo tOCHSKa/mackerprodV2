@@ -35,8 +35,8 @@ const prestations = [
     ]
   },
   {
-    title: 'Mariages & Événements',
-    description: 'Immortalisez vos moments uniques avec des vidéos émouvantes, sincères et intemporelles.',
+    title: 'Formule DUO',
+    description: 'Une formule complète avec un photographe et un vidéaste, pour des souvenirs riches, vivants et parfaitement coordonnés.',
     icon: 'fas fa-heart',
     list: [
       'Captation discrète et naturelle',
@@ -57,7 +57,7 @@ const prestations = [
     ]
   },
   {
-    title: 'Documentaires',
+    title: 'Événements',
     description: 'Réalisation de formats longs racontant vos histoires avec authenticité et profondeur.',
     icon: 'fas fa-video',
     list: [

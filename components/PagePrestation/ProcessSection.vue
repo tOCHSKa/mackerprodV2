@@ -23,7 +23,7 @@
 <script setup>
 const process = [
     {
-        title: 'Échange',
+        title: 'Analyse',
         description: 'Nous discutons de votre projet, vos attentes et vos objectifs pour définir ensemble le cadre de travail.',
         icon: 'fas fa-home'
     },

@@ -93,7 +93,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-bold mb-1">Adresse</h4>
-                                    <p>637 GRANDE RUE VERTE<br>59400 CAMBRAI, France</p>
+                                    <p>59400 CAMBRAI, France</p>
                                 </div>
                             </div>
 
@@ -113,7 +113,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-bold mb-1">Téléphone</h4>
-                                    <p>+33 6 12 34 56 78</p>
+                                    <p>+33 07 49 43 73 69</p>
                                 </div>
                             </div>
 

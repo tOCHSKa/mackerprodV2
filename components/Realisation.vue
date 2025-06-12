@@ -83,8 +83,8 @@ const project = [
     title: 'Saint-Eloi Bapaume',
     description: 'Campagne publicitaire mettant en avant des produits bio locaux avec une esthétique naturelle et épurée.',
     year: '2025',
-    link: 'https://www.youtube.com/watch?v=QIJaPO-Bu5I',
-    embed: 'https://www.youtube.com/embed/QIJaPO-Bu5I?controls=0&mute=1&loop=1&playlist=QIJaPO-Bu5I&modestbranding=1&rel=0',
+    link: 'https://www.youtube.com/watch?v=UsO7fR-v0S8',
+    embed: 'https://www.youtube.com/embed/UsO7fR-v0S8?controls=0&mute=1&loop=1&playlist=UsO7fR-v0S8&modestbranding=1&rel=0',
     image: 'https://tochska.github.io/assets-mackerprod/steloi.svg',
     class: 'slide-steloi'
   }

@@ -9,7 +9,7 @@
           Je travaille avec du matériel professionnel pour garantir une qualité d'image et de son irréprochable.
         </p>
   
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           <div
             v-for="(item, index) in equipement"
             :key="index"
@@ -42,29 +42,9 @@
       icon: 'fas fa-video',
     },
     {
-      title: 'Son',
-      description: [
-        'Micros shotgun & cravate',
-        'Enregistreurs Zoom',
-        'Mixette portable',
-      ],
-      icon: 'fas fa-microphone',
-    },
-    {
-      title: 'Lumière',
-      description: [
-        'Filtres ND & CPL',
-        'Flash et lumière Godox',
-        'Éclairage continu',
-      ],
-      icon: 'fas fa-lightbulb',
-    },
-    {
       title: 'Post-production',
       description: [
-        'Adobe Premiere Pro',
         'DaVinci Resolve',
-        'After Effects',
       ],
       icon: 'fas fa-laptop',
     },
@@ -72,14 +52,17 @@
       title: 'Drone',
       description: [
         'Drone DJI Mini 3 Pro',
+        'Neo FPV'
       ],
       icon: 'fas fa-plane',
     },
     {
       title: 'Équipements',
       description: [
-        'Trépied',
-        'Stabilisateur DJI Ronin',
+        'Système de captation sonore',
+        'Stabilisateur DJI RS3',
+        'Eclairage professionnel',
+        'Parc d`objectifs polyvalents',
       ],
       icon: 'fas fa-toolbox',
     },
