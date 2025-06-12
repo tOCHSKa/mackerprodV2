@@ -58,18 +58,28 @@
   </template>
   
   <script setup>
-  import { ref } from 'vue'
+  import { ref, onMounted } from 'vue'
   
   const container = ref(null)
   const scrollAmount = 340
-  
+  onMounted(() => {
+  // Vérifie si le ref est bien attaché
+  console.log('container ready?', container.value)
+})
+
   const scrollLeft = () => {
-    container.value?.scrollBy({ left: -scrollAmount, behavior: 'smooth' })
+  if (container.value) {
+    container.value.scrollBy({ left: -340, behavior: 'smooth' })
+    console.log('scrolling left')
   }
-  
-  const scrollRight = () => {
-    container.value?.scrollBy({ left: scrollAmount, behavior: 'smooth' })
+}
+
+const scrollRight = () => {
+  if (container.value) {
+    container.value.scrollBy({ left: 340, behavior: 'smooth' })
+    console.log('scrolling right')
   }
+}
   
   const reviews = [
     {
