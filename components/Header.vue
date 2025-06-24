@@ -27,11 +27,12 @@
     <div class="container mx-auto px-6 text-center md:text-left relative z-10">
       <div class="md:w-1/2">
         <h1 class="text-4xl text-white md:text-6xl font-bold mb-6">
-          VOTRE HISTOIRE
-          <p class="texte-rouge">NOTRE PASSION</p>
+          MACKER PROD VIDEO CREATION
+          <p class="texte-rouge">CAPTATION TERRESTRE ET AERIENNE</p>
         </h1>
         <p class="text-xl text-white mb-8 open">
-          Je capture l'émotion et raconte votre histoire à travers l'objectif. Des vidéos qui marquent les esprits et créent l'impact.
+          Des images qui parlent, des vidéos qui marquent.<br>
+          Vidéaste & télépilote de drone certifié — Macker Prod sublime vos projets : mariage, immobilier, entreprise.
         </p>
         <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
           <NuxtLink to="#contact" class="bg-[#941e28] hover:bg-transparent hover:border-[2px] border-[2px] border-[#941e28]  text-white px-8 py-3 rounded-full font-bold transition duration-300 ease-in-out">Discutons de votre projet</NuxtLink>

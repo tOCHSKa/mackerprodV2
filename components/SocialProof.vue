@@ -3,7 +3,7 @@
    <section id="avis" class="py-20 bg-gray-100">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-4">ILS M'ONT FAIT <span class="text-accent">CONFIANCE</span></h2>
-            <p class="text-center max-w-2xl mx-auto mb-12">Découvrez ce que mes clients disent de leur expérience avec MackerProd.</p>
+            <p class="text-center max-w-2xl mx-auto mb-12">Leurs mots, leurs expériences, leurs satisfactions.</p>
 
             <!-- Bannière de logos clients -->
             <div class="mb-16 rounded-lg overflow-hidden">

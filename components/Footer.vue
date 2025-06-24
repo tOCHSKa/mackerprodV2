@@ -6,7 +6,7 @@
         <div>
           <h3 class="text-xl font-semibold mb-4">À propos</h3>
           <p class="text-gray-400 text-sm">
-          Nous sommes une entreprises de montage vidéos 
+            MONTEUR VIDEASTE & TELEPILOTE DE DRONE CERTIFIE
           </p>
         </div>
 

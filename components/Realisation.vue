@@ -5,9 +5,7 @@
         MES <span class="text-[#941e28]">RÉALISATIONS</span>
       </h2>
       <p class="text-center max-w-2xl mx-auto mb-12 text-[#1a2026]">
-        Découvrez une sélection de mes projets vidéo les plus marquants. Chaque
-        réalisation est une histoire unique, capturée avec passion et professionnalisme.
-      </p>
+        Je filme pour capturer, je monte pour révéler.L’image devient un récit. Le récit devient un film. Le film devient votre signature.</p>
 
       <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         <div

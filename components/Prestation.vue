@@ -2,8 +2,7 @@
 <section id="services" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-4">MES <span class="text-[#941e28]">PRESTATIONS</span></h2>
-            <p class="text-center max-w-2xl mx-auto mb-12">Je propose une gamme complète de services vidéo pour répondre
-                à tous vos besoins, de la captation événementielle à la production cinématographique.</p>
+            <p class="text-center max-w-2xl mx-auto mb-12">Je propose une gamme complète de services vidéo : <strong>captation</strong>, <strong>montage</strong>, <strong>étalonnage</strong>, pour particuliers comme professionnels. Du reportage à la vidéo cinématographique, chaque projet est pensé pour marquer. </p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div v-for="prestation in prestations" :key="prestation.title" class="service-card bg-gray-50 rounded-lg p-8 hover:shadow-lg transition">
@@ -30,7 +29,7 @@
 const prestations = [
     {
         title: 'Immobilier',
-        description: 'Production de clips vidéo pour votre immobilier avec une esthétique unique et percutante.',
+        description: 'Des images nettes et lumineuses qui mettent en valeur chaque détail de vos biens, pour séduire vos futurs acquéreurs. Plan aérien, drone FPV, caméra stabilisée, une qualité professionnelle pour un rendu unique et impactant. ',
         icon: 'fas fa-home'
     },
     {
@@ -40,22 +39,22 @@ const prestations = [
     },
     {
         title: 'Corporate',
-        description: 'Création de contenus pour votre entreprise avec une esthétique unique et percutante.',
+        description: 'Des photos et vidéos professionnelles qui reflètent l’identité et les valeurs de votre entreprise avec authenticité. ',
         icon: 'fas fa-briefcase'
     },
     {
-        title: 'Formule DUO',
-        description: 'Une formule complète avec un photographe et un vidéaste, pour des souvenirs riches, vivants et parfaitement coordonnés',
+        title: 'Mariage DUO',
+        description: '1 photographe + 1 vidéaste ou 2 vidéastes - Deux regards complémentaires pour capturer l’émotion et la magie de votre jour unique, du matin jusqu’au soir.',
         icon: 'fas fa-video'
     },
     {
         title: 'Prestation drone',
-        description: 'Production de vidéos drone pour votre entreprise avec une esthétique unique et percutante.',
+        description: 'Des prises de vue aériennes pour sublimer vos projets sous un angle inédit et dynamique. Drone cinématique pour des plans époustouflants, drone FPV pour un rendu vif et spectaculaire.',
         icon: 'fas fa-plane'
     },
     {
         title: 'Contenu sur Mesure',
-        description: 'Solutions vidéo personnalisées adaptées à vos besoins spécifiques, du concept au produit final.',
+        description: 'Création personnalisée de visuels adaptés à vos besoins, pour raconter votre histoire avec impact et créativité.',
         icon: 'fas fa-lightbulb'
     }
 ]
