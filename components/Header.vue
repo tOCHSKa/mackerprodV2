@@ -1,6 +1,6 @@
 <template>
   <section class="relative min-h-screen flex items-center overflow-hidden">
-    
+
     <!-- VIDEO DE FOND -->
     <video
       ref="videoRef"
@@ -21,38 +21,60 @@
     </button>
 
     <!-- OVERLAY -->
-    <div class="absolute top-0 left-0 w-full h-full bg-black opacity-60 z-[-1]"></div>
+    <div class="absolute top-0 left-0 w-full h-full bg-black opacity-30 z-[-1]"></div>
 
-    <!-- CONTENU -->
-    <div class="container mx-auto px-6 text-center md:text-left relative z-10">
-      <div class="md:w-1/2">
-        <h1 class="text-4xl text-white md:text-6xl font-bold mb-6">
-          MACKER PROD VIDEO CREATION
-          <p class="texte-rouge">CAPTATION TERRESTRE ET AERIENNE</p>
-        </h1>
-        <p class="text-xl text-white mb-8 open">
-          Des images qui parlent, des vidéos qui marquent.<br>
-          Vidéaste & télépilote de drone certifié — Macker Prod sublime vos projets : mariage, immobilier, entreprise.
-        </p>
-        <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-          <NuxtLink to="#contact" class="bg-[#941e28] hover:bg-transparent hover:border-[2px] border-[2px] border-[#941e28]  text-white px-8 py-3 rounded-full font-bold transition duration-300 ease-in-out">Discutons de votre projet</NuxtLink>
-          <NuxtLink to="/realisation" class="border-2 text-white border-white bg-white-400 hover:bg-white hover:text-black px-8 py-3 rounded-full font-bold transition duration-300 ease-in-out">Voir mes réalisations</NuxtLink>
-        </div>
-        <div class="flex flex-row mt-8 px-2 gap-5 items-center">
-          <NuxtLink to="https://www.youtube.com/@MackerPROD" target="_blank" rel="noopener noreferrer" class="text-white fa-xl hover:scale-125 transition-transform duration-300 ease-in-out">
-            <i class="fab fa-youtube"></i>
-          </NuxtLink>
-          <NuxtLink to="https://www.linkedin.com/in/mickael-descheemacker-986463166/" target="_blank" rel="noopener noreferrer" class="text-white fa-xl hover:scale-125 transition-transform duration-300 ease-in-out">
-            <i class="fab fa-linkedin-in"></i>
-          </NuxtLink>
-          <NuxtLink to="https://www.facebook.com/Mackerprod" target="_blank" rel="noopener noreferrer" class="text-white fa-xl hover:scale-125 transition-transform duration-300 ease-in-out">
-            <i class="fab fa-facebook"></i>
-          </NuxtLink>
-        </div>
+    <!-- TITRE EN HAUT CENTRÉ -->
+    <div class="absolute top-28 left-1/2 transform -translate-x-1/2 text-center z-10">
+      <h1 class="text-5xl text-white md:text-6xl font-bold mb-6">
+        MACKER <span class="texte-rouge">PROD</span>
+      </h1>
+    </div>
+
+    <!-- CONTENU EN BAS CENTRÉ -->
+    <div class="absolute bottom-24 left-1/2 transform -translate-x-1/2 text-center z-10 px-6">
+
+      <!-- ✅ DESCRIPTION visible seulement sur desktop -->
+      <p class=" md:block text-xl text-white mb-8 open max-w-xl mx-auto">
+        Des images qui parlent, des vidéos qui marquent.<br>
+        Vidéaste & télépilote de drone certifié — Macker Prod sublime vos projets : mariage, immobilier, entreprise.
+      </p>
+
+      <!-- ✅ BOUTONS DESKTOP -->
+      <div class="hidden md:flex flex-row justify-center gap-4 mb-6">
+        <NuxtLink to="#contact" class="bg-[#941e28] hover:bg-transparent hover:border-[2px] border-[2px] border-[#941e28] text-white px-8 py-3 rounded-full font-bold transition duration-300 ease-in-out">
+          Discutons de votre projet
+        </NuxtLink>
+        <NuxtLink to="/realisation" class="border-2 text-white border-white bg-white-400 hover:bg-white hover:text-black px-8 py-3 rounded-full font-bold transition duration-300 ease-in-out">
+          Voir mes réalisations
+        </NuxtLink>
+      </div>
+
+      <!-- ✅ BOUTONS MOBILE -->
+      <div class="flex md:hidden flex-row justify-center gap-4 mb-6">
+        <NuxtLink to="#contact" class="bg-[#941e28] hover:bg-transparent hover:border-[2px] border-[2px] border-[#941e28] text-white px-6 py-3 rounded-full font-bold transition duration-300 ease-in-out">
+          Contactez-moi
+        </NuxtLink>
+        <NuxtLink to="/realisation" class="border-2 text-white border-white bg-white-400 hover:bg-white hover:text-black px-6 py-3 rounded-full font-bold transition duration-300 ease-in-out">
+          Mes réalisations
+        </NuxtLink>
+      </div>
+
+      <!-- RÉSEAUX SOCIAUX (seulement desktop/tablette) -->
+      <div class="hidden md:flex justify-center gap-5 items-center">
+        <NuxtLink to="https://www.youtube.com/@MackerPROD" target="_blank" rel="noopener noreferrer" class="text-white fa-xl hover:scale-125 transition-transform duration-300 ease-in-out">
+          <i class="fab fa-youtube"></i>
+        </NuxtLink>
+        <NuxtLink to="https://www.linkedin.com/in/mickael-descheemacker-986463166/" target="_blank" rel="noopener noreferrer" class="text-white fa-xl hover:scale-125 transition-transform duration-300 ease-in-out">
+          <i class="fab fa-linkedin-in"></i>
+        </NuxtLink>
+        <NuxtLink to="https://www.facebook.com/Mackerprod" target="_blank" rel="noopener noreferrer" class="text-white fa-xl hover:scale-125 transition-transform duration-300 ease-in-out">
+          <i class="fab fa-facebook"></i>
+        </NuxtLink>
       </div>
     </div>
   </section>
 </template>
+
 
 <script setup>
 import { ref, onMounted } from 'vue'
