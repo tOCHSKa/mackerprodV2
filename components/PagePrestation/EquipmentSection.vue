@@ -35,16 +35,15 @@
     {
       title: 'Caméras',
       description: [
-        'Samyang 35-150mm',
-        'Lumix 24mm F1.8',
-        'Lumix 50mm F1.8',
+        '2X panasonic Lumix S5II',
+        '1X Osmo 3',
       ],
       icon: 'fas fa-video',
     },
     {
       title: 'Post-production',
       description: [
-        'DaVinci Resolve',
+        'DaVinci Resolve - STUDIO',
       ],
       icon: 'fas fa-laptop',
     },
@@ -52,7 +51,8 @@
       title: 'Drone',
       description: [
         'Drone DJI Mini 3 Pro',
-        'Neo FPV'
+        'Neo FPV',
+        'Avata 2 FPV'
       ],
       icon: 'fas fa-plane',
     },
@@ -62,7 +62,7 @@
         'Système de captation sonore',
         'Stabilisateur DJI RS3',
         'Eclairage professionnel',
-        'Parc d`objectifs polyvalents',
+        'Parc d`objectifs polyvalents de 24 à 150mm',
       ],
       icon: 'fas fa-toolbox',
     },

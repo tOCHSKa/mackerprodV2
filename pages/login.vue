@@ -115,10 +115,6 @@
       if (success) {
         // Redirection vers le dashboard après connexion réussie
         // router.push('/')
-        console.log(adminStore.token)
-        console.log(adminStore.isAuthenticated)
-        console.log(adminStore.role)
-        console.log(adminStore.email)
         if(adminStore.token){
           if(adminStore.role === 'admin'){
             router.push('/admin')

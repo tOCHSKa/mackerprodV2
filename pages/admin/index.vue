@@ -161,18 +161,16 @@ const toggleDropdown = (index) => {
 }
 
 const editItem = (index) => {
-  console.log('Édition de l\'item', index)
   activeDropdown.value = null
 }
 
 const viewDetails = (index) => {
-  console.log('Voir détails de l\'item', index)
+  activeDropdown.value = null
   activeDropdown.value = null
 }
 
 const deleteItem = (index) => {
     const userId = users.value[index].id_utilisateur
-  console.log('Suppression de l\'utilisateur avec ID', userId);
   activeDropdown.value = null
 }
 

@@ -98,17 +98,17 @@ activeDropdown.value = activeDropdown.value === index ? null : index
 }
 
 const editItem = (index) => {
-console.log('Édition de l\'item', index)
+
 activeDropdown.value = null
 }
 
 const viewDetails = (index) => {
-console.log('Voir détails de l\'item', index)
+
 activeDropdown.value = null
 }
 
 const deleteItem = (index) => {
-console.log('Suppression de l\'item', index)
+
 activeDropdown.value = null
 }
 

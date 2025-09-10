@@ -20,11 +20,7 @@
            shadow hover:shadow-md transition duration-300 flex-shrink-0  flex flex-col justify-between"
         >
           <div class="flex items-center mb-4">
-            <img
-              :src="r.image"
-              alt="Client"
-              class="w-12 h-12 rounded-full mr-4 object-cover"
-            />
+
             <div>
               <h4 class="font-bold text-lg">{{ r.nom }}</h4>
               <div class="text-yellow-400 text-sm">
@@ -41,10 +37,6 @@
             </div>
           </div>
           <p class="text-gray-600 text-sm mb-4 text-justify">{{ r.texte }}</p>
-          <div class="text-xs text-gray-500 flex items-center">
-            <i class="fab fa-google mr-2"></i>
-            {{ r.source }} - {{ r.date }}
-          </div>
         </div>
       </div>
   
@@ -64,27 +56,23 @@
   const container = ref(null)
   const scrollAmount = 340
   onMounted(() => {
-  // Vérifie si le ref est bien attaché
-  console.log('container ready?', container.value)
 })
 
   const scrollLeft = () => {
   if (container.value) {
     container.value.scrollBy({ left: -340, behavior: 'smooth' })
-    console.log('scrolling left')
   }
 }
 
 const scrollRight = () => {
   if (container.value) {
     container.value.scrollBy({ left: 340, behavior: 'smooth' })
-    console.log('scrolling right')
   }
 }
   
   const reviews = [
     {
-      nom: "Jean-Baptiste Poulai",
+      nom: "Jean-Baptiste Poulain",
       image:
         "https://scontent-cdg4-1.xx.fbcdn.net/v/t39.30808-1/486094925_3849494558601164_7042117494380945027_n.jpg?stp=cp0_dst-jpg_s40x40_tt6&_nc_cat=108&ccb=1-7&_nc_sid=e99d92&_nc_ohc=N4fAERgWa1kQ7kNvwH0Gn2C&_nc_oc=Adl0y_ORkZpPhJYpOb0Up9aErXq_0QHTDUil0yaWRp2mFlAqRObU6dC2bXV56NjIkXg&_nc_zt=24&_nc_ht=scontent-cdg4-1.xx&_nc_gid=OvMrvaq9C51axSz8SCK9xg&oh=00_AfNYkPUUe6YyaKBqjqXcQ8W4AH40VXg3cPEBLBPd-Omvdw&oe=6855CA1C",
       texte:

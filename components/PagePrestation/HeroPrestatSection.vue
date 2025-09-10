@@ -3,7 +3,7 @@
       <section class="hero-bg text-white py-32">
         <div class="container mx-auto px-6 text-center">
             <h1 class="text-4xl md:text-6xl font-bold mb-6">MES <span class="text-[#941e28]">PRESTATIONS</span></h1>
-            <p class="text-xl max-w-2xl mx-auto">Je propose une gamme complète de services vidéo pour répondre à tous vos besoins, de la captation événementielle à la production cinématographique.</p>
+            <p class="text-xl max-w-2xl mx-auto">Je propose une gamme complète de services vidéo pour répondre à tout vos besoins, de la captation événementielle à la production cinématographique.</p>
         </div>
     </section>
 </template>

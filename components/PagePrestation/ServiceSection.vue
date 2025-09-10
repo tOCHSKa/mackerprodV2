@@ -18,6 +18,10 @@
                 </div>
             </div>
         </div>
+        <div class="container mx-auto mt-20 p-6">
+          <h4 class="text-center text-2xl font-bold mb-3">* Formule duo <span class="text-[#941e28]">possible</span></h4>
+          <p class="text-center text-[#1a2026] max-w-2xl mx-auto mb-12">Une formule complète avec une photographe et un vidéaste, pour des souvenirs riches, vivants et parfaitement coordonnés.</p>
+        </div>
     </section>
 </template>
 
@@ -29,20 +33,22 @@ const prestations = [
     icon: 'fas fa-home',
     list: [
       'Mise en valeur visuelle du bien',
-      'Prises de vues aériennes (drone)',
+      'Prises de vues aériennes (drone) + FPV',
       'Montage rythmé et attractif',
       'Habillage graphique sobre'
     ]
   },
   {
-    title: 'Formule DUO',
-    description: 'Une formule complète avec un photographe et un vidéaste, pour des souvenirs riches, vivants et parfaitement coordonnés.',
+    title: 'Mariage',
+    description: 'Des préparatifs au gateau, je capte le plus beau jour de votre vie.',
     icon: 'fas fa-heart',
     list: [
       'Captation discrète et naturelle',
       'Émotion au cœur du montage',
       'Séquences drone & slow motion',
-      'Livraison sur clé USB personnalisée'
+      'Livraison sur clé USB personnalisée',
+      'Drone',
+      'Formule duo possible *'
     ]
   },
   {
@@ -53,7 +59,8 @@ const prestations = [
       'Pitch entreprise dynamique',
       'Interviews dirigées & scriptées',
       'Motion design & sous-titrage',
-      'Livraison multi-format web'
+      'Eclairage professionnel',
+      'Captation sonore'
     ]
   },
   {
@@ -61,10 +68,12 @@ const prestations = [
     description: 'Réalisation de formats longs racontant vos histoires avec authenticité et profondeur.',
     icon: 'fas fa-video',
     list: [
-      'Écriture & narration soignée',
-      'Interviews immersives',
-      'Tournage multi-caméras',
-      'Montage narratif fluide'
+      'Mariage',
+      'Anniversaire',
+      'Soirée d\'entreprise',
+      'Autres demandes, contactez-moi',
+      'Formule duo possible *'
+
     ]
   },
   {
@@ -72,7 +81,7 @@ const prestations = [
     description: 'Vue aérienne spectaculaire pour enrichir vos contenus visuels professionnels.',
     icon: 'fas fa-plane',
     list: [
-      'Prises de vues 4K stabilisées',
+      'Prises de vues 4K stabilisées + FPV',
       'Plans cinématiques personnalisés',
       'Drone homologué & assuré',
       'Pilote certifié DGAC'

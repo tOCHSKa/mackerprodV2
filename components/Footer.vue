@@ -15,7 +15,7 @@
           <h3 class="text-xl font-semibold mb-4">Liens utiles</h3>
           <ul class="space-y-2 text-sm text-gray-300">
             <li><NuxtLink to="/" class="hover:text-white">Accueil</NuxtLink></li>
-            <li><NuxtLink to="/" class="hover:text-white">Stu'Dee Photographie</NuxtLink></li>
+            <li><NuxtLink to="https://www.studee-photographie.fr" target="_blank" rel="noopener noreferrer" class="hover:text-white">Stu'Dee Photographie</NuxtLink></li>
             <li><NuxtLink to="/prestation" class="hover:text-white">Prestations</NuxtLink></li>
             <li>
               <NuxtLink to="/admin" class="hover:text-white">Espace Admin</NuxtLink>
@@ -26,7 +26,7 @@
             <li v-else>
                 <NuxtLink to="/loginuser" class="hover:text-white">Se connecter</NuxtLink>
             </li>
-            <li><NuxtLink to="/#contact" class="hover:text-white">Contact</NuxtLink></li>
+            <li><a href="/#contact" class="hover:text-white">Contact</a></li>
           </ul>
         </div>
 
@@ -36,20 +36,20 @@
           <p class="text-gray-400 text-sm">Email : contact@mackerprod.com</p>
           <p class="text-gray-400 text-sm">Téléphone : +33 07 49 43 73 69</p>
           <div class="flex space-x-4 mt-4">
-            <NuxtLink
-              to="#"
+            <NuxtLink target="_blank" rel="noopener noreferrer"
+              to="https://www.youtube.com/@MackerPROD"
               class="text-white fa-xl hover:scale-125 transition-transform duration-300"
             >
               <i class="fab fa-youtube"></i>
             </NuxtLink>
-            <NuxtLink
-              to="#"
+            <NuxtLink target="_blank" rel="noopener noreferrer"
+              to="https://www.linkedin.com/in/mickael-descheemacker-986463166/"
               class="text-white fa-xl hover:scale-125 transition-transform duration-300"
             >
               <i class="fab fa-linkedin-in"></i>
             </NuxtLink>
-            <NuxtLink
-              to="#"
+            <NuxtLink target="_blank" rel="noopener noreferrer"
+              to="https://www.facebook.com/Mackerprod"
               class="text-white fa-xl hover:scale-125 transition-transform duration-300"
             >
               <i class="fab fa-facebook"></i>
@@ -72,7 +72,6 @@ import { useAdminStore } from '~/store/adminStore'
 
 const adminStore = useAdminStore()
 adminStore.initializeStore()
-console.log("role",adminStore.role)
 </script>
 
 <style scoped></style>

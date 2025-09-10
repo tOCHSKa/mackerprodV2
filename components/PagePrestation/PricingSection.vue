@@ -5,68 +5,106 @@
             <h2 class="text-3xl font-bold text-[#1a2026] text-center mb-4">TARIFS <span class="text-[#941e28]">INDICATIFS</span></h2>
             <p class="text-center max-w-2xl mx-auto mb-12">Des forfaits adaptés à chaque type de projet. Contactez-moi pour un devis personnalisé.</p>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
                 <!-- Forfait Basic -->
                 <div class="pricing-card bg-white rounded-lg shadow-lg overflow-hidden">
                     <div class="bg-[#1a2026] p-6">
-                        <h3 class="text-xl font-bold text-center text-white">BASIC</h3>
+                        <h3 class="text-xl font-bold text-center text-white">CAPTATION</h3>
+                        <h4 class="text-lg font-bold text-center text-white">BASIC</h4>
                         <p class="text-white text-center text-sm">Pour les petits projets simples</p>
+                        <p class="text-white text-center text-md">Demi-journée (4h)</p>
                     </div>
                     <div class="p-6">
-                        <div class="text-4xl font-bold text-center mb-4">500€ <span class="text-sm font-normal text-gray-500">/jour</span></div>
+                        <div class="text-4xl font-bold text-center mb-4">300€ <span class="text-sm font-normal text-gray-500">/jour</span></div>
                         <ul class="space-y-3 mb-6">
-                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> 1 journée de tournage</li>
-                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> Montage simple</li>
+                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> 4 heures de tournage</li>
                             <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> 1 version finale</li>
-                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-times text-gray-300 mr-2"></i> Pas de motion design</li>
-                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-times text-gray-300 mr-2"></i> Pas d'étalonnage avancé</li>
+                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-300 mr-2"></i> 1 retouche incluse</li>
+                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-300 mr-2"></i> Option Drone +150€</li>
+                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> Captation son & éclairage</li>
                         </ul>
-                        <NuxtLink to="#contact" class="block text-center border-2 border-accent text-accent hover:bg-accent hover:text-white px-6 py-3 rounded-full font-medium transition">Demander un devis</NuxtLink>
+                        <a href="/#contact" class="block text-center bg-accent hover:bg-red-800 text-white px-6 py-3 rounded-full font-medium transition">
+                          Demander un devis
+                        </a>
                     </div>
                 </div>
 
                 <!-- Forfait Pro (Populaire) -->
                 <div class="pricing-card pricing-popular bg-white rounded-lg shadow-lg overflow-hidden">
                     <div class="bg-accent p-6">
-                        <h3 class="text-xl font-bold text-center text-white">PRO</h3>
+                        <h3 class="text-xl font-bold text-center text-white">CAPTATION</h3>
+                        <h4 class="text-lg font-bold text-center text-white">PRO</h4>
                         <p class="text-white text-center text-sm">Solution la plus choisie</p>
+                        <p class="text-white text-center text-md">Journée (8h)</p>
                     </div>
                     <div class="p-6">
-                        <div class="text-4xl font-bold text-center mb-4">900€ <span class="text-sm font-normal text-gray-500">/jour</span></div>
+                        <div class="text-4xl font-bold text-center mb-4">500€ <span class="text-sm font-normal text-gray-500">/jour</span></div>
                         <ul class="space-y-3 mb-6">
-                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> 1-2 jours de tournage</li>
-                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> Montage professionnel</li>
-                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> 2 versions finales</li>
-                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> Motion design simple</li>
-                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> Étalonnage de base</li>
+                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> 8 heures de tournage</li>
+                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> 1 version finale</li>
+                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> 2 retouches incluses</li>
+                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> Option Drone +100€</li>
+                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> Captation son & éclairage</li>
                         </ul>
-                        <NuxtLink to="#contact" class="block text-center bg-accent hover:bg-red-800 text-white px-6 py-3 rounded-full font-medium transition">Demander un devis</NuxtLink>
+                        <a href="/#contact" class="block text-center bg-accent hover:bg-red-800 text-white px-6 py-3 rounded-full font-medium transition">
+                          Demander un devis
+                        </a>
                     </div>
                 </div>
 
-                <!-- Forfait Premium -->
+                <!-- Post Production Basic -->
                 <div class="pricing-card bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="bg-[#1a2026] p-6">
-                        <h3 class="text-xl font-bold text-center text-white">PREMIUM</h3>
-                        <p class="text-white text-center text-sm">Pour les projets exigeants</p>
+                    <div class="bg-[#1a2026] p-12">
+                        <h3 class="text-xl font-bold text-center text-white">POST PRODUCTION</h3>
+                        <h4 class="text-lg font-bold text-center text-white">BASIC</h4>
                     </div>
                     <div class="p-6">
-                        <div class="text-4xl font-bold text-center mb-4 text-[#1a2026]">1 500€ <span class="text-sm font-normal text-gray-500">/jour</span></div>
+                        <div class="text-4xl font-bold text-center mb-4 text-[#1a2026]">25€ <span class="text-sm font-normal text-gray-500">/Heure</span></div>
                         <ul class="space-y-3 mb-6">
-                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> Tournage sur mesure</li>
-                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> Montage avancé</li>
-                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> Nombreuses versions</li>
-                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> Motion design complet</li>
-                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> Étalonnage professionnel</li>
+                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> Montage standard</li>
+                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> Pas d'effets</li>
+                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> Étalonnage standard</li>
+                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> Sound design</li>
+                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> Musique sous license</li>
                         </ul>
-                        <NuxtLink to="/#contact" class="block text-center border-2 border-accent text-accent hover:bg-accent hover:text-white px-6 py-3 rounded-full font-medium transition">Demander un devis</NuxtLink>
+                        <a href="/#contact" class="block text-center bg-accent hover:bg-red-800 text-white px-6 py-3 rounded-full font-medium transition">
+                          Demander un devis
+                        </a>
                     </div>
                 </div>
-            </div>
 
+                <!-- Post Production Pro -->
+                <div class="pricing-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="bg-accent p-12">
+                        <h3 class="text-xl font-bold text-center text-white">POST PRODUCTION</h3>
+                        <h4 class="text-lg font-bold text-center text-white">PRO</h4>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-4xl font-bold text-center mb-4">50€ <span class="text-sm font-normal text-gray-500">/Heure</span></div>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> Montage avancé</li>
+                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> Motion design (2 effets max)</li>
+                            <ul class="flex items-center text-[#1a2026]">
+                                <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i>Etalonnage avancé</li>
+                            </ul>
+                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> Sound design</li>
+                            <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> Musique sous license</li>
+                        </ul>
+                        <a href="/#contact" class="block text-center bg-accent hover:bg-red-800 text-white px-6 py-3 rounded-full font-medium transition">
+                          Demander un devis
+                        </a>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="text-center mt-12">
+                    <p class="text-orange-400 font-bold mb-4">1 heure de captation = 3 heures de post-production</p>
+                </div>
             <div class="text-center mt-12">
                 <p class="text-gray-600 mb-4">Vous avez un projet spécifique ? Parlons-en !</p>
-                <NuxtLink to="/#contact" class="inline-block bg-accent hover:bg-red-800 text-white px-6 py-3 rounded-full font-medium transition">Contactez-moi</NuxtLink>
+                <a href="/#contact" class="inline-block bg-accent hover:bg-red-800 text-white px-6 py-3 rounded-full font-medium transition">
+                  Contactez-moi
+                </a>
             </div>
         </div>
     </section>

@@ -12,13 +12,6 @@
                 </button>
             </div>
         </div>
-
-        <div class="tab-container">
-            <div class="tab active">Toutes les photos</div>
-            <div class="tab">Albums</div>
-            <div class="tab">Favoris</div>
-        </div>
-
         <div class="search-bar">
             <input type="text" class="search-input" placeholder="Rechercher des photos...">
             <button class="search-btn">
@@ -51,57 +44,51 @@
             <h2 class="text-xl font-semibold mb-4">Mes Albums</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
                 <!-- Album 1 -->
-                <div class="album-card">
+                <div v-for="(album, index) in albums" :key="index">
+                    <div class="album-card p-4">
                     <img src="https://source.unsplash.com/random/300x200/?nature" alt="Nature" class="album-cover">
                     <div class="album-info">
-                        <h3 class="album-title">Nature</h3>
-                        <p class="album-photo-count">24 photos</p>
+                        <h3 class="album-title">{{ album.titre }}</h3>
+                        <p class="album-photo-count">Créé le {{ new Date(album.created_at).toLocaleDateString('fr-FR') }} </p>
+
                     </div>
                 </div>
-                
-                <!-- Album 2 -->
-                <div class="album-card">
-                    <img src="https://source.unsplash.com/random/300x200/?vacation" alt="Vacances" class="album-cover">
-                    <div class="album-info">
-                        <h3 class="album-title">Vacances 2023</h3>
-                        <p class="album-photo-count">56 photos</p>
-                    </div>
-                </div>
-                
-                <!-- Album 3 -->
-                <div class="album-card">
-                    <img src="https://source.unsplash.com/random/300x200/?family" alt="Famille" class="album-cover">
-                    <div class="album-info">
-                        <h3 class="album-title">Famille</h3>
-                        <p class="album-photo-count">112 photos</p>
-                    </div>
-                </div>
-                
-                <!-- Album 4 -->
-                <div class="album-card">
-                    <img src="https://source.unsplash.com/random/300x200/?travel" alt="Voyages" class="album-cover">
-                    <div class="album-info">
-                        <h3 class="album-title">Voyages</h3>
-                        <p class="album-photo-count">78 photos</p>
-                    </div>
-                </div>
-                
-                <!-- Album 5 -->
-                <div class="album-card">
-                    <img src="https://source.unsplash.com/random/300x200/?event" alt="Événements" class="album-cover">
-                    <div class="album-info">
-                        <h3 class="album-title">Événements</h3>
-                        <p class="album-photo-count">42 photos</p>
-                    </div>
                 </div>
                 
                 <!-- Bouton pour créer un nouvel album -->
-                <div class="album-card flex items-center justify-center border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
-                    <div class="text-center p-4">
-                        <i class="fas fa-plus-circle text-4xl text-gray-400 mb-2"></i>
-                        <h3 class="text-gray-600 font-medium">Créer un album</h3>
+                <!-- Bouton "Créer un album" -->
+                <div 
+                class="album-card flex items-center justify-center border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50"
+                @click="showModal = true"
+                >
+                <div class="text-center p-4">
+                    <i class="fas fa-plus-circle text-4xl text-gray-400 mb-2"></i>
+                    <h3 class="text-gray-600 font-medium">Créer un album</h3>
+                </div>
+                </div>
+
+                <!-- Modal Création Album -->
+                <div v-if="showModal" class="fixed inset-0  flex items-center justify-center z-50">
+                <div class="bg-white rounded-lg shadow-lg w-full max-w-md p-6">
+                    <h2 class="text-xl font-semibold mb-4">Créer un nouvel album</h2>
+
+                    <!-- Champ titre -->
+                    <label class="block text-gray-700">Titre</label>
+                    <input v-model="newAlbum.titre" type="text" class="w-full p-2 border rounded mb-4" placeholder="Titre de l'album">
+
+                    <!-- Champ description -->
+                    <label class="block text-gray-700">Description</label>
+                    <textarea v-model="newAlbum.description" class="w-full p-2 border rounded mb-4" placeholder="Description de l'album"></textarea>
+
+                    <!-- Boutons -->
+                    <div class="flex justify-end space-x-2">
+                    <button @click="showModal = false" class="cursor-pointer px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">Annuler</button>
+                    <button @click="createAlbum" class="cursor-pointer px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Créer</button>
                     </div>
                 </div>
+                </div>
+
+
             </div>
         </div>
 
@@ -110,141 +97,8 @@
             <h2 class="text-xl font-semibold mb-4">Toutes les photos</h2>
             
             <div class="photo-grid">
-                <!-- Photo 1 -->
-                <div class="photo-card">
-                    <img src="https://source.unsplash.com/random/600x400/?mountain" alt="Montagne" class="photo-image">
-                    <div class="photo-overlay">
-                        <h4 class="photo-title">Montagnes enneigées</h4>
-                        <p class="photo-date">15 Janvier 2023</p>
-                    </div>
-                    <div class="photo-actions">
-                        <div class="action-btn" title="Favori">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <div class="action-btn" title="Partager">
-                            <i class="fas fa-share-alt"></i>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Photo 2 -->
-                <div class="photo-card">
-                    <img src="https://source.unsplash.com/random/600x400/?beach" alt="Plage" class="photo-image">
-                    <div class="photo-overlay">
-                        <h4 class="photo-title">Coucher de soleil</h4>
-                        <p class="photo-date">22 Juillet 2023</p>
-                    </div>
-                    <div class="photo-actions">
-                        <div class="action-btn" title="Favori">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <div class="action-btn" title="Partager">
-                            <i class="fas fa-share-alt"></i>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Photo 3 -->
-                <div class="photo-card">
-                    <img src="https://source.unsplash.com/random/600x400/?city" alt="Ville" class="photo-image">
-                    <div class="photo-overlay">
-                        <h4 class="photo-title">Ville la nuit</h4>
-                        <p class="photo-date">5 Mars 2023</p>
-                    </div>
-                    <div class="photo-actions">
-                        <div class="action-btn" title="Favori">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <div class="action-btn" title="Partager">
-                            <i class="fas fa-share-alt"></i>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Photo 4 -->
-                <div class="photo-card">
-                    <img src="https://source.unsplash.com/random/600x400/?portrait" alt="Portrait" class="photo-image">
-                    <div class="photo-overlay">
-                        <h4 class="photo-title">Portrait en studio</h4>
-                        <p class="photo-date">12 Novembre 2023</p>
-                    </div>
-                    <div class="photo-actions">
-                        <div class="action-btn" title="Favori">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <div class="action-btn" title="Partager">
-                            <i class="fas fa-share-alt"></i>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Photo 5 -->
-                <div class="photo-card">
-                    <img src="https://source.unsplash.com/random/600x400/?animal" alt="Animal" class="photo-image">
-                    <div class="photo-overlay">
-                        <h4 class="photo-title">Renard dans la neige</h4>
-                        <p class="photo-date">8 Février 2023</p>
-                    </div>
-                    <div class="photo-actions">
-                        <div class="action-btn" title="Favori">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <div class="action-btn" title="Partager">
-                            <i class="fas fa-share-alt"></i>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Photo 6 -->
-                <div class="photo-card">
-                    <img src="https://source.unsplash.com/random/600x400/?food" alt="Nourriture" class="photo-image">
-                    <div class="photo-overlay">
-                        <h4 class="photo-title">Dîner gastronomique</h4>
-                        <p class="photo-date">30 Mai 2023</p>
-                    </div>
-                    <div class="photo-actions">
-                        <div class="action-btn" title="Favori">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <div class="action-btn" title="Partager">
-                            <i class="fas fa-share-alt"></i>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Photo 7 -->
-                <div class="photo-card">
-                    <img src="https://source.unsplash.com/random/600x400/?architecture" alt="Architecture" class="photo-image">
-                    <div class="photo-overlay">
-                        <h4 class="photo-title">Bâtiment moderne</h4>
-                        <p class="photo-date">17 Avril 2023</p>
-                    </div>
-                    <div class="photo-actions">
-                        <div class="action-btn" title="Favori">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <div class="action-btn" title="Partager">
-                            <i class="fas fa-share-alt"></i>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Photo 8 -->
-                <div class="photo-card">
-                    <img src="https://source.unsplash.com/random/600x400/?wedding" alt="Mariage" class="photo-image">
-                    <div class="photo-overlay">
-                        <h4 class="photo-title">Mariage de Sophie</h4>
-                        <p class="photo-date">3 Juin 2023</p>
-                    </div>
-                    <div class="photo-actions">
-                        <div class="action-btn" title="Favori">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <div class="action-btn" title="Partager">
-                            <i class="fas fa-share-alt"></i>
-                        </div>
-                    </div>
-                </div>
+
+
             </div>
         </div>
 
@@ -328,6 +182,59 @@
 definePageMeta({
   layout: 'admin'
 })
+
+import { useAdminStore } from '~/store/adminStore'
+const albums = ref([])
+const error = ref(null)
+const adminStore = useAdminStore()
+adminStore.initializeStore()
+
+const { data: albumData, error: albumError } = await useAsyncData('albumData', () =>
+$fetch('/api/album/getAll', {
+    headers: {
+    Authorization: `Bearer ${adminStore.token}`
+    }
+})
+)
+albums.value = albumData.value || []
+error.value = albumError.value || null
+
+const showModal = ref(false)
+const newAlbum = reactive({
+  titre: '',
+  description: ''
+})
+
+const createAlbum = async () => {
+  try {
+    if (!newAlbum.titre.trim()) {
+      alert("Le titre est obligatoire")
+      return
+    }
+
+    const response = await $fetch('/api/album/add', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${adminStore.token}`,
+        'Content-Type': 'application/json'
+      },
+      body: { titre: newAlbum.titre, description: newAlbum.description }
+    })
+
+    albums.value.push(response)
+
+    // Reset + fermer modal
+    newAlbum.titre = ''
+    newAlbum.description = ''
+    showModal.value = false
+
+    alert("Album créé ✅")
+  } catch (error) {
+    console.error('Erreur création album:', error)
+    alert("Erreur lors de la création ❌")
+  }
+}
+
 </script>
 
 <style scoped>

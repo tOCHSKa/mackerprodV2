@@ -30,11 +30,11 @@
                         <select v-model="video.theme" id="category" class="form-control" required>
                             <option value="">Sélectionnez un thème</option>
                             <option value="event">Événement</option>
-                            <option value="mariage">Mariage</option>
+                            <option value="duo">Duo</option>
                             <option value="immobilier">Immobilier</option>
                             <option value="corporate">Corporate</option>
-                            <option value="interview">Interview</option>
-                            <option value="publicité">Publicité</option>
+                            <option value="drone">Drone</option>
+                            <option value="montage">Montage</option>
                         </select>
                     </div>
                 </div>
@@ -93,7 +93,7 @@ const formatedVideo = computed(() => {
 })
 
 const submitForm = async () => {
-    const response = await $fetch('http://localhost:3001/api/video/add', {
+    const response = await $fetch('/api/video/add', {
         method: 'POST',
         body: formatedVideo.value,
         headers: {

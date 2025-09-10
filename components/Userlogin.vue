@@ -117,7 +117,6 @@
   })
 
   const onSubmit = async () => {
-    console.log('coucou')
     // Reset error messages
     errors.value = { email: '', password: '' }
 

@@ -17,7 +17,7 @@
           <NuxtLink to="/realisation" class="group relative text-gray-700 hover:text-[#941e28] border-b-2 border-transparent  transition-all duration-300 open">Réalisations
             <span class="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#941e28] transition-all duration-300 group-hover:w-full"></span>
           </NuxtLink>
-          <NuxtLink to="/prestation" class="group relative text-gray-700 hover:text-[#941e28] border-b-2 border-transparent  transition-all duration-300 open">Préstations
+          <NuxtLink to="/prestation" class="group relative text-gray-700 hover:text-[#941e28] border-b-2 border-transparent  transition-all duration-300 open">Prestations
             <span class="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#941e28] transition-all duration-300 group-hover:w-full"></span>
           </NuxtLink>
           <NuxtLink to="/#contact" class="group relative text-gray-700 hover:text-[#941e28] border-b-2 border-transparent  transition-all duration-300 open">Contact
@@ -81,7 +81,7 @@
 >
   <nav class="flex flex-col space-y-4">
     <NuxtLink to="/realisation" @click="handleClick" class="text-gray-700">Réalisations</NuxtLink>
-    <NuxtLink to="/prestation" @click="handleClick" class="text-gray-700">Préstations</NuxtLink>
+    <NuxtLink to="/prestation" @click="handleClick" class="text-gray-700">Prestations</NuxtLink>
     <NuxtLink to="/#contact" @click="handleClick" class="text-gray-700">Contact</NuxtLink>
     <div v-if="adminStore.role === 'user'">
     <NuxtLink to="/profil" @click="handleClick" class="text-gray-700">Profil</NuxtLink>

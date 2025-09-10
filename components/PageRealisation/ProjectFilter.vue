@@ -17,13 +17,15 @@
                             <div class="p-6">
                                 <div class="flex justify-between items-start mb-2">
                                     <h3 class="text-xl font-bold">{{  video.titre }}</h3>
-                                    <span class="bg-accent text-white text-xs px-2 py-1 rounded capitalize">{{  video.theme }}</span>
+                                    
                                 </div>
-                                <p class="text-gray-600 mb-4">{{  video.description }}</p>
+                                <div class="min-h-[100px]">
+                                    <p class="text-gray-600 mb-4">{{  video.description }}</p>
+                                </div>
                                 <div class="flex justify-between items-center">
                                     <span class="text-sm text-accent font-medium">{{ video.created_at.slice(0, 10) }}</span>
                                     <button class="cursor-pointer text-accent hover:underline view-details" data-project="1">
-                                        <NuxtLink :to="`https://www.youtube.com/watch?v=${video.miniature}`">Voir les détails</NuxtLink>
+                                        <NuxtLink :to="`https://www.youtube.com/watch?v=${video.miniature}`" target="_blank">Voir les détails</NuxtLink>
                                     </button>
                                 </div>
                             </div>
@@ -84,20 +86,12 @@ const buttons = [
         value: 'corporate'
     },
     {
-        title: 'Mariages',
-        value: 'mariage'
-    },
-    {
-        title: 'Publicités',
-        value: 'publicité'
+        title: 'Duo',
+        value: 'duo'
     },
     {
         title: 'Événements',
-        value: 'event'
-    },
-    {
-        title: 'Interviews',
-        value: 'interview'
+        value: 'evenement'
     },
     {
         title: 'Immobilier',

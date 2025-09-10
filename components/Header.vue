@@ -34,7 +34,7 @@
     <div class="absolute bottom-24 left-1/2 transform -translate-x-1/2 text-center z-10 px-6">
 
       <!-- ✅ DESCRIPTION visible seulement sur desktop -->
-      <p class=" md:block text-xl text-white mb-8 open max-w-xl mx-auto">
+      <p class=" md:block text-sm text-white mb-8 open max-w-xl mx-auto">
         Des images qui parlent, des vidéos qui marquent.<br>
         Vidéaste & télépilote de drone certifié — Macker Prod sublime vos projets : mariage, immobilier, entreprise.
       </p>
@@ -50,12 +50,12 @@
       </div>
 
       <!-- ✅ BOUTONS MOBILE -->
-      <div class="flex md:hidden flex-row justify-center gap-4 mb-6">
+      <div class="flex md:hidden flex-row justify-center items-center gap-4 mb-6">
         <NuxtLink to="#contact" class="bg-[#941e28] hover:bg-transparent hover:border-[2px] border-[2px] border-[#941e28] text-white px-6 py-3 rounded-full font-bold transition duration-300 ease-in-out">
-          Contactez-moi
+          Contact
         </NuxtLink>
         <NuxtLink to="/realisation" class="border-2 text-white border-white bg-white-400 hover:bg-white hover:text-black px-6 py-3 rounded-full font-bold transition duration-300 ease-in-out">
-          Mes réalisations
+         Réalisations
         </NuxtLink>
       </div>
 
