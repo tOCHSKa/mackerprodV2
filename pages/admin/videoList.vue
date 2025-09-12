@@ -45,7 +45,7 @@
                 </div>
             </div>
 
-            <div class="overflow-x-auto">
+            <div class="overflow-x-auto min-h-[50vh]">
                 <table class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50">
                         <tr>
@@ -83,14 +83,22 @@
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                 <div class="dropdown">
-                                    <button class="text-gray-400 hover:text-gray-600">
+                                    <button @click="toggleDropdown(index)" class="text-gray-400 hover:text-gray-600 cursor-pointer">
                                         <i class="fas fa-ellipsis-v"></i>
                                     </button>
-                                    <div class="dropdown-content">
-                                        <a href="#" class="dropdown-item"><i class="fas fa-eye mr-2"></i>Voir</a>
-                                        <a href="#" class="dropdown-item"><i class="fas fa-edit mr-2"></i>Modifier</a>
-                                        <a href="#" class="dropdown-item"><i class="fas fa-chart-bar mr-2"></i>Statistiques</a>
-                                        <a href="#" class="dropdown-item text-red-500"><i class="fas fa-trash mr-2"></i>Supprimer</a>
+                                    <div
+                                        v-if="openIndex === index"
+                                        class="absolute right-2 top-0 w-48 bg-white border border-gray-200 rounded-md shadow-md z-50"
+                                    >
+                                        <a href="#" class="dropdown-item block px-4 py-2 hover:bg-gray-100">
+                                        <i class="fas fa-eye mr-2"></i>Voir
+                                        </a>
+                                        <a href="#" class="dropdown-item block px-4 py-2 hover:bg-gray-100">
+                                        <i class="fas fa-edit mr-2"></i>Modifier
+                                        </a>
+                                        <a href="#" @click="deleteVideo(video.id_video)" class="dropdown-item block px-4 py-2 text-red-500 hover:bg-gray-100">
+                                        <i class="fas fa-trash mr-2"></i>Supprimer
+                                        </a>
                                     </div>
                                 </div>
                             </td>
@@ -141,6 +149,29 @@ $fetch('/api/video/getAll', {
 })
 )
 
+const API_URL = "http://localhost:3001/api/video"
+const deleteVideo = async (id) => {
+  try {
+    const { error } = await useFetch(`${API_URL}/${id}`, {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${adminStore.token}`,
+        'Content-Type': 'application/json'
+      }
+    })
+
+    if (!error.value) {
+      videos.value = videos.value.filter(v => v.id_video !== id)
+      openIndex.value = null   // ferme le menu
+    } else {
+      console.error('Erreur suppression:', error.value)
+    }
+  } catch (err) {
+    console.error('Exception suppression:', err)
+  }
+}
+
+
 const activeDropdown = ref(null)
 const currentPage = ref(1)
 const itemsPerPage = 5
@@ -156,13 +187,28 @@ const items = computed(() => {
 
 videos.value = videosData.value || []
 error.value = videosError.value || null
+const openIndex = ref(null)
 
+function toggleDropdown(index) {
+  // ferme si on reclique sur le même
+  openIndex.value = openIndex.value === index ? null : index
+}
+
+// Fermer si on clique en dehors
+onMounted(() => {
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.dropdown')) {
+      openIndex.value = null
+    }
+  })
+})
 </script>
 
 <style scoped>
  .main-content {
             padding: var(--spacing-lg);
             background-color: var(--bg-color);
+
         }
 
         .page-header {

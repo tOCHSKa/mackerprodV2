@@ -8,7 +8,7 @@ export default defineEventHandler(async () => {
       console.error('Erreur côté API Nuxt:', error)
       throw createError({
         statusCode: 500,
-        statusMessage: 'Erreur lors de la communication avec le backend'
+        statusMessage: 'Erreur lors de la communication avec le serveur'
       })
     }
   })
