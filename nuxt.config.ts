@@ -25,14 +25,17 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
-  nitro: {
-    routeRules: {
-      '/api/': { 
-        proxy: { 
-          to: 'http://localhost:3001/api/' // make sure this is an ENV driven variable if production does not match
-        }
-      }
-    }
+  // nitro: {
+  //   routeRules: {
+  //     '/api/': { 
+  //       proxy: { 
+  //         to: 'http://localhost:3001/api/'
+  //       }
+  //     }
+  //   }
+  // },
+  runtimeConfig: {
+    apiBase: process.env.API_BASE || 'http://localhost:3001/api',
   },
 components: [
   { path: '~/components', pathPrefix: true },

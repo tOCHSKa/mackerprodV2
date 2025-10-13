@@ -2,7 +2,7 @@
    <!-- Pricing Section -->
    <section class="py-20 bg-gray-100">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-[#1a2026] text-center mb-4">TARIFS <span class="text-[#941e28]">INDICATIFS</span></h2>
+            <h2 class="text-3xl font-bold text-[#1a2026] text-center mb-4">TARIFS <span class="text-[#941e28]">SUR MESURE</span></h2>
             <p class="text-center max-w-2xl mx-auto mb-12">Des forfaits adaptés à chaque type de projet. Contactez-moi pour un devis personnalisé.</p>
 
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
@@ -15,7 +15,7 @@
                         <p class="text-white text-center text-md">Demi-journée (4h)</p>
                     </div>
                     <div class="p-6">
-                        <div class="text-4xl font-bold text-center mb-4">300€ <span class="text-sm font-normal text-gray-500">/jour</span></div>
+                        <!-- <div class="text-4xl font-bold text-center mb-4">300€ <span class="text-sm font-normal text-gray-500">/jour</span></div> -->
                         <ul class="space-y-3 mb-6">
                             <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> 4 heures de tournage</li>
                             <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> 1 version finale</li>
@@ -38,7 +38,7 @@
                         <p class="text-white text-center text-md">Journée (8h)</p>
                     </div>
                     <div class="p-6">
-                        <div class="text-4xl font-bold text-center mb-4">500€ <span class="text-sm font-normal text-gray-500">/jour</span></div>
+                        <!-- <div class="text-4xl font-bold text-center mb-4">500€ <span class="text-sm font-normal text-gray-500">/jour</span></div> -->
                         <ul class="space-y-3 mb-6">
                             <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> 8 heures de tournage</li>
                             <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> 1 version finale</li>
@@ -59,7 +59,7 @@
                         <h4 class="text-lg font-bold text-center text-white">BASIC</h4>
                     </div>
                     <div class="p-6">
-                        <div class="text-4xl font-bold text-center mb-4 text-[#1a2026]">25€ <span class="text-sm font-normal text-gray-500">/Heure</span></div>
+                        <!-- <div class="text-4xl font-bold text-center mb-4 text-[#1a2026]">25€ <span class="text-sm font-normal text-gray-500">/Heure</span></div> -->
                         <ul class="space-y-3 mb-6">
                             <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> Montage standard</li>
                             <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> Pas d'effets</li>
@@ -80,7 +80,7 @@
                         <h4 class="text-lg font-bold text-center text-white">PRO</h4>
                     </div>
                     <div class="p-6">
-                        <div class="text-4xl font-bold text-center mb-4">50€ <span class="text-sm font-normal text-gray-500">/Heure</span></div>
+                        <!-- <div class="text-4xl font-bold text-center mb-4">50€ <span class="text-sm font-normal text-gray-500">/Heure</span></div> -->
                         <ul class="space-y-3 mb-6">
                             <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> Montage avancé</li>
                             <li class="flex items-center text-[#1a2026]"><i class="fas fa-check text-green-500 mr-2"></i> Motion design (2 effets max)</li>

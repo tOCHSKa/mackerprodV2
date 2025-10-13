@@ -27,6 +27,7 @@
                 <NuxtLink to="/loginuser" class="hover:text-white">Se connecter</NuxtLink>
             </li>
             <li><a href="/#contact" class="hover:text-white">Contact</a></li>
+            <li><NuxtLink to="/cgu" class="hover:text-white">CGU</NuxtLink></li>
           </ul>
         </div>
 
