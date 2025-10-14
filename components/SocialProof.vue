@@ -25,11 +25,17 @@
                             <img src="https://tochska.github.io/assets-mackerprod/steloi.svg" alt="steloi">
                         </div>
                         <div class="slide">
-                            <img src="https://tochska.github.io/assets-mackerprod/4tech.svg" alt="4tech">
+                            <img src="https://tochska.github.io/assets-mackerprod/birdie.svg" alt="birdie">
+                        </div>                        
+                        <div class="slide">
+                            <img src="https://tochska.github.io/assets-mackerprod/desenfans.svg" alt="desenfans">
+                        </div>
+                        <div class="slide">
+                            <img src="https://tochska.github.io/assets-mackerprod/fcu.svg" alt="fcu">
                         </div>
                         <div class="slide">
                             <img src="https://tochska.github.io/assets-mackerprod/dimmobilier.svg" alt="dim mobilier">
-                        </div>                        
+                        </div>
                         <div class="slide">
                             <img src="https://tochska.github.io/assets-mackerprod/foxhabitat.svg" alt="foxhabitat">
                         </div>
@@ -40,16 +46,13 @@
                             <img src="https://tochska.github.io/assets-mackerprod/steloi.svg" alt="steloi">
                         </div>
                         <div class="slide">
-                            <img src="https://tochska.github.io/assets-mackerprod/4tech.svg" alt="4tech">
+                            <img src="https://tochska.github.io/assets-mackerprod/birdie.svg" alt="birdie">
+                        </div>                        
+                        <div class="slide">
+                            <img src="https://tochska.github.io/assets-mackerprod/desenfans.svg" alt="desenfans">
                         </div>
                         <div class="slide">
-                            <img src="https://tochska.github.io/assets-mackerprod/dimmobilier.svg" alt="dim mobilier">
-                        </div>
-                        <div class="slide">
-                            <img src="https://tochska.github.io/assets-mackerprod/foxhabitat.svg" alt="foxhabitat">
-                        </div>
-                        <div class="slide">
-                            <img src="https://tochska.github.io/assets-mackerprod/liujo.svg" alt="liujo">
+                            <img src="https://tochska.github.io/assets-mackerprod/fcu.svg" alt="fcu">
                         </div>
                     </div>
                 </div>
@@ -65,9 +68,13 @@
 <style scoped>
     /* Animation pour la bannière de logos */
     @keyframes scroll {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(calc(-250px * 7))}
-    }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 
     .slider {
         background: white;
@@ -100,10 +107,11 @@
     }
 
     .slide-track {
-        animation: scroll 40s linear infinite;
         display: flex;
-        width: calc(250px * 14);
-    }
+        width: calc(250px * 14); /* Tu as 7 logos répétés deux fois, donc 14 total */
+        animation: scroll 40s linear infinite;
+        will-change: transform;
+}   
 
     .slide {
         height: 100px;
