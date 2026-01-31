@@ -149,7 +149,7 @@ $fetch('/api/video/getAll', {
 })
 )
 
-const API_URL = "http://localhost:3001/api/video"
+const API_URL = "https://mackerprod.com/api/video"
 const deleteVideo = async (id) => {
   try {
     const { error } = await useFetch(`${API_URL}/${id}`, {

@@ -44,6 +44,7 @@
             <div class="relative h-64 overflow-hidden">
               <iframe
                 :src="video.chemin_lien"
+                loading="lazy"
                 class="absolute inset-0 w-full h-full"
                 frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -107,7 +108,6 @@ const buttons = [
   { title: 'Tous les projets', value: 'all' },
   { title: 'Corporate', value: 'corporate' },
   { title: 'Mariage', value: 'duo' },
-  { title: 'Événements', value: 'evenement' },
   { title: 'Immobilier', value: 'immobilier' }
 ]
 
@@ -141,7 +141,7 @@ watch(
 const filteredVideos = computed(() =>
   (videos.value || [])
     .filter(video => videoFilter.value === 'all' || video.theme === videoFilter.value)
-    .slice(0, 6)
+    
 )
 </script>
 

@@ -150,6 +150,8 @@
 </template>
 <script setup>
 import { ref, reactive } from 'vue'
+import { useReCaptcha } from 'vue-recaptcha-v3'
+const recaptcha = useReCaptcha()
 
 const getInitialState = () => ({
   nom_expediteur: '',
@@ -213,14 +215,22 @@ const handleSubmit = async () => {
   if (!validateForm()) return
 
   try {
+    // ⭐ Récupération du token reCAPTCHA
+    await recaptcha?.recaptchaLoaded()
+    const token = await recaptcha.executeRecaptcha('contact_form')
+
     await $fetch('/api/message/add', {
       method: 'POST',
-      body: { ...state },
+      body: { 
+        ...state,
+        recaptchaToken: token  // ⭐ On envoie le token au backend
+      },
     })
 
     isSuccess.value = true
     Object.assign(state, getInitialState())
     toastMessage.value = 'Message envoyé avec succès !'
+
     setTimeout(() => {
       isSuccess.value = false
     }, 3000)
@@ -230,6 +240,7 @@ const handleSubmit = async () => {
     toastMessage.value = 'Erreur lors de l’envoi du message !'
   }
 }
+
 
 </script>
 
