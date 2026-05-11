@@ -41,16 +41,50 @@
           data-category="clip"
         >
           <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-            <div class="relative h-64 overflow-hidden">
-              <iframe
-                :src="video.chemin_lien"
-                loading="lazy"
-                class="absolute inset-0 w-full h-full"
-                frameborder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
+            <div class="relative h-64 overflow-hidden bg-black">
+              <!-- MINIATURE -->
+              <div
+                v-if="!video._play"
+                class="absolute inset-0 cursor-pointer group"
+                @click="video._play = true"
+              >
+                <img
+                  :src="`https://img.youtube.com/vi/${video.miniature}/hqdefault.jpg`"
+                  :alt="video.titre"
+                  class="w-full h-full object-cover"
+                />
+
+                <!-- BOUTON PLAY -->
+                <div
+                  class="absolute inset-0 flex items-center justify-center"
+                  >
+                    <div
+                      class="w-16 h-16 bg-black/60 rounded-full flex items-center justify-center
+                            group-hover:scale-105 transition"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-8 h-8 text-white ml-1"
+                        fill="currentColor"
+                        viewBox="0 0 16 16"
+                      >
+                        <path d="M6 3.993v8.014L11.5 8 6 3.993z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- IFRAME -->
+                <iframe
+                  v-else
+                  :src="`${video.chemin_lien}?autoplay=1`"
+                  class="absolute inset-0 w-full h-full"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
             </div>
+
             <div class="p-6">
               <div class="flex justify-between items-start mb-2">
                 <h3 class="text-xl font-bold">{{ video.titre }}</h3>
@@ -103,6 +137,23 @@ const { data: videos, pending, error } = await useAsyncData('videos', () =>
   $fetch('/api/video/getAll')
 )
 
+// --- ÉTAT LOCAL DES VIDÉOS (play / pause) ---
+const videosWithState = ref([])
+
+// Initialisation quand les vidéos arrivent
+watch(
+  videos,
+  (newVideos) => {
+    if (!newVideos) return
+
+    videosWithState.value = newVideos.map(video => ({
+      ...video,
+      _play: false
+    }))
+  },
+  { immediate: true }
+)
+
 // --- LISTE DES BOUTONS ---
 const buttons = [
   { title: 'Tous les projets', value: 'all' },
@@ -111,7 +162,24 @@ const buttons = [
   { title: 'Immobilier', value: 'immobilier' }
 ]
 
-// --- AU MONTAGE : lire le paramètre ?filter= depuis l’URL ---
+// --- FILTRAGE ---
+const filteredVideos = computed(() => {
+  const filtered = videosWithState.value.filter(
+    video => videoFilter.value === 'all' || video.theme === videoFilter.value
+  )
+  console.log("videos après filtre :", filtered.length)
+  return filtered
+    .sort((a, b) => new Date(b.created_at) - new Date(a.created_at)) // tri du plus récent
+})
+
+// --- RESET DES VIDÉOS AU CHANGEMENT DE FILTRE ---
+watch(videoFilter, () => {
+  videosWithState.value.forEach(video => {
+    video._play = false
+  })
+})
+
+// --- INIT FILTRE VIA URL ---
 onMounted(() => {
   const initialFilter = route.query.filter || 'all'
   if (buttons.some(btn => btn.value === initialFilter)) {
@@ -127,7 +195,7 @@ function setFilter(value) {
   })
 }
 
-// --- SYNCHRONISATION SI L’URL CHANGE MANUELLEMENT ---
+// --- SYNC SI URL CHANGE MANUELLEMENT ---
 watch(
   () => route.query.filter,
   (newVal) => {
@@ -136,14 +204,8 @@ watch(
     }
   }
 )
-
-// --- FILTRAGE LOCAL ---
-const filteredVideos = computed(() =>
-  (videos.value || [])
-    .filter(video => videoFilter.value === 'all' || video.theme === videoFilter.value)
-    
-)
 </script>
+
 
 <style scoped>
 .project-card {

@@ -70,10 +70,8 @@ Voici les répertoires et fichiers principaux du projet :
 
 ## 4. Fonctionnalités prévues
 
-- Interface de conversion de fichiers vidéo
 - Gestion d'une bibliothèque de contenus
 - Possibilité de trier, supprimer et consulter des vidéos
-- Intégration potentielle avec un service de traitement vidéo (ex. : backend REST)
 
 ---
 
@@ -81,10 +79,7 @@ Voici les répertoires et fichiers principaux du projet :
 
 Le projet est actuellement en phase de structuration. Les priorités de développement incluent :
 
-- Définition de l’architecture de pages et composants
-- Mise en place du système de navigation
-- Développement des premières interfaces utilisateur
-- Connexion à l’API backend pour le traitement vidéo
+- 
 
 ---
 
@@ -98,9 +93,6 @@ Le projet est prévu pour être déployé sur une plateforme compatible avec Nux
 
 - Détail des composants
 - Documentation des routes et vues
-- Intégration avec le backend
-- Interface d’administration du contenu
-- Guide utilisateur pour le vidéaste
 
 ---
 

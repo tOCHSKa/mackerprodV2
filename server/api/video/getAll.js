@@ -6,7 +6,12 @@ export default defineEventHandler(async () => {
     const response = await $fetch(`${config.apiBase}/video/getAll`, {
       method: 'GET',
     })
-    return response
+
+    const videoSorted = [...response].sort(
+      (a, b) => new Date(b.created_at) - new Date(a.created_at)
+    )
+    console.log('videoSorted:', videoSorted.length)
+    return videoSorted
   } catch (error) {
     console.error('Erreur côté API Nuxt:', error)
     throw createError({
