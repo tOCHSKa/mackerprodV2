@@ -29,10 +29,9 @@ Cette application démontre une maîtrise complète de l'écosystème Vue.js mod
 Frontend Framework    → Nuxt 3 (Vue 3 + SSR)
 State Management     → Pinia
 Styling              → Tailwind CSS v4 + Nuxt UI
-Content Management   → Nuxt Content
-Image Optimization   → Nuxt Image
-Icons                → Nuxt Icon
-Testing              → Nuxt Test Utils
+Image Optimization   → TinyPNG
+Icons                → Font Awesome
+Testing              → N/C
 Security             → reCAPTCHA v3 + JWT
 ```
 
@@ -200,7 +199,7 @@ Ce projet m'a permis de :
 
 ## 📬 Contact
 
-**Développeur** : [tOCHSKa](https://github.com/tOCHSKa)
+**Développeur** : [UbedaKevin](https://github.com/UbedaKevin/)
 
 Pour toute question technique ou opportunité de collaboration :
 - 📧 Via GitHub
@@ -211,4 +210,4 @@ Pour toute question technique ou opportunité de collaboration :
 
 **⭐ Si ce projet vous intéresse, n'hésitez pas à le star !**
 
-Made with ❤️ and ☕ by tOCHSKa
+Made with ❤️ and ☕ by UbedaKevin
